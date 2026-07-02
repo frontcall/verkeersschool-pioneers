@@ -1,38 +1,73 @@
 ---
-// data-todo="whatsapp-number-pending" — vervang het nummer hieronder door het echte nummer
 const waNumber = '31643127001';
-const waUrl = `https://wa.me/${waNumber}`;
 ---
 
-<div class="fixed bottom-6 right-5 sm:right-6 z-50" id="wa-btn-wrap">
-  <!-- Pulse ring -->
-  <span
-    id="wa-pulse"
-    class="wa-pulse-ring absolute inset-0 rounded-full bg-[#25D366] opacity-60"
+<div
+  id="wa-btn-wrap"
+  class="fixed bottom-6 right-5 sm:right-6 z-50 flex items-center gap-3"
+  style="opacity: 0; transform: translateY(12px);"
+>
+  <!-- Tooltip pill (verschijnt bij hover) -->
+  <div
+    id="wa-tooltip"
+    class="pointer-events-none opacity-0 transition-all duration-200 bg-pioneer-navy text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg whitespace-nowrap"
     aria-hidden="true"
-  ></span>
-
-  <a
-    href={waUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat met Verkeersschool Pioneers via WhatsApp"
-    class="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
   >
-    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-      <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
-    </svg>
-  </a>
+    Chat via WhatsApp
+    <!-- Arrow -->
+    <span class="absolute right-[-5px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-4 border-b-4 border-l-[5px] border-t-transparent border-b-transparent border-l-pioneer-navy"></span>
+  </div>
+
+  <!-- Button wrapper (voor pulse) -->
+  <div class="relative">
+    <!-- Pulse ring -->
+    <span
+      id="wa-pulse"
+      class="wa-pulse-ring absolute inset-0 rounded-full bg-[#25D366]"
+      aria-hidden="true"
+    ></span>
+
+    <a
+      href={`https://wa.me/${waNumber}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat met Verkeersschool Pioneers via WhatsApp"
+      id="wa-link"
+      class="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+    >
+      <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+      </svg>
+    </a>
+  </div>
 </div>
 
 <script>
-  // Stop de pulse-animatie na 3 herhalingen (3 × 1.8s = ~5.4s)
-  const pulse = document.getElementById('wa-pulse');
-  if (pulse) {
-    setTimeout(() => {
-      pulse.style.animation = 'none';
-      pulse.style.opacity = '0';
-    }, 5600);
-  }
+  const wrap    = document.getElementById('wa-btn-wrap')!;
+  const pulse   = document.getElementById('wa-pulse')!;
+  const tooltip = document.getElementById('wa-tooltip')!;
+  const link    = document.getElementById('wa-link')!;
+
+  // Entry animatie na 800ms
+  setTimeout(() => {
+    wrap.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    wrap.style.opacity    = '1';
+    wrap.style.transform  = 'translateY(0)';
+  }, 800);
+
+  // Stop pulse na 3x (≈5.4s)
+  setTimeout(() => {
+    pulse.style.animation = 'none';
+    pulse.style.opacity   = '0';
+  }, 5600);
+
+  // Tooltip bij hover
+  link.addEventListener('mouseenter', () => {
+    tooltip.style.opacity = '1';
+    tooltip.style.transform = 'translateX(0)';
+  });
+  link.addEventListener('mouseleave', () => {
+    tooltip.style.opacity = '0';
+  });
 </script>
