@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Alle categorieën"
+  description="Verkeersschool Pioneers biedt rijlessen voor alle categorieën: B, A, Am, C, Ce en Taxi. Bekijk het aanbod per categorie."
+>
+  <section class="hero-bg text-white py-16 md:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-32 right-0 w-[520px] h-[520px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%);"></div>
+      <div class="orb-drift-slow absolute bottom-0 -left-20 w-[380px] h-[380px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(42,67,116,0.55) 0%, transparent 65%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8">
+      <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3">Alle categorieën</p>
+      <h1 class="font-display font-bold text-4xl md:text-5xl tracking-tight mb-4">Waarvoor wil jij rijles?</h1>
+      <p class="text-white/65 text-lg max-w-lg">Van auto tot taxi — Verkeersschool Pioneers begeleidt jou naar elk rijbewijs.</p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-off-white">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { cat: 'B', titel: 'Auto', omschrijving: 'Handgeschakeld, automaat & aanhanger (Be). De meest gevraagde categorie.', href: '/pakketten?cat=b', prijs: 'Vanaf € 1.049' },
+          { cat: 'A', titel: 'Motor', omschrijving: 'A1, A2 en A — van lichte motor tot onbeperkt. Twee wielen, volledige vrijheid.', href: '/pakketten?cat=a', prijs: 'Prijs op aanvraag' },
+          { cat: 'Am', titel: 'Scooter', omschrijving: 'Bromfiets- of snorfietsrijbewijs. Snel geregeld, ook voor jongeren.', href: '/pakketten?cat=am', prijs: 'Prijs op aanvraag' },
+          { cat: 'C', titel: 'Vrachtwagen', omschrijving: 'Categorie C en CE — voor wie zwaar transport wil rijden.', href: '/pakketten?cat=c', prijs: 'Prijs op aanvraag' },
+          { cat: 'Taxi', titel: 'Taxi', omschrijving: 'Chauffeurskaart voor taxichauffeurs. Inclusief begeleiding voor het examen.', href: '/pakketten?cat=taxi', prijs: 'Prijs op aanvraag' },
+        ].map(({ cat, titel, omschrijving, href, prijs }) => (
+          <a
+            href={href}
+            class="reveal-item card-lift block bg-white rounded-2xl border border-asphalt-line p-7 hover:border-pioneer-navy/30 transition-all duration-200"
+          >
+            <span class="inline-block bg-pioneer-red/10 text-pioneer-red font-bold text-xs uppercase tracking-widest px-2.5 py-1 rounded-full mb-4">{cat}</span>
+            <h2 class="font-display font-bold text-xl tracking-tight mb-2">{titel}</h2>
+            <p class="text-asphalt text-sm leading-relaxed mb-4">{omschrijving}</p>
+            <p class="font-semibold text-pioneer-navy text-sm">{prijs}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
