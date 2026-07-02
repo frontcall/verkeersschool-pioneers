@@ -104,24 +104,31 @@ import SectionDivider from '../components/SectionDivider.astro';
             <div class="absolute -top-20 -right-20 w-72 h-72 bg-pioneer-red/12 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
             <div class="absolute -bottom-10 -left-10 w-44 h-44 bg-pioneer-navy-light/18 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
 
-            <div class="flex items-center gap-2 mb-5 relative">
+            <div class="flex items-center gap-2 mb-4 relative">
               <span class="bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Actie pakket</span>
+              <span class="text-white/50 text-[10px] font-semibold uppercase tracking-wider">· Tijdelijk beschikbaar</span>
             </div>
 
+            <!-- Doorgestreepte oude prijs -->
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-white/35 text-base line-through">€ 1.899,–</span>
+              <span class="bg-pioneer-red/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Bespaar €500!</span>
+            </div>
+            <!-- Actieprijs -->
             <div class="relative mb-1">
-              <span class="font-display font-bold text-4xl sm:text-[3.25rem] leading-none text-white">€ 1.499</span>
+              <span class="font-display font-bold text-4xl sm:text-[3.25rem] leading-none text-white">€ 1.399</span>
               <span class="text-white/50 text-lg">,–</span>
             </div>
-            <p class="text-white/40 text-xs mb-6">Studenten pakket — handgeschakeld</p>
+            <p class="text-white/40 text-xs mb-6">Actie pakket — 24 lessen · handgeschakeld</p>
 
             <ul class="space-y-3 mb-7">
               {[
-                '20 rijlessen inbegrepen',
-                'Gratis proefles',
-                'Gratis theoriepakket',
-                'Onbeperkte herexamens*',
+                '24 rijlessen inbegrepen',
+                'Gratis proefles!',
+                'Geen inschrijf- of advieskosten',
+                'Onbeperkt gratis herexamens!',
               ].map(item => (
-                <li class="flex items-center gap-3 text-sm text-white/80">
+                <li class="flex items-center gap-3 text-sm text-white/85">
                   <span class="flex-shrink-0 w-5 h-5 rounded-full bg-success-soft/20 flex items-center justify-center">
                     <svg class="w-3 h-3 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
@@ -138,7 +145,7 @@ import SectionDivider from '../components/SectionDivider.astro';
               rel="noopener noreferrer"
               class="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 hover:-translate-y-0.5 text-sm"
             >
-              Gratis Vrijblijvende Proefles
+              Claim jouw gratis proefles
             </a>
             <a href="/algemene-voorwaarden" class="text-xs text-asphalt/60 hover:text-pioneer-navy mt-2 inline-block transition-colors">Algemene voorwaarden</a>
           </div>
