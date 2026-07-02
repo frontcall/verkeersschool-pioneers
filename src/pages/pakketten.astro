@@ -1,21 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SectionDivider from '../components/SectionDivider.astro';
-
-// Fase 3: Google Sheet koppeling wordt hier gebouwd.
-// Dit is de statische shell voor Fase 1.
-const categories = [
-  { id: 'auto', label: 'Auto', icon: '🚗', sub: 'B-rijbewijs' },
-  { id: 'motor', label: 'Motor', icon: '🏍️', sub: 'A-rijbewijs' },
-  { id: 'scooter', label: 'Scooter', icon: '🛵', sub: 'AM-rijbewijs' },
-  { id: 'vrachtwagen', label: 'Vrachtwagen', icon: '🚛', sub: 'C-rijbewijs' },
-  { id: 'taxi', label: 'Taxi', icon: '🚕', sub: 'Taxipas' },
-];
 ---
 
 <Layout
   title="Pakketten & Prijzen"
-  description="Bekijk alle rijlespakketten van Verkeersschool Pioneers — auto, motor, scooter, vrachtwagen en taxi. Transparante prijzen, geen verborgen kosten."
+  description="Bekijk alle rijlespakketten van Verkeersschool Pioneers — handgeschakeld en automaat. Transparante prijzen, onbeperkte herexamens inbegrepen."
 >
   <!-- Page header -->
   <section class="bg-pioneer-navy text-white py-16 md:py-20">
@@ -24,77 +14,314 @@ const categories = [
       <h1 class="font-display font-bold text-4xl md:text-5xl tracking-tight mb-4">
         Kies jouw pakket
       </h1>
-      <p class="text-white/65 text-lg max-w-lg">
-        Transparante prijzen, geen verborgen kosten. Klik op een categorie om de pakketten te bekijken.
+      <p class="text-white/65 text-lg max-w-xl">
+        Transparante prijzen, geen verborgen kosten. Onbeperkte herexamens inbegrepen — jij betaalt alleen de lessen.
       </p>
     </div>
   </section>
 
-  <!-- Category tabs -->
+  <!-- Sticky category tabs -->
   <div class="sticky top-16 md:top-20 z-30 bg-white border-b border-asphalt-line shadow-sm">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
       <nav class="flex gap-1 overflow-x-auto py-3 scrollbar-hide" aria-label="Categorieën">
-        {categories.map(({ id, label, icon }) => (
-          <a
-            href={`#${id}`}
-            class="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-asphalt hover:text-pioneer-navy hover:bg-off-white whitespace-nowrap transition-colors flex-shrink-0"
-          >
-            <span>{icon}</span> {label}
-          </a>
-        ))}
+        <a href="#handgeschakeld" class="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-asphalt hover:text-pioneer-navy hover:bg-off-white whitespace-nowrap transition-colors flex-shrink-0">
+          🚗 Handgeschakeld
+        </a>
+        <a href="#automaat" class="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-asphalt hover:text-pioneer-navy hover:bg-off-white whitespace-nowrap transition-colors flex-shrink-0">
+          🚗 Automaat
+        </a>
+        <a href="#vervolg" class="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-asphalt hover:text-pioneer-navy hover:bg-off-white whitespace-nowrap transition-colors flex-shrink-0">
+          ➕ Vervolglessen
+        </a>
+        <a href="#faq" class="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-asphalt hover:text-pioneer-navy hover:bg-off-white whitespace-nowrap transition-colors flex-shrink-0">
+          ❓ Veelgestelde vragen
+        </a>
       </nav>
     </div>
   </div>
 
-  <!-- Pricing sections — gevuld via Google Sheet in Fase 3 -->
-  <div id="pricing-container">
-    {categories.map(({ id, label, icon, sub }) => (
-      <section id={id} class="py-14 md:py-20 scroll-mt-32">
-        <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-          <div class="flex items-center gap-3 mb-8">
-            <span class="text-3xl">{icon}</span>
-            <div>
-              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">{label}</h2>
-              <p class="text-asphalt text-sm">{sub}</p>
-            </div>
-          </div>
+  <!-- HANDGESCHAKELD -->
+  <section id="handgeschakeld" class="py-14 md:py-20 scroll-mt-32">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-3xl">🚗</span>
+        <div>
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Handgeschakeld</h2>
+          <p class="text-asphalt text-sm">B-rijbewijs — schakel zelf</p>
+        </div>
+      </div>
+      <p class="text-asphalt mb-10 max-w-xl">
+        Slagen voor je rijexamen met een handgeschakelde auto. De meeste leerlingen slagen in één keer.
+      </p>
 
-          <!-- Loading state — wordt vervangen door echte data in Fase 3 -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-2xl border border-asphalt-line p-6 animate-pulse">
-              <div class="h-4 bg-asphalt-line rounded mb-3 w-2/3"></div>
-              <div class="h-8 bg-asphalt-line rounded mb-2 w-1/2"></div>
-              <div class="h-3 bg-asphalt-line rounded mb-1 w-full"></div>
-              <div class="h-3 bg-asphalt-line rounded mb-4 w-4/5"></div>
-              <div class="h-10 bg-asphalt-line rounded w-full"></div>
-            </div>
-          </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <p class="text-asphalt text-sm mt-6 italic">
-            Prijzen worden geladen vanuit ons prijzenoverzicht. Zie je niks? <a href="/contact" class="text-pioneer-red hover:underline">Neem contact op</a> voor de actuele prijzen.
+        <!-- Start Pakket -->
+        <div class="bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col">
+          <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Start Pakket</p>
+          <div class="flex items-baseline gap-1 mb-5">
+            <span class="font-display font-bold text-4xl text-pioneer-navy">€ 1.049</span>
+          </div>
+          <ul class="space-y-2.5 flex-1 mb-6">
+            {[
+              '11 rijlessen',
+              'Gratis proefles',
+              'Inschrijving & advies',
+              '1 praktijkexamen',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-asphalt">
+                <svg class="w-4 h-4 text-success-soft flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20me%20inschrijven%20voor%20het%20Start%20Pakket%20(handgeschakeld)."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 w-full py-3 rounded-lg border border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-colors"
+          >
+            Schrijf je in
+          </a>
+        </div>
+
+        <!-- Studenten Pakket (popular) -->
+        <div class="relative bg-pioneer-navy rounded-2xl p-7 flex flex-col">
+          <span class="absolute -top-3.5 left-6 bg-pioneer-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            Meest gekozen
+          </span>
+          <p class="text-xs font-bold uppercase tracking-widest text-white/50 mb-3">Studenten Pakket</p>
+          <div class="flex items-baseline gap-1 mb-5">
+            <span class="font-display font-bold text-4xl text-white">€ 1.499</span>
+          </div>
+          <ul class="space-y-2.5 flex-1 mb-6">
+            {[
+              '20 rijlessen',
+              'Gratis proefles',
+              'Gratis theoriepakket',
+              '1 theorie-examen',
+              '1 praktijkexamen',
+              'Onbeperkte herexamens*',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-white/80">
+                <svg class="w-4 h-4 text-[#4ade80] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20me%20inschrijven%20voor%20het%20Studenten%20Pakket%20(handgeschakeld)."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-colors"
+          >
+            Schrijf je in
+          </a>
+        </div>
+
+        <!-- Spoed Pakket -->
+        <div class="bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col">
+          <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Spoed Pakket</p>
+          <div class="flex items-baseline gap-1 mb-5">
+            <span class="font-display font-bold text-4xl text-pioneer-navy">€ 2.099</span>
+          </div>
+          <ul class="space-y-2.5 flex-1 mb-6">
+            {[
+              '30 rijlessen',
+              'Gratis proefles',
+              'Gratis theoriepakket',
+              '1 praktijkexamen',
+              'Onbeperkte herexamens*',
+              'Tot 5 lessen per week',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-asphalt">
+                <svg class="w-4 h-4 text-success-soft flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20me%20inschrijven%20voor%20het%20Spoed%20Pakket%20(handgeschakeld)."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 w-full py-3 rounded-lg border border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-colors"
+          >
+            Schrijf je in
+          </a>
+        </div>
+      </div>
+
+      <p class="text-asphalt/60 text-xs mt-5">
+        * Herexamenkosten worden door ons vergoed tot €299 per herexamen. Je betaalt alleen de rijlessen.
+      </p>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- AUTOMAAT -->
+  <section id="automaat" class="py-14 md:py-20 scroll-mt-32">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-3xl">🚗</span>
+        <div>
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Automaat</h2>
+          <p class="text-asphalt text-sm">B-rijbewijs — automatische versnelling</p>
+        </div>
+      </div>
+      <p class="text-asphalt mb-10 max-w-xl">
+        Met een automaat hoef je niet te schakelen. Je geeft 100% van je aandacht aan de weg — ideaal als je snel wilt leren rijden.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+
+        <!-- Automaat Pakket -->
+        <div class="relative bg-pioneer-navy rounded-2xl p-7 flex flex-col">
+          <span class="absolute -top-3.5 left-6 bg-pioneer-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+            Compleet pakket
+          </span>
+          <p class="text-xs font-bold uppercase tracking-widest text-white/50 mb-3">Automaat Pakket</p>
+          <div class="flex items-baseline gap-1 mb-5">
+            <span class="font-display font-bold text-4xl text-white">€ 1.750</span>
+          </div>
+          <ul class="space-y-2.5 flex-1 mb-6">
+            {[
+              '24 rijlessen',
+              'Gratis proefles',
+              '1 praktijkexamen',
+              'Onbeperkte herexamens*',
+              'Geen inschrijf- of advieskosten',
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-white/80">
+                <svg class="w-4 h-4 text-[#4ade80] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20me%20inschrijven%20voor%20het%20Automaat%20Pakket."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-colors"
+          >
+            Schrijf je in
+          </a>
+        </div>
+
+        <!-- Losse rijles -->
+        <div class="bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col">
+          <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Losse Rijles</p>
+          <div class="flex items-baseline gap-1 mb-2">
+            <span class="font-display font-bold text-4xl text-pioneer-navy">€ 60</span>
+            <span class="text-asphalt text-sm">per les</span>
+          </div>
+          <p class="text-asphalt text-sm mb-6 flex-1">
+            Heb je al rijervaring of wil je gewoon een les of twee pakken? Boek losse lessen zonder vast pakket.
+          </p>
+          <a
+            href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20een%20losse%20automaat%20rijles%20boeken."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 w-full py-3 rounded-lg border border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-colors"
+          >
+            Les inplannen
+          </a>
+        </div>
+      </div>
+
+      <p class="text-asphalt/60 text-xs mt-5">
+        * Herexamenkosten worden door ons vergoed tot €299 per herexamen. Je betaalt alleen de rijlessen.
+      </p>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- VERVOLG PAKKET -->
+  <section id="vervolg" class="py-14 md:py-20 scroll-mt-32 bg-white">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-pioneer-red font-semibold text-sm uppercase tracking-widest mb-3">Extra lessen nodig?</p>
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-4">Vervolg Pakket</h2>
+          <p class="text-asphalt leading-relaxed mb-6">
+            Heb je je pakket gehad maar wil je extra oefenen voor je examen? Met het Vervolg Pakket koop je 5 extra rijlessen bij, zonder gedoe.
+          </p>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-4xl text-pioneer-navy">€ 249</span>
+            <span class="text-asphalt">— 5 rijlessen</span>
+          </div>
+          <a
+            href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20het%20Vervolg%20Pakket%20(5%20extra%20lessen)%20boeken."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-colors"
+          >
+            Vervolg Pakket boeken
+          </a>
+        </div>
+        <div class="bg-off-white rounded-2xl border border-asphalt-line p-8">
+          <h3 class="font-display font-bold text-lg mb-4">Examen aanvragen</h3>
+          <p class="text-asphalt text-sm leading-relaxed mb-4">
+            Om je examen in te plannen machtigt jij ons via <strong>www.mijncbr.nl</strong> met Digi-D.
+          </p>
+          <p class="text-asphalt text-sm leading-relaxed">
+            Onze CBR-schoolcode is: <strong class="font-mono text-pioneer-navy text-base">1160G5</strong>
           </p>
         </div>
-        {id !== 'taxi' && <SectionDivider class="mt-14 md:mt-20" />}
-      </section>
-    ))}
-  </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- FAQ placeholder -->
-  <section class="bg-white py-14 md:py-20">
+  <SectionDivider />
+
+  <!-- FAQ -->
+  <section id="faq" class="py-14 md:py-20 scroll-mt-32">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-8">
+      <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-2">
         Veelgestelde vragen
       </h2>
-      <!-- data-todo="faq-content-pending — Mahmood levert de antwoorden aan" -->
-      <div class="space-y-4 max-w-2xl">
+      <p class="text-asphalt mb-10 max-w-xl">Staat jouw vraag er niet bij? Stuur ons een WhatsApp-bericht.</p>
+      <div class="space-y-3 max-w-2xl">
         {[
-          'Zijn examenkosten inbegrepen in het pakket?',
-          'Welke betaalmogelijkheden zijn er?',
-          'Hoe lang duurt een rijles?',
-          'Kan ik mijn pakket uitbreiden met extra lessen?',
-          'In welke gebieden rijden jullie?',
-        ].map((q) => (
-          <details class="group bg-off-white rounded-xl border border-asphalt-line">
+          {
+            q: 'Zijn examenkosten inbegrepen in het pakket?',
+            a: 'Ja, bij de Studenten-, Spoed- en Automaat-pakketten zijn de examenkosten inbegrepen. Slaag je niet de eerste keer? Dan betalen wij de herexamenkosten, tot €299 per herexamen. Je betaalt alleen de rijlessen.',
+          },
+          {
+            q: 'Welke betaalmogelijkheden zijn er?',
+            a: 'Je kunt je pakket vooruit betalen, maandelijks betalen of per les betalen. We bespreken de opties bij inschrijving — er is altijd een regeling die bij jou past.',
+          },
+          {
+            q: 'Hoe lang duurt een rijles?',
+            a: 'Een standaard rijles duurt 60 minuten. In overleg met je instructeur is een langere les ook mogelijk.',
+          },
+          {
+            q: 'Kan ik mijn pakket uitbreiden met extra lessen?',
+            a: 'Ja, dat is altijd mogelijk. Je kunt het Vervolg Pakket bijkopen (5 lessen voor €249) of losse lessen toevoegen.',
+          },
+          {
+            q: 'In welke gebieden rijden jullie?',
+            a: 'We rijden in Breda, Etten-Leur, Roosendaal, Oosterhout, Rijsbergen, Zevenbergen, Chaam, Terheijden, Oudenbosch en Rijen. Twijfel je? Neem even contact op.',
+          },
+          {
+            q: 'Kan ik les krijgen in het Engels of Arabisch?',
+            a: 'Ja! Onze instructeurs geven les in het Nederlands, Engels en Arabisch. Geef dit aan bij inschrijving.',
+          },
+          {
+            q: 'Kan ik al starten als ik 16 jaar ben?',
+            a: 'Vanaf 16 jaar kun je al beginnen met theorie-instructie. Praktijklessen beginnen vanaf 16,5 jaar.',
+          },
+        ].map(({ q, a }) => (
+          <details class="group bg-white rounded-xl border border-asphalt-line">
             <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer font-semibold text-pioneer-navy list-none">
               {q}
               <svg class="w-4 h-4 text-asphalt flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -102,11 +329,33 @@ const categories = [
               </svg>
             </summary>
             <div class="px-5 pb-5 text-asphalt text-sm leading-relaxed">
-              <em class="text-asphalt/60">Antwoord volgt — wordt aangeleverd door Verkeersschool Pioneers.</em>
+              {a}
             </div>
           </details>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-pioneer-navy text-white py-14">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
+      <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-3">
+        Nog vragen of direct inschrijven?
+      </h2>
+      <p class="text-white/60 mb-7">We staan voor je klaar — 7 dagen per week, ook 's avonds.</p>
+      <a
+        href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20een%20vraag%20over%20de%20pakketten."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-colors"
+      >
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+        </svg>
+        Stuur een WhatsApp-bericht
+      </a>
     </div>
   </section>
 </Layout>

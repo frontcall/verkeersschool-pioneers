@@ -1,21 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Placeholder reviews — VERVANG MET ECHTE GOOGLE REVIEWS VOOR LAUNCH
-// data-todo="google-reviews-pending — Google Bedrijfsprofiel link aanleveren"
-const placeholderReviews = [
-  { name: 'Fatima A.', rating: 5, date: 'Juni 2025', text: 'Geweldige rijschool! De instructeur had heel veel geduld en ik ben in één keer geslaagd. De lessen waren duidelijk en professioneel. Echt een aanrader voor iedereen die wil leren rijden in Breda.' },
-  { name: 'Daan V.', rating: 5, date: 'Mei 2025', text: 'Duidelijke uitleg, fijne sfeer en een eerlijke prijs. Het pakket was precies wat ik nodig had. Na mijn rij-examen meteen geslaagd!' },
-  { name: 'Yassine M.', rating: 5, date: 'April 2025', text: 'Professionele rijschool met persoonlijke aandacht. Je merkt dat ze echt willen dat je slaagt, niet alleen de uren vol maken.' },
-  { name: 'Lisa de B.', rating: 5, date: 'Maart 2025', text: 'Ik had faalangst voor het examen, maar door de goede begeleiding voelde ik me zeker. In één keer geslaagd!' },
-  { name: 'Rachid E.', rating: 5, date: 'Februari 2025', text: 'Fijn contact, soepele planning en goede instructeurs. Het motorrijbewijs heb ik hier gehaald en ik zou ze zeker aanraden.' },
-  { name: 'Sophie H.', rating: 4, date: 'Januari 2025', text: 'Goede ervaring. De lessen waren gestructureerd en de instructeur had altijd nuttige feedback. Prima rijschool.' },
+const reviews = [
+  {
+    name: 'Emma',
+    rating: 5,
+    text: 'Dankzij de juiste leermethode ben ik in één keer geslaagd. Heel erg tevreden met de aanpak van de instructeur. Absoluut een aanrader!',
+  },
+  {
+    name: 'Eddie',
+    rating: 5,
+    text: 'Uitstekende rijschool en een geweldige aanpak. De instructeur legt alles goed uit en heeft veel geduld. Echt aanbevolen!',
+  },
+  {
+    name: 'Mike',
+    rating: 5,
+    text: 'Geweldige lessen en geslaagd voor mijn examen. Verkeersschool Pioneers weet hoe ze leerlingen goed voorbereiden.',
+  },
+  {
+    name: 'Eugenie',
+    rating: 5,
+    text: 'Vriendelijke instructeur, uitstekende leermethode en een fijne, welkome sfeer. Ik zou hier zeker opnieuw rijlessen nemen!',
+  },
 ];
 ---
 
 <Layout
   title="Reviews"
-  description="Lees wat leerlingen van Verkeersschool Pioneers vinden — eerlijke Google Reviews van mensen die hier hun rijbewijs hebben gehaald."
+  description="Lees wat leerlingen van Verkeersschool Pioneers vinden — 4,7 sterren op Google. Eerlijke ervaringen van mensen die hier hun rijbewijs hebben gehaald."
 >
   <!-- Page header -->
   <section class="bg-pioneer-navy text-white py-16 md:py-20">
@@ -24,7 +36,6 @@ const placeholderReviews = [
       <h1 class="font-display font-bold text-4xl md:text-5xl tracking-tight mb-4">
         Wat onze leerlingen zeggen
       </h1>
-      <!-- Gemiddelde score placeholder -->
       <div class="flex items-center gap-3 mt-6">
         <div class="flex items-center gap-1">
           {Array.from({ length: 5 }).map(() => (
@@ -33,7 +44,7 @@ const placeholderReviews = [
             </svg>
           ))}
         </div>
-        <span class="font-display font-bold text-3xl">5.0</span>
+        <span class="font-display font-bold text-3xl">4,7</span>
         <span class="text-white/50 text-sm">op Google</span>
       </div>
     </div>
@@ -42,22 +53,19 @@ const placeholderReviews = [
   <!-- Reviews grid -->
   <section class="py-16 md:py-20">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-        {placeholderReviews.map(({ name, rating, date, text }) => (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 max-w-3xl">
+        {reviews.map(({ name, rating, text }) => (
           <div class="bg-white rounded-2xl border border-asphalt-line p-6 flex flex-col">
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex items-center gap-1">
-                {Array.from({ length: rating }).map(() => (
-                  <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                  </svg>
-                ))}
-              </div>
-              <span class="text-xs text-asphalt">{date}</span>
+            <div class="flex items-center gap-1 mb-4">
+              {Array.from({ length: rating }).map(() => (
+                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
             </div>
             <p class="text-asphalt text-sm leading-relaxed flex-1 mb-4">"{text}"</p>
             <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-full bg-pioneer-navy/10 flex items-center justify-center text-pioneer-navy font-bold text-xs">
+              <div class="w-8 h-8 rounded-full bg-pioneer-navy/10 flex items-center justify-center text-pioneer-navy font-bold text-sm">
                 {name[0]}
               </div>
               <p class="font-semibold text-pioneer-navy text-sm">{name}</p>
@@ -67,12 +75,12 @@ const placeholderReviews = [
       </div>
 
       <!-- Google Reviews CTA -->
-      <!-- data-todo="google-profile-link-pending" -->
-      <div class="text-center">
+      <div class="bg-off-white rounded-2xl border border-asphalt-line p-8 max-w-md">
+        <h3 class="font-display font-bold text-lg mb-2">Meer reviews lezen?</h3>
+        <p class="text-asphalt text-sm mb-5">Bekijk alle beoordelingen op ons Google Bedrijfsprofiel.</p>
         <a
           href="#"
-          data-todo="google-profile-link-pending"
-          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-asphalt-line hover:border-pioneer-navy text-pioneer-navy font-semibold text-sm transition-colors hover:bg-white"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-asphalt-line bg-white hover:border-pioneer-navy text-pioneer-navy font-semibold text-sm transition-colors"
         >
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -83,6 +91,24 @@ const placeholderReviews = [
           Bekijk alle reviews op Google
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-pioneer-navy text-white py-14">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
+      <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-3">
+        Jij kunt de volgende zijn
+      </h2>
+      <p class="text-white/60 mb-7 max-w-md mx-auto">De meeste leerlingen slagen in één keer. Plan je gratis proefles via WhatsApp.</p>
+      <a
+        href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20een%20gratis%20proefles%20plannen."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-colors"
+      >
+        Plan een gratis proefles
+      </a>
     </div>
   </section>
 </Layout>
