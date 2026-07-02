@@ -12,12 +12,22 @@ import SectionDivider from '../components/SectionDivider.astro';
        HERO
   ═══════════════════════════════════════════════ -->
   <section class="hero-bg text-white overflow-hidden">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8 py-20 md:py-28 lg:py-36">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8 pt-14 pb-20 md:pt-16 md:pb-28 lg:pt-20 lg:pb-36">
+
+      <!-- Logo — groot en centraal bovenin de hero -->
+      <div class="hero-item flex justify-center mb-10 md:mb-14" data-delay="1">
+        <img
+          src="/logo.jpg"
+          alt="Verkeersschool Pioneers"
+          class="h-24 sm:h-28 md:h-36 lg:h-40 w-auto object-contain rounded-2xl shadow-2xl shadow-black/30"
+        />
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
         <!-- Left: copy -->
         <div>
-          <p class="hero-item inline-flex items-center gap-2 text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-5" data-delay="1">
+          <p class="hero-item inline-flex items-center gap-2 text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-5" data-delay="2">
             <span class="w-5 h-px bg-pioneer-red inline-block"></span>
             Rijschool in Breda &amp; omgeving
           </p>
