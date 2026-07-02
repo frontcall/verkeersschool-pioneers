@@ -11,7 +11,7 @@
   --color-pioneer-red-dark: #A81C2A;
   --color-asphalt: #4B4F58;
   --color-asphalt-line: #E8E9EC;
-  --color-off-white: #FAFAF8;
+  --color-off-white: #F3F9F0;
   --color-success-soft: #2F8F5B;
 }
 
@@ -126,9 +126,9 @@
   background-color: var(--color-off-white);
   background-image:
     radial-gradient(ellipse 80% 80% at 50% 50%,
-      rgba(250, 250, 248, 0)   20%,
-      rgba(250, 250, 248, 0.85) 60%,
-      rgba(250, 250, 248, 1)   78%
+      rgba(243, 249, 240, 0)   20%,
+      rgba(243, 249, 240, 0.85) 60%,
+      rgba(243, 249, 240, 1)   78%
     ),
     radial-gradient(circle at 1px 1px, rgba(22, 35, 63, 0.13) 1px, transparent 0);
   background-size: 100% 100%, 22px 22px;

@@ -12,10 +12,13 @@ const navItems = [
 ];
 ---
 
+<!-- Safe-area fill: vult de statusbalk/notch-zone met wit op iOS -->
+<div class="fixed top-0 left-0 right-0 bg-white z-[51]" style="height: env(safe-area-inset-top);"></div>
+
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-asphalt-line transition-all duration-300"
-  style="padding-top: env(safe-area-inset-top);"
+  class="fixed left-0 right-0 z-50 bg-white border-b border-asphalt-line transition-all duration-300"
+  style="top: env(safe-area-inset-top);"
 >
   <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
@@ -72,7 +75,7 @@ const navItems = [
           href="/inschrijven"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-pioneer-red text-pioneer-red text-sm font-semibold transition-all duration-150 hover:bg-pioneer-red hover:text-white"
         >
-          Schrijf je in
+          Proefles Inplannen
         </a>
       </div>
 
@@ -148,7 +151,7 @@ const navItems = [
       href="/inschrijven"
       class="flex items-center justify-center gap-2 w-full py-3.5 rounded-lg border-2 border-pioneer-red text-pioneer-red font-semibold transition-colors hover:bg-pioneer-red hover:text-white"
     >
-      Schrijf je in
+      Proefles Inplannen
     </a>
   </div>
 </nav>

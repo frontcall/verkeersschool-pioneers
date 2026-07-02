@@ -37,17 +37,16 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Waarvoor wil jij rijles?</h2>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
 
-        <!-- HANDGESCHAKELD -->
+        <!-- B -->
         <button
           type="button"
           class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
-          data-cat="handgeschakeld"
+          data-cat="b"
           aria-pressed="false"
         >
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
-            <!-- Sedan hatchback -->
             <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="90" cy="90" rx="70" ry="5" fill="currentColor" fill-opacity="0.07"/>
               <path d="M8 70 L8 55 C8 51 11 48 16 46 L44 36 C52 27 63 22 80 22 L108 22 C122 22 132 27 140 36 L160 46 C165 48 170 51 170 55 L170 70 Z" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
@@ -59,7 +58,6 @@ import Layout from '../layouts/Layout.astro';
               <circle cx="142" cy="70" r="7" fill="currentColor" fill-opacity="0.2"/>
               <path d="M10 55 L17 49" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
               <rect x="165" y="50" width="6" height="10" rx="2" fill="currentColor" fill-opacity="0.6"/>
-              <!-- Gear shift H-pattern badge -->
               <g transform="translate(150, 24)" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
                 <line x1="4" y1="2" x2="4" y2="10"/>
                 <line x1="10" y1="2" x2="10" y2="10"/>
@@ -73,88 +71,35 @@ import Layout from '../layouts/Layout.astro';
             </svg>
           </div>
           <p class="text-[10px] font-bold uppercase tracking-widest text-pioneer-red/80 group-[.is-active]:text-pioneer-red mb-1">B-rijbewijs</p>
-          <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Handgeschakeld</p>
-          <p class="text-asphalt text-xs group-[.is-active]:text-white/60">Schakel zelf &mdash; meest gevraagd</p>
+          <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Categorie B</p>
+          <p class="text-asphalt text-xs group-[.is-active]:text-white/60">Schakel, Automaat &amp; Be</p>
           <p class="mt-2.5 text-pioneer-navy font-semibold text-sm group-[.is-active]:text-white/80">Vanaf &euro;&nbsp;1.049</p>
         </button>
 
-        <!-- AUTOMAAT -->
+        <!-- A -->
         <button
           type="button"
           class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
-          data-cat="automaat"
+          data-cat="a"
           aria-pressed="false"
         >
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
-            <!-- Automaat sedan (rounder/taller roofline) -->
-            <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-              <ellipse cx="90" cy="90" rx="70" ry="5" fill="currentColor" fill-opacity="0.07"/>
-              <path d="M8 70 L8 54 C8 50 11 47 16 45 L46 34 C54 24 66 19 84 19 L104 19 C120 19 130 24 138 34 L160 45 C165 47 170 50 170 54 L170 70 Z" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-              <path d="M52 34 L62 20 L118 20 L138 34 L130 46 L60 46 Z" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <line x1="95" y1="46" x2="95" y2="70" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.3"/>
-              <circle cx="42" cy="70" r="16" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
-              <circle cx="42" cy="70" r="7" fill="currentColor" fill-opacity="0.2"/>
-              <circle cx="142" cy="70" r="16" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
-              <circle cx="142" cy="70" r="7" fill="currentColor" fill-opacity="0.2"/>
-              <path d="M10 54 L17 48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <rect x="165" y="50" width="6" height="10" rx="2" fill="currentColor" fill-opacity="0.6"/>
-              <!-- P R N D badge -->
-              <g transform="translate(144, 22)" fill="currentColor" fill-opacity="0.6" font-family="monospace" font-size="5" font-weight="700" text-anchor="middle">
-                <text x="3" y="7">P</text>
-                <text x="9" y="7">R</text>
-                <text x="15" y="7">N</text>
-                <text x="21" y="7" fill-opacity="1">D</text>
-              </g>
-            </svg>
-          </div>
-          <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
-            <svg class="w-5 h-5 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-            </svg>
-          </div>
-          <p class="text-[10px] font-bold uppercase tracking-widest text-pioneer-red/80 group-[.is-active]:text-pioneer-red mb-1">B-rijbewijs</p>
-          <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Automaat</p>
-          <p class="text-asphalt text-xs group-[.is-active]:text-white/60">Automatisch schakelen</p>
-          <p class="mt-2.5 text-pioneer-navy font-semibold text-sm group-[.is-active]:text-white/80">Vanaf &euro;&nbsp;1.750</p>
-        </button>
-
-        <!-- MOTOR -->
-        <button
-          type="button"
-          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
-          data-cat="motor"
-          aria-pressed="false"
-        >
-          <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
-            <!-- Motorcycle -->
             <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="90" cy="92" rx="68" ry="4" fill="currentColor" fill-opacity="0.06"/>
-              <!-- Rear wheel -->
               <circle cx="38" cy="72" r="20" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
               <circle cx="38" cy="72" r="10" fill="currentColor" fill-opacity="0.18"/>
-              <!-- Front wheel -->
               <circle cx="150" cy="72" r="20" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
               <circle cx="150" cy="72" r="10" fill="currentColor" fill-opacity="0.18"/>
-              <!-- Swingarm -->
               <path d="M58 72 L78 58 L108 54" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Main frame spine -->
               <path d="M78 58 L88 40 L118 38" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Down tube -->
               <path d="M88 40 L100 56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- Front fork -->
               <path d="M130 72 L128 48" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
               <path d="M150 72 L138 48" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/>
-              <!-- Engine -->
               <rect x="88" y="54" width="32" height="20" rx="4" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="2"/>
-              <!-- Tank -->
               <path d="M88 40 C96 32 112 30 124 36 L124 44 C112 42 96 44 88 52 Z" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <!-- Seat -->
               <path d="M88 38 L108 35 L122 38" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-              <!-- Handlebars -->
               <path d="M128 46 L126 36 M126 36 L120 34 M126 36 L132 33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <!-- Exhaust -->
               <path d="M90 72 L70 74 L52 72" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity="0.4"/>
-              <!-- Headlight -->
               <circle cx="148" cy="52" r="5" fill="currentColor" fill-opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
             </svg>
           </div>
@@ -163,42 +108,32 @@ import Layout from '../layouts/Layout.astro';
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
             </svg>
           </div>
-          <p class="text-[10px] font-bold uppercase tracking-widest text-pioneer-red/80 group-[.is-active]:text-pioneer-red mb-1">A1 / A2 / A</p>
-          <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Motor</p>
-          <p class="text-asphalt text-xs group-[.is-active]:text-white/60">Twee wielen, volle vrijheid</p>
+          <p class="text-[10px] font-bold uppercase tracking-widest text-pioneer-red/80 group-[.is-active]:text-pioneer-red mb-1">A-rijbewijs</p>
+          <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Categorie A</p>
+          <p class="text-asphalt text-xs group-[.is-active]:text-white/60">A1, A2 &amp; A</p>
           <p class="mt-2.5 text-pioneer-navy font-semibold text-sm group-[.is-active]:text-white/80">Prijs op aanvraag</p>
         </button>
 
-        <!-- SCOOTER -->
+        <!-- Am -->
         <button
           type="button"
           class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
-          data-cat="scooter"
+          data-cat="am"
           aria-pressed="false"
         >
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
-            <!-- Scooter -->
             <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="90" cy="92" rx="65" ry="4" fill="currentColor" fill-opacity="0.06"/>
-              <!-- Rear wheel (smaller) -->
               <circle cx="36" cy="74" r="17" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
               <circle cx="36" cy="74" r="8" fill="currentColor" fill-opacity="0.18"/>
-              <!-- Front wheel -->
               <circle cx="148" cy="74" r="17" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
               <circle cx="148" cy="74" r="8" fill="currentColor" fill-opacity="0.18"/>
-              <!-- Main body panel -->
               <path d="M58 62 C58 62 62 44 80 40 L116 38 L136 50 L148 56 L148 64 L58 64 Z" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-              <!-- Front apron/shield -->
               <path d="M136 47 C146 44 160 50 162 60 L148 64 L134 60 Z" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <!-- Floor board -->
               <rect x="58" y="64" width="70" height="9" rx="3" fill="currentColor" fill-opacity="0.09" stroke="currentColor" stroke-width="1.5"/>
-              <!-- Rear connection -->
               <path d="M58 62 L50 64 L40 72" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- Seat -->
               <path d="M80 40 L98 35 L118 35 L124 40" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-              <!-- Handlebars -->
               <path d="M140 49 L138 36 M138 36 L132 34 M138 36 L145 33" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <!-- Headlight (round) -->
               <circle cx="158" cy="52" r="6" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5"/>
             </svg>
           </div>
@@ -208,44 +143,33 @@ import Layout from '../layouts/Layout.astro';
             </svg>
           </div>
           <p class="text-[10px] font-bold uppercase tracking-widest text-pioneer-red/80 group-[.is-active]:text-pioneer-red mb-1">AM-rijbewijs</p>
-          <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Scooter</p>
-          <p class="text-asphalt text-xs group-[.is-active]:text-white/60">Snel en wendbaar door de stad</p>
+          <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Categorie Am</p>
+          <p class="text-asphalt text-xs group-[.is-active]:text-white/60">Scooter</p>
           <p class="mt-2.5 text-pioneer-navy font-semibold text-sm group-[.is-active]:text-white/80">Prijs op aanvraag</p>
         </button>
 
-        <!-- VRACHTWAGEN -->
+        <!-- C -->
         <button
           type="button"
           class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
-          data-cat="vrachtwagen"
+          data-cat="c"
           aria-pressed="false"
         >
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
-            <!-- Cab-over truck -->
             <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="100" cy="94" rx="84" ry="4" fill="currentColor" fill-opacity="0.06"/>
-              <!-- Cargo box -->
               <rect x="76" y="30" width="110" height="50" rx="3" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="2.5"/>
-              <!-- Cargo door line -->
               <line x1="142" y1="30" x2="142" y2="80" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.3"/>
-              <!-- Cab body -->
               <rect x="14" y="30" width="64" height="50" rx="5" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2.5"/>
-              <!-- Cab windshield -->
               <rect x="20" y="36" width="52" height="26" rx="3" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="1.5"/>
-              <!-- Air deflector on cab roof -->
               <path d="M14 30 C14 22 24 18 36 18 L76 20 L78 30 Z" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              <!-- Cab door line -->
               <line x1="48" y1="30" x2="48" y2="80" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.35"/>
-              <!-- Front bumper/grille -->
               <rect x="10" y="66" width="12" height="14" rx="2" fill="currentColor" fill-opacity="0.45"/>
-              <!-- Front wheel -->
               <circle cx="50" cy="82" r="16" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
               <circle cx="50" cy="82" r="8" fill="currentColor" fill-opacity="0.2"/>
-              <!-- Rear axle double wheel -->
               <circle cx="152" cy="82" r="16" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
               <circle cx="152" cy="82" r="8" fill="currentColor" fill-opacity="0.2"/>
               <circle cx="170" cy="82" r="13" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-width="1.8" stroke-opacity="0.45"/>
-              <!-- Underframe -->
               <line x1="76" y1="82" x2="132" y2="82" stroke="currentColor" stroke-width="2" stroke-opacity="0.18"/>
             </svg>
           </div>
@@ -255,8 +179,8 @@ import Layout from '../layouts/Layout.astro';
             </svg>
           </div>
           <p class="text-[10px] font-bold uppercase tracking-widest text-pioneer-red/80 group-[.is-active]:text-pioneer-red mb-1">C / CE-rijbewijs</p>
-          <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Vrachtwagen</p>
-          <p class="text-asphalt text-xs group-[.is-active]:text-white/60">Zware voertuigen, grote kansen</p>
+          <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Categorie C</p>
+          <p class="text-asphalt text-xs group-[.is-active]:text-white/60">C &amp; Ce</p>
           <p class="mt-2.5 text-pioneer-navy font-semibold text-sm group-[.is-active]:text-white/80">Prijs op aanvraag</p>
         </button>
 
@@ -268,17 +192,12 @@ import Layout from '../layouts/Layout.astro';
           aria-pressed="false"
         >
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
-            <!-- Taxi sedan with roof sign + checker stripe -->
             <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="90" cy="90" rx="70" ry="5" fill="currentColor" fill-opacity="0.07"/>
-              <!-- Body -->
               <path d="M8 70 L8 55 C8 51 11 48 16 46 L44 36 C52 27 63 22 80 22 L108 22 C122 22 132 27 140 36 L160 46 C165 48 170 51 170 55 L170 70 Z" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
-              <!-- Windows -->
               <path d="M50 36 L58 23 L122 23 L143 36 L137 48 L56 48 Z" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <!-- Taxi roof sign -->
               <rect x="76" y="12" width="28" height="11" rx="3" fill="currentColor" fill-opacity="0.45" stroke="currentColor" stroke-width="1.5"/>
               <rect x="80" y="15" width="20" height="4" rx="1" fill="currentColor" fill-opacity="0.2"/>
-              <!-- Checker stripe -->
               <rect x="60" y="56" width="9" height="8" rx="1" fill="currentColor" fill-opacity="0.55"/>
               <rect x="71" y="56" width="9" height="8" rx="1" fill="currentColor" fill-opacity="0.25"/>
               <rect x="82" y="56" width="9" height="8" rx="1" fill="currentColor" fill-opacity="0.55"/>
@@ -286,16 +205,12 @@ import Layout from '../layouts/Layout.astro';
               <rect x="104" y="56" width="9" height="8" rx="1" fill="currentColor" fill-opacity="0.55"/>
               <rect x="115" y="56" width="9" height="8" rx="1" fill="currentColor" fill-opacity="0.25"/>
               <rect x="126" y="56" width="9" height="8" rx="1" fill="currentColor" fill-opacity="0.55"/>
-              <!-- Door split -->
               <line x1="96" y1="48" x2="96" y2="70" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.3"/>
-              <!-- Wheels -->
               <circle cx="42" cy="70" r="16" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
               <circle cx="42" cy="70" r="7" fill="currentColor" fill-opacity="0.2"/>
               <circle cx="142" cy="70" r="16" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2.5"/>
               <circle cx="142" cy="70" r="7" fill="currentColor" fill-opacity="0.2"/>
-              <!-- Headlight -->
               <path d="M10 55 L17 49" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- Taillight -->
               <rect x="165" y="50" width="6" height="10" rx="2" fill="currentColor" fill-opacity="0.6"/>
             </svg>
           </div>
@@ -317,8 +232,8 @@ import Layout from '../layouts/Layout.astro';
   <!-- ══ PRIJS CONTENT (one section visible at a time) ══ -->
   <div id="cat-content" class="scroll-mt-20">
 
-    <!-- ── Handgeschakeld ── -->
-    <div class="cat-section" data-section="handgeschakeld">
+    <!-- ── B (Handgeschakeld + Automaat) ── -->
+    <div class="cat-section" data-section="b">
       <section class="py-16 md:py-20 bg-off-white">
         <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
           <div class="flex items-start gap-4 mb-3">
@@ -328,12 +243,14 @@ import Layout from '../layouts/Layout.astro';
               </svg>
             </div>
             <div>
-              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Handgeschakeld</h2>
-              <p class="text-asphalt text-sm mt-0.5">B-rijbewijs &mdash; jij bedient de koppeling en het schakelen</p>
+              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Categorie B</h2>
+              <p class="text-asphalt text-sm mt-0.5">Handgeschakeld, Automaat &amp; Be</p>
             </div>
           </div>
-          <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Slagen voor je rijexamen met een handgeschakelde auto. De meeste leerlingen slagen in &eacute;&eacute;n keer.</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Slagen voor je rijexamen voor de auto. De meeste leerlingen slagen in &eacute;&eacute;n keer.</p>
+
+          <h3 class="font-display font-bold text-xl tracking-tight mb-6 ml-0 sm:ml-16">Handgeschakeld</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <!-- Start Pakket -->
             <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-asphalt/30 to-asphalt/10 rounded-t-2xl"></div>
@@ -351,8 +268,8 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <a href="/inschrijven?cat=Handgeschakeld&pakket=start" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
-                Schrijf je in
+              <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20interesse%20in%20rijles." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+                Neem contact met ons op
               </a>
             </div>
             <!-- Studenten (popular) -->
@@ -374,8 +291,8 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <a href="/inschrijven?cat=Handgeschakeld&pakket=studenten" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
-                Schrijf je in
+              <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20interesse%20in%20rijles." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+                Neem contact met ons op
               </a>
             </div>
             <!-- Spoed -->
@@ -395,32 +312,15 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <a href="/inschrijven?cat=Handgeschakeld&pakket=spoed" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
-                Schrijf je in
+              <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20interesse%20in%20rijles." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+                Neem contact met ons op
               </a>
             </div>
           </div>
-          <p class="text-asphalt/55 text-xs mt-5">* Herexamenkosten worden door ons vergoed tot &euro;299 per herexamen.</p>
-        </div>
-      </section>
-    </div>
+          <p class="text-asphalt/55 text-xs mb-10">* Herexamenkosten worden door ons vergoed tot &euro;299 per herexamen.</p>
 
-    <!-- ── Automaat ── -->
-    <div class="cat-section" data-section="automaat">
-      <section class="py-16 md:py-20 bg-off-white">
-        <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-          <div class="flex items-start gap-4 mb-3">
-            <div class="w-12 h-12 rounded-xl bg-pioneer-red/8 flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-            </div>
-            <div>
-              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Automaat</h2>
-              <p class="text-asphalt text-sm mt-0.5">B-rijbewijs &mdash; automatische versnellingsbak</p>
-            </div>
-          </div>
-          <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Met een automaat geef je 100% aandacht aan de weg. Ideaal als je snel wilt leren rijden.</p>
+          <h3 class="font-display font-bold text-xl tracking-tight mb-6 ml-0 sm:ml-16">Automaat</h3>
+          <p class="text-asphalt mb-8 max-w-xl ml-0 sm:ml-16">Met een automaat geef je 100% aandacht aan de weg. Ideaal als je snel wilt leren rijden.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
             <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
@@ -440,8 +340,8 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <a href="/inschrijven?cat=Automaat&pakket=compleet" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
-                Schrijf je in
+              <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20interesse%20in%20rijles." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+                Neem contact met ons op
               </a>
             </div>
             <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
@@ -462,8 +362,8 @@ import Layout from '../layouts/Layout.astro';
       </section>
     </div>
 
-    <!-- ── Motor ── -->
-    <div class="cat-section" data-section="motor">
+    <!-- ── A (Motor) ── -->
+    <div class="cat-section" data-section="a">
       <section class="py-16 md:py-20 bg-off-white">
         <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
           <div class="flex items-start gap-4 mb-3">
@@ -473,8 +373,8 @@ import Layout from '../layouts/Layout.astro';
               </svg>
             </div>
             <div>
-              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Motor</h2>
-              <p class="text-asphalt text-sm mt-0.5">A-rijbewijs &mdash; twee wielen, volledige vrijheid</p>
+              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Categorie A</h2>
+              <p class="text-asphalt text-sm mt-0.5">A1 / A2 / A &mdash; twee wielen, volledige vrijheid</p>
             </div>
           </div>
           <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Van A1 (lichte motor) tot A (onbeperkt) &mdash; we begeleiden jou naar het rijbewijs dat bij jou past.</p>
@@ -483,7 +383,7 @@ import Layout from '../layouts/Layout.astro';
               { label: 'A1 &mdash; Lichte motor', sub: 'tot 125cc / 11 kW', items: ['Inclusief theoriebegeleiding', 'Verkeersdeelname & manoeuvres', '1 praktijkexamen (deel A + B)', 'Persoonlijke instructeur'] },
               { label: 'A2 &mdash; Middencategorie', sub: 'tot 35 kW', items: ['Inclusief theoriebegeleiding', 'Hoge- en lage snelheidsmanoeuvres', '1 praktijkexamen (deel A + B)', 'Persoonlijke instructeur'] },
               { label: 'A &mdash; Onbeperkt', sub: 'na 2 jaar A2 of direct op leeftijd', items: ['Inclusief theoriebegeleiding', 'Examentraining op locatie', '1 praktijkexamen (deel A + B)', 'Persoonlijke instructeur'] },
-            ].map(({ label, sub, items }, i) => (
+            ].map(({ label, sub, items }) => (
               <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
                 <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/60 to-pioneer-red/20 rounded-t-2xl"></div>
                 <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-1" set:html={label}></p>
@@ -498,12 +398,9 @@ import Layout from '../layouts/Layout.astro';
                     </li>
                   ))}
                 </ul>
-                <div class="bg-off-white rounded-xl border border-asphalt-line px-4 py-3 mb-4 text-center">
-                  <p class="text-xs text-asphalt/60 mb-0.5">Prijs op aanvraag</p>
-                  <p class="font-display font-bold text-pioneer-navy">Neem contact op</p>
-                </div>
-                <a href="/inschrijven?cat=Motor" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
-                  Schrijf je in
+                <a href="/contact" class="text-pioneer-red font-semibold hover:underline text-sm mb-4 block text-center">Neem contact op voor prijs →</a>
+                <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20interesse%20in%20rijles." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+                  Neem contact met ons op
                 </a>
               </div>
             ))}
@@ -512,8 +409,8 @@ import Layout from '../layouts/Layout.astro';
       </section>
     </div>
 
-    <!-- ── Scooter ── -->
-    <div class="cat-section" data-section="scooter">
+    <!-- ── Am (Scooter) ── -->
+    <div class="cat-section" data-section="am">
       <section class="py-16 md:py-20 bg-off-white">
         <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
           <div class="flex items-start gap-4 mb-3">
@@ -524,7 +421,7 @@ import Layout from '../layouts/Layout.astro';
               </svg>
             </div>
             <div>
-              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Scooter</h2>
+              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Categorie Am</h2>
               <p class="text-asphalt text-sm mt-0.5">AM-rijbewijs &mdash; snel en wendbaar door de stad</p>
             </div>
           </div>
@@ -544,12 +441,9 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <div class="bg-white/10 rounded-xl px-4 py-3 mb-4 text-center relative">
-                <p class="text-white/50 text-xs mb-0.5">Prijs op aanvraag</p>
-                <p class="font-display font-bold text-white">Neem contact op</p>
-              </div>
-              <a href="/inschrijven?cat=Scooter" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
-                Schrijf je in
+              <a href="/contact" class="text-pioneer-red font-semibold hover:underline text-sm mb-4 block text-center">Neem contact op voor prijs →</a>
+              <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20interesse%20in%20rijles." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+                Neem contact met ons op
               </a>
             </div>
             <div class="bg-off-white rounded-2xl border border-asphalt-line p-7 flex flex-col justify-center gap-4">
@@ -568,8 +462,8 @@ import Layout from '../layouts/Layout.astro';
       </section>
     </div>
 
-    <!-- ── Vrachtwagen ── -->
-    <div class="cat-section" data-section="vrachtwagen">
+    <!-- ── C (Vrachtwagen) ── -->
+    <div class="cat-section" data-section="c">
       <section class="py-16 md:py-20 bg-off-white">
         <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
           <div class="flex items-start gap-4 mb-3">
@@ -579,8 +473,8 @@ import Layout from '../layouts/Layout.astro';
               </svg>
             </div>
             <div>
-              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Vrachtwagen</h2>
-              <p class="text-asphalt text-sm mt-0.5">C-rijbewijs &mdash; zware voertuigen, grote kansen</p>
+              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Categorie C</h2>
+              <p class="text-asphalt text-sm mt-0.5">C &amp; CE-rijbewijs &mdash; zware voertuigen, grote kansen</p>
             </div>
           </div>
           <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Het C-rijbewijs opent de deur naar een carri&egrave;re in transport en logistiek. Wij begeleiden je van begin tot examen.</p>
@@ -603,12 +497,9 @@ import Layout from '../layouts/Layout.astro';
                     </li>
                   ))}
                 </ul>
-                <div class="bg-off-white rounded-xl border border-asphalt-line px-4 py-3 mb-4 text-center">
-                  <p class="text-xs text-asphalt/60 mb-0.5">Prijs op aanvraag</p>
-                  <p class="font-display font-bold text-pioneer-navy">Neem contact op</p>
-                </div>
-                <a href="/inschrijven?cat=Vrachtwagen" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
-                  Schrijf je in
+                <a href="/contact" class="text-pioneer-red font-semibold hover:underline text-sm mb-4 block text-center">Neem contact op voor prijs →</a>
+                <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20interesse%20in%20rijles." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+                  Neem contact met ons op
                 </a>
               </div>
             ))}
@@ -648,12 +539,9 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <div class="bg-white/10 rounded-xl px-4 py-3 mb-4 text-center relative">
-                <p class="text-white/50 text-xs mb-0.5">Prijs op aanvraag</p>
-                <p class="font-display font-bold text-white">Neem contact op</p>
-              </div>
-              <a href="/inschrijven?cat=Taxi" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
-                Schrijf je in
+              <a href="/contact" class="text-pioneer-red font-semibold hover:underline text-sm mb-4 block text-center">Neem contact op voor prijs →</a>
+              <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20interesse%20in%20rijles." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+                Neem contact met ons op
               </a>
             </div>
             <div class="space-y-4">
@@ -680,36 +568,6 @@ import Layout from '../layouts/Layout.astro';
 
   </div><!-- /cat-content -->
 
-  <!-- ══ VERVOLG PAKKET ══ -->
-  <section id="vervolg" class="py-16 md:py-20 scroll-mt-20 bg-white">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div class="reveal-item">
-          <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
-            <span class="w-5 h-px bg-pioneer-red inline-block"></span>Extra lessen nodig?
-          </p>
-          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-4">Vervolg Pakket</h2>
-          <p class="text-asphalt leading-relaxed mb-6 max-w-sm">Pakket op maar nog niet examenklaar? Koop 5 extra rijlessen bij &mdash; zonder gedoe.</p>
-          <div class="flex items-baseline gap-2 mb-7">
-            <span class="font-display font-bold text-4xl text-pioneer-navy">&euro; 249</span>
-            <span class="text-asphalt">&mdash; 5 rijlessen</span>
-          </div>
-          <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20het%20Vervolg%20Pakket%20(5%20extra%20lessen)%20boeken." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/25 hover:-translate-y-0.5">
-            Vervolg Pakket boeken
-          </a>
-        </div>
-        <div class="reveal-item bg-white rounded-2xl border border-asphalt-line p-8" data-delay="2">
-          <h3 class="font-display font-bold text-lg mb-4">Examen aanvragen via CBR</h3>
-          <p class="text-asphalt text-sm leading-relaxed mb-4">Om je examen in te plannen machtig jij ons via <strong>www.mijncbr.nl</strong> met DigiD. Heb je dit gedaan, dan regelen wij de rest.</p>
-          <div class="bg-off-white rounded-xl border border-asphalt-line px-5 py-4">
-            <p class="text-asphalt text-xs mb-1 uppercase tracking-widest font-semibold">CBR Schoolcode</p>
-            <p class="font-mono font-bold text-pioneer-navy text-2xl tracking-wider">1160G5</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ══ FAQ ══ -->
   <section id="faq" class="py-16 md:py-20 scroll-mt-20 bg-off-white">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
@@ -722,12 +580,11 @@ import Layout from '../layouts/Layout.astro';
       <div class="space-y-3 max-w-2xl">
         {[
           { q: 'Zijn examenkosten inbegrepen in het pakket?', a: 'Ja, bij de Studenten-, Spoed- en Automaat-pakketten zijn de examenkosten inbegrepen. Slaag je niet de eerste keer? Dan betalen wij de herexamenkosten, tot €299 per herexamen.', delay: '1' },
-          { q: 'Welke betaalmogelijkheden zijn er?', a: 'Je kunt je pakket vooruit betalen, maandelijks betalen of per les betalen. We bespreken de opties bij inschrijving — er is altijd een regeling die bij jou past.', delay: '2' },
-          { q: 'Hoe lang duurt een rijles?', a: 'Een standaard rijles duurt 60 minuten. In overleg met je instructeur is een langere les ook mogelijk.', delay: '3' },
-          { q: 'Kan ik mijn pakket uitbreiden met extra lessen?', a: 'Ja, dat is altijd mogelijk. Je kunt het Vervolg Pakket bijkopen (5 lessen voor €249) of losse lessen toevoegen.', delay: '4' },
-          { q: 'In welke gebieden rijden jullie?', a: 'We rijden in Breda, Etten-Leur, Roosendaal, Oosterhout, Rijsbergen, Zevenbergen, Chaam, Terheijden, Oudenbosch en Rijen.', delay: '5' },
-          { q: 'Kan ik les krijgen in het Engels of Arabisch?', a: 'Ja! Onze instructeurs geven les in het Nederlands, Engels en Arabisch. Geef dit aan bij inschrijving.', delay: '6' },
-          { q: 'Kan ik al starten als ik 16 jaar ben?', a: 'Vanaf 16 jaar kun je al beginnen met theorie-instructie. Praktijklessen beginnen vanaf 16,5 jaar.', delay: '1' },
+          { q: 'Welke betaalmogelijkheden zijn er?', a: 'Je kunt je pakket vooruit betalen, in termijnen betalen of per les betalen. We bespreken de opties bij inschrijving — er is altijd een regeling die bij jou past.', delay: '2' },
+          { q: 'Kan ik mijn pakket uitbreiden met extra lessen?', a: 'Ja, dat is altijd mogelijk. Je kunt het Vervolg Pakket bijkopen of losse lessen toevoegen.', delay: '3' },
+          { q: 'In welke gebieden rijden jullie?', a: 'We rijden in Breda, Etten-Leur, Roosendaal, Oosterhout, Rijsbergen, Zevenbergen, Chaam, Terheijden, Oudenbosch en Rijen.', delay: '4' },
+          { q: 'Kan ik les krijgen in het Engels?', a: 'Ja! Onze instructeurs geven les in het Nederlands en Engels. Geef dit aan bij inschrijving.', delay: '5' },
+          { q: 'Kan ik al starten als ik 16 jaar ben?', a: 'Vanaf 16 jaar kun je al beginnen met theorie-instructie. Praktijklessen beginnen vanaf 16,5 jaar.', delay: '6' },
         ].map(({ q, a, delay }) => (
           <details class="reveal-item group bg-white rounded-xl border border-asphalt-line hover:border-pioneer-navy/20 transition-colors" data-delay={delay}>
             <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer font-semibold text-pioneer-navy list-none select-none">
@@ -753,8 +610,8 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
       <div class="reveal-item">
-        <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-3">Nog vragen of direct inschrijven?</h2>
-        <p class="text-white/55 mb-7">We staan voor je klaar &mdash; 7 dagen per week, ook 's avonds.</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-3">Nog vragen of Gratis Vrijblijvende Proefles?</h2>
+        <p class="text-white/55 mb-7"><!-- PLACEHOLDER: tekst volgt van klant --></p>
         <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20een%20vraag%20over%20de%20pakketten." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 hover:-translate-y-0.5">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -769,7 +626,6 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  /* Active card state — nav background wordt pioneer-navy */
   .cat-card.is-active {
     background-color: #16233F;
     border-color: #16233F;
@@ -786,7 +642,6 @@ import Layout from '../layouts/Layout.astro';
     color: rgba(255,255,255,0.75);
   }
 
-  /* Price sections: hidden by default, fade in on activate */
   .cat-section {
     display: none;
   }
@@ -831,7 +686,6 @@ import Layout from '../layouts/Layout.astro';
       });
     });
 
-    // Standaard Handgeschakeld tonen zonder scrollen
-    selectCat('handgeschakeld', false);
+    selectCat('b', false);
   })();
 </script>

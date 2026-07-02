@@ -5,7 +5,7 @@ import SectionDivider from '../components/SectionDivider.astro';
 
 <Layout
   title="Over ons"
-  description="Leer Verkeersschool Pioneers kennen — onze missie, lesgebied en aanpak. Rijles in Breda en omgeving, 7 dagen per week, in het Nederlands, Engels en Arabisch."
+  description="Leer Verkeersschool Pioneers kennen — onze missie, lesgebied en aanpak. Rijles in Breda en omgeving, 7 dagen per week, in het Nederlands en Engels."
 >
   <!-- Page header -->
   <section class="hero-bg text-white py-16 md:py-20 relative overflow-hidden">
@@ -39,13 +39,10 @@ import SectionDivider from '../components/SectionDivider.astro';
           </h2>
           <div class="space-y-4 text-asphalt leading-relaxed">
             <p>
-              Verkeersschool Pioneers is opgericht met één doel: leerlingen niet alleen hun rijbewijs laten halen, maar ze ook echt klaar maken voor het verkeer. Veilig, zelfverzekerd en verantwoordelijk rijden — dat is onze missie.
+              Verkeersschool Pioneers is al lang actief in Breda en de omliggende gemeenten en geeft rijles voor elke categorie — 7 dagen per week beschikbaar.
             </p>
             <p>
-              We zijn actief in Breda en de omliggende gemeenten. Of je nu voor het eerst achter het stuur kruipt, snel wilt slagen met het Spoed Pakket of theorie-instructie wilt vanaf je 16e — bij ons vind je het juiste pakket en de juiste begeleiding.
-            </p>
-            <p>
-              Onze instructeurs zijn geduldig, ervaren en beschikbaar van maandag tot zondag, ook in de avonden. Rijles in het Nederlands, Engels of Arabisch — jij kiest wat werkt.
+              Of je nu voor het eerst achter het stuur kruipt of een specifieke categorie wilt halen — bij ons vind je de juiste begeleiding.
             </p>
           </div>
         </div>
@@ -60,8 +57,8 @@ import SectionDivider from '../components/SectionDivider.astro';
               delay: '1',
             },
             {
-              title: 'NL / EN / AR',
-              body: 'Rijles in het Nederlands, Engels of Arabisch. Jij kiest.',
+              title: 'NL / EN',
+              body: 'Rijles in het Nederlands en Engels. Jij kiest.',
               icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129',
               delay: '2',
             },
@@ -73,7 +70,7 @@ import SectionDivider from '../components/SectionDivider.astro';
             },
             {
               title: 'Flexibel betalen',
-              body: 'Vooraf, maandelijks of per les — jij bepaalt. Geen verborgen kosten.',
+              body: 'Vooraf, in termijnen of per les — jij bepaalt. Geen verborgen kosten.',
               icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z',
               delay: '4',
             },
@@ -100,44 +97,6 @@ import SectionDivider from '../components/SectionDivider.astro';
               <p class="text-asphalt text-xs leading-relaxed">{body}</p>
             </div>
           ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <SectionDivider />
-
-  <!-- Instructeurs -->
-  <section class="py-16 md:py-20 bg-white">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <div class="reveal-item mb-10">
-        <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
-          <span class="w-5 h-px bg-pioneer-red inline-block"></span>Ons team
-        </p>
-        <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-2">Onze instructeurs</h2>
-        <p class="text-asphalt max-w-lg">Ervaren instructeurs — beschikbaar 7 dagen per week, ook 's avonds. Altijd persoonlijk betrokken.</p>
-      </div>
-
-      <div class="reveal-item card-lift bg-off-white rounded-2xl border border-asphalt-line p-8 max-w-xl" data-delay="1">
-        <div class="flex items-start gap-5">
-          <!-- Avatar -->
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pioneer-navy to-pioneer-navy-light flex items-center justify-center text-white font-display font-bold text-2xl flex-shrink-0">
-            M
-          </div>
-          <div>
-            <h3 class="font-display font-bold text-xl mb-0.5">Mahmood</h3>
-            <p class="text-pioneer-red text-sm font-semibold mb-3">Rijinstructeur &amp; oprichter</p>
-            <p class="text-asphalt text-sm leading-relaxed mb-4">
-              Meer dan 10 jaar ervaring in het rijonderwijs. Geeft les in het Nederlands, Engels en Arabisch. Bekendstaat om zijn geduld, persoonlijke aanpak en hoge slagingspercentage.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              {['10+ jaar ervaring', 'NL / EN / AR', 'Geduldig', 'Persoonlijk'].map(tag => (
-                <span class="bg-pioneer-navy/6 text-pioneer-navy text-xs font-semibold px-2.5 py-1 rounded-full">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </div>

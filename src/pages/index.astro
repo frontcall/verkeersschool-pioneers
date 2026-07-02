@@ -37,16 +37,16 @@ import SectionDivider from '../components/SectionDivider.astro';
         <div>
           <p class="hero-item inline-flex items-center gap-2 text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-5" data-delay="1">
             <span class="w-5 h-px bg-pioneer-red inline-block"></span>
-            Rijschool in Breda &amp; omgeving
+            Verkeersschool in Breda &amp; omgeving voor categorieën A, Am, B, Be, C, Ce en Taxi
           </p>
 
           <h1 class="hero-item font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] xl:text-6xl leading-[1.06] tracking-tight mb-6" data-delay="2">
             Wil jij snel je<br />
-            <span class="text-gradient-fire">rijbewijs halen?</span>
+            rijbewijs halen?
           </h1>
 
           <p class="hero-item text-white/68 text-lg leading-relaxed mb-8 max-w-[480px]" data-delay="3">
-            Persoonlijk contact, vaste instructeurs en rijles 7 dagen per week — ook 's avonds. In het Nederlands, Engels of Arabisch.
+            Persoonlijk contact, vaste instructeurs en rijles 7 dagen per week — ook 's avonds. In het Nederlands en Engels.
           </p>
 
           <div class="hero-item flex flex-wrap gap-3" data-delay="4">
@@ -105,7 +105,7 @@ import SectionDivider from '../components/SectionDivider.astro';
             <div class="absolute -bottom-10 -left-10 w-44 h-44 bg-pioneer-navy-light/18 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
 
             <div class="flex items-center gap-2 mb-5 relative">
-              <span class="bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Meest gekozen</span>
+              <span class="bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Actie pakket</span>
             </div>
 
             <div class="relative mb-1">
@@ -133,11 +133,14 @@ import SectionDivider from '../components/SectionDivider.astro';
             </ul>
 
             <a
-              href="/inschrijven?cat=Handgeschakeld&pakket=studenten"
+              href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20een%20gratis%20proefles%20plannen."
+              target="_blank"
+              rel="noopener noreferrer"
               class="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 hover:-translate-y-0.5 text-sm"
             >
-              Schrijf je in
+              Gratis Vrijblijvende Proefles
             </a>
+            <a href="/algemene-voorwaarden" class="text-xs text-asphalt/60 hover:text-pioneer-navy mt-2 inline-block transition-colors">Algemene voorwaarden</a>
           </div>
         </div>
       </div>
@@ -238,80 +241,6 @@ import SectionDivider from '../components/SectionDivider.astro';
   <SectionDivider />
 
   <!-- ══════════════════════════════════════════════
-       PAKKETTEN TEASER
-  ═══════════════════════════════════════════════ -->
-  <section class="py-16 md:py-24 bg-white">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <div class="reveal-item flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
-        <div>
-          <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
-            <span class="w-5 h-px bg-pioneer-red inline-block"></span>Onze pakketten
-          </p>
-          <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight">
-            Kies jouw pakket
-          </h2>
-        </div>
-        <a href="/pakketten" class="text-pioneer-navy font-semibold text-sm hover:text-pioneer-red transition-colors flex items-center gap-1.5 whitespace-nowrap group">
-          Alle pakketten &amp; prijzen
-          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {([
-          { href: '/pakketten#handgeschakeld', label: 'Start Pakket', sub: 'Handgeschakeld', price: '€ 1.049', detail: '11 lessen + proefles', popular: false, delay: '1' },
-          { href: '/pakketten#handgeschakeld', label: 'Studenten Pakket', sub: 'Handgeschakeld', price: '€ 1.499', detail: '20 lessen + theoriepakket', popular: true, delay: '2' },
-          { href: '/pakketten#handgeschakeld', label: 'Spoed Pakket', sub: 'Handgeschakeld', price: '€ 2.099', detail: '30 lessen, tot 5x/week', popular: false, delay: '3' },
-          { href: '/pakketten#automaat', label: 'Automaat Pakket', sub: 'Automaat', price: '€ 1.750', detail: '24 lessen + proefles', popular: false, delay: '4' },
-        ] as const).map(({ href, label, sub, price, detail, popular, delay }) => (
-          <a
-            href={href}
-            data-delay={delay}
-            class:list={[
-              'reveal-item card-lift relative flex flex-col rounded-2xl border p-6 overflow-hidden',
-              popular
-                ? 'bg-pioneer-navy border-pioneer-navy card-glow-inner'
-                : 'bg-white border-asphalt-line hover:border-pioneer-navy/30',
-            ]}
-          >
-            {popular && (
-              <span class="absolute top-4 right-4 bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-                Populair
-              </span>
-            )}
-            {!popular && <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/40 to-pioneer-red/20 rounded-t-2xl"></div>}
-            {popular && <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>}
-
-            <p class:list={['text-[10px] font-bold uppercase tracking-widest mb-3', popular ? 'text-white/45' : 'text-pioneer-red']}>
-              {sub}
-            </p>
-            <p class:list={['font-display font-bold text-base mb-2', popular ? 'text-white' : 'text-pioneer-navy']}>
-              {label}
-            </p>
-            <p class:list={['font-display font-bold text-3xl leading-none mb-1', popular ? 'text-white' : 'text-pioneer-navy']}>
-              {price}
-            </p>
-            <p class:list={['text-xs mt-2', popular ? 'text-white/50' : 'text-asphalt']}>
-              {detail}
-            </p>
-
-            <div class:list={['mt-5 pt-4 border-t text-xs font-semibold flex items-center gap-1.5', popular ? 'border-white/10 text-white/60' : 'border-asphalt-line text-pioneer-navy/60']}>
-              Bekijk details
-              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-              </svg>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <SectionDivider />
-
-  <!-- ══════════════════════════════════════════════
        REVIEWS
   ═══════════════════════════════════════════════ -->
   <section class="py-16 md:py-24 dot-grid-bg">
@@ -385,7 +314,7 @@ import SectionDivider from '../components/SectionDivider.astro';
           <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
             <span class="w-5 h-px bg-pioneer-red inline-block"></span>Lesgebied
           </p>
-          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-4">
+          <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-4">
             Rijles bij jou in de buurt
           </h2>
           <p class="text-asphalt leading-relaxed mb-6">
