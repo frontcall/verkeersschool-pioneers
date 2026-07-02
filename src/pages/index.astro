@@ -7,75 +7,121 @@ import SectionDivider from '../components/SectionDivider.astro';
   title="Home"
   description="Verkeersschool Pioneers in Breda — rijlessen voor auto (handgeschakeld & automaat). Persoonlijke begeleiding, vaste instructeurs, 7 dagen per week beschikbaar."
 >
-  <!-- HERO -->
-  <section class="bg-pioneer-navy text-white">
+
+  <!-- ══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section class="hero-bg text-white overflow-hidden">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8 py-20 md:py-28 lg:py-36">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="max-w-2xl">
-          <p class="text-pioneer-red font-semibold text-sm uppercase tracking-widest mb-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Left: copy -->
+        <div>
+          <p class="hero-item inline-flex items-center gap-2 text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-5" data-delay="1">
+            <span class="w-5 h-px bg-pioneer-red inline-block"></span>
             Rijschool in Breda &amp; omgeving
           </p>
-          <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight mb-6">
+
+          <h1 class="hero-item font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] xl:text-6xl leading-[1.06] tracking-tight mb-6" data-delay="2">
             Wil jij snel je<br />
             <span class="text-pioneer-red">rijbewijs halen?</span>
           </h1>
-          <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-xl">
-            Persoonlijk contact, vaste instructeurs en lessen 7 dagen per week — ook 's avonds. Rijles in het Nederlands, Engels of Arabisch.
+
+          <p class="hero-item text-white/68 text-lg leading-relaxed mb-8 max-w-[480px]" data-delay="3">
+            Persoonlijk contact, vaste instructeurs en rijles 7 dagen per week — ook 's avonds. In het Nederlands, Engels of Arabisch.
           </p>
-          <div class="flex flex-wrap gap-4">
+
+          <div class="hero-item flex flex-wrap gap-3" data-delay="4">
             <a
               href="/pakketten"
-              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-colors"
+              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/25 hover:-translate-y-0.5"
             >
-              Bekijk alle pakketten
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              Bekijk pakketten
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
               </svg>
             </a>
             <a
-              href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20wil%20graag%20een%20gratis%20proefles%20plannen."
+              href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20een%20gratis%20proefles%20plannen."
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg border border-white/25 hover:border-white/50 text-white font-semibold transition-colors hover:bg-white/5"
+              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold transition-all duration-200"
             >
-              Plan een gratis proefles
+              Gratis proefles plannen
             </a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="hero-item flex flex-wrap items-center gap-5 mt-9 pt-9 border-t border-white/10" data-delay="5">
+            <div class="flex items-center gap-2 text-white/55 text-sm">
+              <svg class="w-4 h-4 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              Geen inschrijfkosten
+            </div>
+            <div class="flex items-center gap-2 text-white/55 text-sm">
+              <svg class="w-4 h-4 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              Onbeperkte herexamens
+            </div>
+            <div class="flex items-center gap-2 text-white/55 text-sm">
+              <svg class="w-4 h-4 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              4,7&#9733; Google rating
+            </div>
           </div>
         </div>
 
-        <!-- Deal card -->
-        <div class="lg:flex lg:justify-end">
-          <div class="bg-white/8 border border-white/15 rounded-2xl p-7 max-w-sm w-full">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="bg-pioneer-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Actie</span>
-              <span class="text-white/50 text-sm line-through">€ 1.899,-</span>
+        <!-- Right: deal card -->
+        <div class="hero-item lg:flex lg:justify-end" data-delay="5">
+          <div class="relative bg-white/8 border border-white/14 rounded-2xl p-7 max-w-sm w-full backdrop-blur-sm overflow-hidden">
+            <!-- Red top accent -->
+            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
+
+            <!-- Decorative glow -->
+            <div class="absolute -top-16 -right-16 w-48 h-48 bg-pioneer-red/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
+
+            <div class="flex items-center gap-2 mb-5 relative">
+              <span class="bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Actie</span>
+              <span class="text-white/40 text-sm line-through">€ 1.899,-</span>
             </div>
-            <div class="flex items-baseline gap-2 mb-1">
-              <span class="font-display font-bold text-5xl text-white">€ 1.399</span>
-              <span class="text-white/60 text-sm">,-</span>
+
+            <div class="relative mb-1">
+              <span class="font-display font-bold text-[3.25rem] leading-none text-white">€ 1.399</span>
+              <span class="text-white/50 text-lg">,–</span>
             </div>
-            <p class="text-white/50 text-xs mb-5">Studenten pakket — meest gekozen</p>
-            <ul class="space-y-2.5 mb-6">
+            <p class="text-white/40 text-xs mb-6">Studenten pakket — meest gekozen</p>
+
+            <ul class="space-y-3 mb-7">
               {[
                 '24 rijlessen inbegrepen',
                 'Gratis proefles',
                 'Geen inschrijf- of advieskosten',
                 'Onbeperkte gratis herexamens',
               ].map(item => (
-                <li class="flex items-center gap-2.5 text-sm text-white/80">
-                  <svg class="w-4 h-4 text-success-soft flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                  </svg>
+                <li class="flex items-center gap-3 text-sm text-white/80">
+                  <span class="flex-shrink-0 w-5 h-5 rounded-full bg-success-soft/20 flex items-center justify-center">
+                    <svg class="w-3 h-3 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
                   {item}
                 </li>
               ))}
             </ul>
+
             <a
               href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20me%20graag%20inschrijven%20voor%20het%20Studenten%20Pakket."
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-colors text-sm"
+              class="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-[#25D366]/30 hover:-translate-y-0.5 text-sm"
             >
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+              </svg>
               Schrijf je nu in
             </a>
           </div>
@@ -84,55 +130,90 @@ import SectionDivider from '../components/SectionDivider.astro';
     </div>
   </section>
 
-  <SectionDivider />
-
-  <!-- WAAROM PIONEERS -->
-  <section class="py-16 md:py-20">
+  <!-- ══════════════════════════════════════════════
+       STATS BAND
+  ═══════════════════════════════════════════════ -->
+  <section class="bg-white border-b border-asphalt-line">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <div class="max-w-xl mb-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x divide-asphalt-line">
+        {[
+          { value: '10+', label: 'Jaar ervaring' },
+          { value: '4,7★', label: 'Google rating' },
+          { value: '3', label: 'Talen (NL/EN/AR)' },
+          { value: '7 dgn', label: 'Per week bereikbaar' },
+        ].map(({ value, label }, i) => (
+          <div class:list={['reveal-item flex flex-col items-center text-center py-7 px-4', i > 0 ? '' : '']}>
+            <span class="font-display font-bold text-3xl sm:text-4xl text-pioneer-red leading-none mb-1">{value}</span>
+            <span class="text-asphalt text-xs sm:text-sm mt-1">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       WAAROM PIONEERS
+  ═══════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-off-white">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="reveal-item max-w-xl mb-12">
+        <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
+          <span class="w-5 h-px bg-pioneer-red inline-block"></span>Waarom Pioneers
+        </p>
         <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-4">
-          Waarom kiezen voor <span class="text-pioneer-red">Pioneers</span>?
+          Meer dan een rijbewijs
         </h2>
         <p class="text-asphalt text-lg leading-relaxed">
           Wij geven onze leerlingen iets waardevols mee waar zij de rest van hun leven profijt van zullen hebben.
         </p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {[
           {
-            icon: '🎯',
-            title: 'De meeste slagen in 1 keer',
-            body: 'Onze instructeurs bereiden je stap voor stap voor op het examen. En lukt het niet de eerste keer? De herexamenkosten zijn voor ons.',
+            icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
+            title: 'De meesten slagen in 1x',
+            body: 'Gerichte voorbereiding op het CBR-examen. En lukt het niet de eerste keer? De herexamenkosten zijn voor ons — tot €299.',
+            delay: '1',
           },
           {
-            icon: '📅',
+            icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z',
             title: "7 dagen per week, ook 's avonds",
-            body: "Vaste instructeurs beschikbaar van maandag tot en met zondag, overdag én 's avonds. Jij kiest wanneer het uitkomt.",
+            body: 'Vaste instructeurs beschikbaar van maandag t/m zondag, overdag én in de avond. Jij bepaalt het lesmoment.',
+            delay: '2',
           },
           {
-            icon: '🌍',
+            icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129',
             title: 'Les in jouw taal',
-            body: 'Rijles in het Nederlands, Engels of Arabisch. Zo snap je altijd precies wat we bedoelen achter het stuur.',
+            body: 'Rijles in het Nederlands, Engels of Arabisch. Zo snap je precies wat de instructeur bedoelt.',
+            delay: '3',
           },
           {
-            icon: '💰',
+            icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z',
             title: 'Flexibel betalen',
-            body: 'Vooruit betalen, maandelijks of per les — jij kiest hoe jij het regelt. Geen verborgen kosten of verrassingen.',
+            body: 'Vooraf, maandelijks of per les — kies wat past. Geen verborgen kosten of verrassingen achteraf.',
+            delay: '4',
           },
           {
-            icon: '🚗',
+            icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253',
+            title: 'Theorie vanaf 16 jaar',
+            body: 'Al op je 16e kun je beginnen met theorie-instructie. Praktijklessen starten op 16,5 jaar.',
+            delay: '5',
+          },
+          {
+            icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
             title: 'Moderne leswagens',
-            body: 'Les in moderne, goed uitgeruste voertuigen. Veilig, comfortabel en klaar voor het examen.',
+            body: 'Jonge, goed uitgeruste voertuigen voor iedere les. Veilig, comfortabel en klaar voor het examen.',
+            delay: '6',
           },
-          {
-            icon: '📚',
-            title: 'Theorie-ondersteuning',
-            body: 'Je instructeur helpt je ook met theorie. Vanaf 16 jaar kun je al beginnen met de theorie-instructie.',
-          },
-        ].map(({ icon, title, body }) => (
-          <div class="bg-white rounded-2xl border border-asphalt-line p-6 hover:shadow-md transition-shadow">
-            <div class="text-3xl mb-3">{icon}</div>
-            <h3 class="font-display font-bold text-lg mb-2">{title}</h3>
+        ].map(({ icon, title, body, delay }) => (
+          <div class="reveal-item card-lift bg-white rounded-2xl border border-asphalt-line p-6" data-delay={delay}>
+            <div class="w-11 h-11 rounded-xl bg-pioneer-red/8 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-[1.05rem] mb-2 tracking-tight">{title}</h3>
             <p class="text-asphalt text-sm leading-relaxed">{body}</p>
           </div>
         ))}
@@ -142,81 +223,72 @@ import SectionDivider from '../components/SectionDivider.astro';
 
   <SectionDivider />
 
-  <!-- PAKKETTEN TEASER -->
-  <section class="py-16 md:py-20 bg-white">
+  <!-- ══════════════════════════════════════════════
+       PAKKETTEN TEASER
+  ═══════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-white">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+      <div class="reveal-item flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
         <div>
-          <p class="text-pioneer-red font-semibold text-sm uppercase tracking-widest mb-2">Onze pakketten</p>
+          <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
+            <span class="w-5 h-px bg-pioneer-red inline-block"></span>Onze pakketten
+          </p>
           <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight">
             Kies jouw pakket
           </h2>
         </div>
-        <a href="/pakketten" class="text-pioneer-navy font-semibold text-sm hover:text-pioneer-red transition-colors flex items-center gap-1 whitespace-nowrap">
+        <a href="/pakketten" class="text-pioneer-navy font-semibold text-sm hover:text-pioneer-red transition-colors flex items-center gap-1.5 whitespace-nowrap group">
           Alle pakketten &amp; prijzen
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
           </svg>
         </a>
       </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {[
-          {
-            href: '/pakketten#handgeschakeld',
-            label: 'Start Pakket',
-            sub: 'Handgeschakeld',
-            price: '€ 1.049',
-            detail: '11 lessen + proefles',
-          },
-          {
-            href: '/pakketten#handgeschakeld',
-            label: 'Studenten Pakket',
-            sub: 'Handgeschakeld',
-            price: '€ 1.499',
-            detail: '20 lessen + theoriepakket',
-            popular: true,
-          },
-          {
-            href: '/pakketten#handgeschakeld',
-            label: 'Spoed Pakket',
-            sub: 'Handgeschakeld',
-            price: '€ 2.099',
-            detail: '30 lessen, tot 5x per week',
-          },
-          {
-            href: '/pakketten#automaat',
-            label: 'Automaat Pakket',
-            sub: 'Automaat',
-            price: '€ 1.750',
-            detail: '24 lessen + proefles',
-          },
-        ].map(({ href, label, sub, price, detail, popular }) => (
+        {([
+          { href: '/pakketten#handgeschakeld', label: 'Start Pakket', sub: 'Handgeschakeld', price: '€ 1.049', detail: '11 lessen + proefles', popular: false, delay: '1' },
+          { href: '/pakketten#handgeschakeld', label: 'Studenten Pakket', sub: 'Handgeschakeld', price: '€ 1.499', detail: '20 lessen + theoriepakket', popular: true, delay: '2' },
+          { href: '/pakketten#handgeschakeld', label: 'Spoed Pakket', sub: 'Handgeschakeld', price: '€ 2.099', detail: '30 lessen, tot 5x/week', popular: false, delay: '3' },
+          { href: '/pakketten#automaat', label: 'Automaat Pakket', sub: 'Automaat', price: '€ 1.750', detail: '24 lessen + proefles', popular: false, delay: '4' },
+        ] as const).map(({ href, label, sub, price, detail, popular, delay }) => (
           <a
             href={href}
+            data-delay={delay}
             class:list={[
-              'group relative flex flex-col rounded-2xl border p-6 transition-all duration-200 hover:shadow-lg',
+              'reveal-item card-lift relative flex flex-col rounded-2xl border p-6 overflow-hidden',
               popular
-                ? 'bg-pioneer-navy border-pioneer-navy text-white'
-                : 'bg-off-white border-asphalt-line hover:border-pioneer-navy hover:bg-white',
+                ? 'bg-pioneer-navy border-pioneer-navy'
+                : 'bg-white border-asphalt-line hover:border-pioneer-navy/30',
             ]}
           >
             {popular && (
-              <span class="absolute -top-3 left-5 bg-pioneer-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                Meest gekozen
+              <span class="absolute top-4 right-4 bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                Populair
               </span>
             )}
-            <p class:list={['text-xs font-semibold uppercase tracking-widest mb-2', popular ? 'text-white/50' : 'text-pioneer-red']}>
+            {!popular && <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/40 to-pioneer-red/20 rounded-t-2xl"></div>}
+            {popular && <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>}
+
+            <p class:list={['text-[10px] font-bold uppercase tracking-widest mb-3', popular ? 'text-white/45' : 'text-pioneer-red']}>
               {sub}
             </p>
-            <p class:list={['font-display font-bold text-lg mb-1', popular ? 'text-white' : 'text-pioneer-navy']}>
+            <p class:list={['font-display font-bold text-base mb-2', popular ? 'text-white' : 'text-pioneer-navy']}>
               {label}
             </p>
-            <p class:list={['font-display font-bold text-3xl mb-1', popular ? 'text-white' : 'text-pioneer-navy']}>
+            <p class:list={['font-display font-bold text-3xl leading-none mb-1', popular ? 'text-white' : 'text-pioneer-navy']}>
               {price}
             </p>
-            <p class:list={['text-xs mt-1', popular ? 'text-white/60' : 'text-asphalt']}>
+            <p class:list={['text-xs mt-2', popular ? 'text-white/50' : 'text-asphalt']}>
               {detail}
             </p>
+
+            <div class:list={['mt-5 pt-4 border-t text-xs font-semibold flex items-center gap-1.5', popular ? 'border-white/10 text-white/60' : 'border-asphalt-line text-pioneer-navy/60']}>
+              Bekijk details
+              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
           </a>
         ))}
       </div>
@@ -225,52 +297,58 @@ import SectionDivider from '../components/SectionDivider.astro';
 
   <SectionDivider />
 
-  <!-- REVIEWS TEASER -->
-  <section class="py-16 md:py-20">
+  <!-- ══════════════════════════════════════════════
+       REVIEWS
+  ═══════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-off-white">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+      <div class="reveal-item flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
         <div>
-          <p class="text-pioneer-red font-semibold text-sm uppercase tracking-widest mb-2">Google Reviews</p>
-          <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight">
+          <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
+            <span class="w-5 h-px bg-pioneer-red inline-block"></span>Google Reviews
+          </p>
+          <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-2">
             Wat onze leerlingen zeggen
           </h2>
-          <div class="flex items-center gap-2 mt-3">
-            <div class="flex items-center gap-0.5">
-              {Array.from({ length: 5 }).map(() => (
-                <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                </svg>
-              ))}
-            </div>
-            <span class="font-bold text-pioneer-navy">4,7</span>
+          <div class="flex items-center gap-2">
+            {Array.from({ length: 5 }).map(() => (
+              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            ))}
+            <span class="font-bold text-pioneer-navy ml-1">4,7</span>
             <span class="text-asphalt text-sm">op Google</span>
           </div>
         </div>
-        <a href="/reviews" class="text-pioneer-navy font-semibold text-sm hover:text-pioneer-red transition-colors flex items-center gap-1 whitespace-nowrap">
+        <a href="/reviews" class="text-pioneer-navy font-semibold text-sm hover:text-pioneer-red transition-colors flex items-center gap-1.5 whitespace-nowrap group">
           Alle reviews
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
           </svg>
         </a>
       </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {[
-          { name: 'Emma', rating: 5, text: 'Dankzij de goede leermethode ben ik in één keer geslaagd. Echt een aanrader!' },
-          { name: 'Eddie', rating: 5, text: 'Uitstekende rijschool en goede aanpak van de instructeur. Absoluut aanbevolen.' },
-          { name: 'Mike', rating: 5, text: 'Geweldige lessen en geslaagd voor mijn examen. Verkeersschool Pioneers doet het goed!' },
-          { name: 'Eugenie', rating: 5, text: 'Vriendelijke instructeur, uitstekende methode en een fijne sfeer. Top rijschool!' },
-        ].map(({ name, rating, text }) => (
-          <div class="bg-white rounded-2xl border border-asphalt-line p-5">
-            <div class="flex items-center gap-0.5 mb-3">
+          { name: 'Emma', rating: 5, text: 'Dankzij de juiste leermethode ben ik in één keer geslaagd. Echt een aanrader!', delay: '1' },
+          { name: 'Eddie', rating: 5, text: 'Uitstekende rijschool en geweldige aanpak. Absoluut aanbevolen!', delay: '2' },
+          { name: 'Mike', rating: 5, text: 'Geweldige lessen en geslaagd voor mijn examen. Top rijschool!', delay: '3' },
+          { name: 'Eugenie', rating: 5, text: 'Vriendelijke instructeur, uitstekende methode en een fijne sfeer.', delay: '4' },
+        ].map(({ name, rating, text, delay }) => (
+          <div class="reveal-item card-lift relative bg-white rounded-2xl border border-asphalt-line p-6 overflow-hidden" data-delay={delay}>
+            <!-- Decorative quote mark -->
+            <span class="absolute -top-2 -right-1 text-[7rem] leading-none font-serif text-pioneer-navy/[0.04] select-none pointer-events-none" aria-hidden="true">"</span>
+
+            <div class="flex items-center gap-0.5 mb-4">
               {Array.from({ length: rating }).map(() => (
                 <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
               ))}
             </div>
-            <p class="text-asphalt text-sm leading-relaxed mb-4">"{text}"</p>
-            <div class="flex items-center gap-2">
-              <div class="w-7 h-7 rounded-full bg-pioneer-navy/10 flex items-center justify-center text-pioneer-navy font-bold text-xs">
+            <p class="text-asphalt text-sm leading-relaxed mb-5">"{text}"</p>
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pioneer-navy to-pioneer-navy-light flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                 {name[0]}
               </div>
               <p class="font-semibold text-pioneer-navy text-sm">{name}</p>
@@ -283,23 +361,56 @@ import SectionDivider from '../components/SectionDivider.astro';
 
   <SectionDivider />
 
-  <!-- LESGEBIED -->
+  <!-- ══════════════════════════════════════════════
+       LESGEBIED
+  ═══════════════════════════════════════════════ -->
   <section class="py-14 md:py-18 bg-white">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <div class="max-w-xl">
-        <p class="text-pioneer-red font-semibold text-sm uppercase tracking-widest mb-3">Lesgebied</p>
-        <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-5">
-          Rijles bij jou in de buurt
-        </h2>
-        <p class="text-asphalt leading-relaxed mb-6">
-          We rijden in Breda en de omliggende gemeenten:
-        </p>
-        <div class="flex flex-wrap gap-2">
-          {['Breda', 'Etten-Leur', 'Roosendaal', 'Oosterhout', 'Rijsbergen', 'Zevenbergen', 'Chaam', 'Terheijden', 'Oudenbosch', 'Rijen'].map(plaats => (
-            <span class="bg-off-white border border-asphalt-line text-pioneer-navy text-sm font-medium px-3.5 py-1.5 rounded-full">
-              {plaats}
-            </span>
-          ))}
+      <div class="reveal-item grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
+            <span class="w-5 h-px bg-pioneer-red inline-block"></span>Lesgebied
+          </p>
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-4">
+            Rijles bij jou in de buurt
+          </h2>
+          <p class="text-asphalt leading-relaxed mb-6">
+            We rijden in Breda en de omliggende gemeenten. Twijfel je of we bij jou rijden? App ons — we kijken graag mee.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {['Breda', 'Etten-Leur', 'Roosendaal', 'Oosterhout', 'Rijsbergen', 'Zevenbergen', 'Chaam', 'Terheijden', 'Oudenbosch', 'Rijen'].map(plaats => (
+              <span class="bg-off-white border border-asphalt-line text-pioneer-navy text-sm font-medium px-3.5 py-1.5 rounded-full">
+                {plaats}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div class="flex lg:justify-end">
+          <div class="bg-off-white border border-asphalt-line rounded-2xl p-7 max-w-sm w-full">
+            <div class="flex items-start gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-pioneer-red/8 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-pioneer-navy text-sm mb-1">Vraag? App ons!</p>
+                <p class="text-asphalt text-xs leading-relaxed">We antwoorden snel — ook in de avond en het weekend.</p>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20meer%20weten%20over%20rijlessen."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-[#25D366]/25"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+              </svg>
+              Chat via WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -307,35 +418,50 @@ import SectionDivider from '../components/SectionDivider.astro';
 
   <SectionDivider />
 
-  <!-- CTA BAND -->
-  <section class="bg-pioneer-navy text-white py-14 md:py-20">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
-      <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-4">
-        Klaar om te beginnen?
-      </h2>
-      <p class="text-white/65 text-lg mb-8 max-w-lg mx-auto">
-        Neem contact op via WhatsApp — we antwoorden snel en helpen je graag verder.
-      </p>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a
-          href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20wil%20me%20graag%20inschrijven."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold transition-colors shadow-lg"
-        >
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
-          </svg>
-          Schrijf je nu in
-        </a>
-        <a
-          href="/contact"
-          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg border border-white/25 hover:border-white/50 text-white font-semibold transition-colors hover:bg-white/5"
-        >
-          Of stuur een bericht
-        </a>
+  <!-- ══════════════════════════════════════════════
+       CTA BAND
+  ═══════════════════════════════════════════════ -->
+  <section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #16233F 0%, #1e2f55 50%, #16233F 100%);">
+    <!-- Subtle pattern overlay -->
+    <div class="absolute inset-0 opacity-30" style="background-image: repeating-linear-gradient(-22deg, transparent, transparent 70px, rgba(255,255,255,0.03) 70px, rgba(255,255,255,0.03) 72px);" aria-hidden="true"></div>
+    <!-- Red glow -->
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-pioneer-red/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
+      <div class="reveal-item">
+        <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-5 flex items-center justify-center gap-2">
+          <span class="w-5 h-px bg-pioneer-red inline-block"></span>
+          Klaar om te starten?
+          <span class="w-5 h-px bg-pioneer-red inline-block"></span>
+        </p>
+        <h2 class="font-display font-bold text-3xl md:text-5xl tracking-tight text-white mb-4">
+          Jouw rijbewijs begint<br class="hidden sm:block" /> met één bericht
+        </h2>
+        <p class="text-white/55 text-lg mb-10 max-w-lg mx-auto leading-relaxed">
+          We antwoorden snel — 7 dagen per week, ook 's avonds. Plan je gratis proefles of schrijf je direct in.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20wil%20me%20graag%20inschrijven."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2.5 px-7 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-[#25D366]/30 hover:-translate-y-0.5 text-base"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+            </svg>
+            Schrijf je nu in
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 px-7 py-4 rounded-xl border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold transition-all duration-200 text-base"
+          >
+            Of stuur een bericht
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
 </Layout>
