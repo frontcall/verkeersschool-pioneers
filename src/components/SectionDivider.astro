@@ -1,0 +1,26 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<!-- Wegmarkering-divider: onderbroken rijbaanstreep -->
+<div class:list={['w-full overflow-hidden', className]} aria-hidden="true">
+  <svg
+    width="100%"
+    height="6"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line
+      x1="0"
+      y1="3"
+      x2="10000"
+      y2="3"
+      stroke="#E8E9EC"
+      stroke-width="2"
+      stroke-dasharray="24 12"
+    />
+  </svg>
+</div>

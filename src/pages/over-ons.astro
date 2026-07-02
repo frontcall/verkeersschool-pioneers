@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+---
+
+<Layout
+  title="Over ons"
+  description="Leer Verkeersschool Pioneers kennen — onze missie, instructeurs en lesgebied in Breda en omgeving."
+>
+  <!-- Page header -->
+  <section class="bg-pioneer-navy text-white py-16 md:py-20">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <p class="text-pioneer-red font-semibold text-sm uppercase tracking-widest mb-3">Over ons</p>
+      <h1 class="font-display font-bold text-4xl md:text-5xl tracking-tight mb-4">
+        Wij zijn Verkeersschool Pioneers
+      </h1>
+      <p class="text-white/65 text-lg max-w-lg">
+        Een rijschool die verder kijkt dan het rijbewijs — wij leren je veilig rijden voor de rest van je leven.
+      </p>
+    </div>
+  </section>
+
+  <!-- Verhaal / Missie -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-5">
+            Ons verhaal
+          </h2>
+          <!-- data-todo="about-story-pending — Mahmood levert de definitieve tekst aan" -->
+          <div class="space-y-4 text-asphalt leading-relaxed">
+            <p>
+              Verkeersschool Pioneers is opgericht met één doel: leerlingen niet alleen hun rijbewijs laten halen, maar ze ook echt klaar maken voor het verkeer. Veilig, zelfverzekerd en verantwoordelijk rijden — dat is onze missie.
+            </p>
+            <p>
+              We zijn actief in Breda en de omliggende gemeenten. Of je nu voor het eerst achter het stuur kruipt of een zakelijk rijbewijs nodig hebt voor vrachtauto of taxi — bij ons vind je het juiste pakket en de juiste begeleiding.
+            </p>
+            <p>
+              Onze instructeurs zijn WRM-gecertificeerd, geduldig en ervaren. Ze stemmen het lesaanbod af op jouw tempo en leerstijl — niet omgekeerd.
+            </p>
+          </div>
+        </div>
+        <!-- Placeholder voor foto -->
+        <div class="bg-asphalt-line rounded-2xl aspect-[4/3] flex items-center justify-center text-asphalt/40 text-sm">
+          <!-- data-todo="photo-pending — eigen beeldmateriaal aanleveren" -->
+          📸 Foto volgt
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- Instructeurs -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-3">Onze instructeurs</h2>
+      <p class="text-asphalt mb-10 max-w-lg">WRM-gecertificeerd, ervaren en altijd persoonlijk betrokken.</p>
+
+      <!-- data-todo="instructor-cards-pending — namen, foto's en specialisaties aanleveren" -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[1, 2, 3].map((i) => (
+          <div class="bg-off-white rounded-2xl border border-asphalt-line overflow-hidden">
+            <div class="bg-asphalt-line aspect-square flex items-center justify-center text-asphalt/40 text-sm">
+              📸 Foto volgt
+            </div>
+            <div class="p-5">
+              <div class="h-4 bg-asphalt-line rounded mb-2 w-1/2"></div>
+              <div class="h-3 bg-asphalt-line rounded w-2/3"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- Lesgebied -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-5">Lesgebied</h2>
+      <p class="text-asphalt leading-relaxed mb-6 max-w-xl">
+        We geven rijlessen in Breda en de omliggende gemeenten, waaronder Etten-Leur, Oosterhout, Roosendaal en Tilburg. Twijfel je of we bij jou in de buurt rijden? Neem even contact op — we kijken graag mee.
+      </p>
+      <!-- data-todo="map-embed-pending — Google Maps embed bij definitief adres" -->
+      <div class="bg-asphalt-line rounded-2xl aspect-video flex items-center justify-center text-asphalt/40 text-sm max-w-2xl">
+        🗺️ Kaart volgt — Google Maps embed
+      </div>
+    </div>
+  </section>
+</Layout>
