@@ -27,13 +27,17 @@ import SectionDivider from '../components/SectionDivider.astro';
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
       <nav class="flex gap-1 overflow-x-auto py-3 scrollbar-hide" aria-label="Categorieën">
         {[
-          { href: '#handgeschakeld', label: 'Handgeschakeld', icon: '🚗' },
-          { href: '#automaat', label: 'Automaat', icon: '🚙' },
-          { href: '#vervolg', label: 'Vervolglessen', icon: '➕' },
-          { href: '#faq', label: 'Veelgestelde vragen', icon: '❓' },
-        ].map(({ href, label, icon }) => (
-          <a href={href} class="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-asphalt hover:text-pioneer-navy hover:bg-off-white whitespace-nowrap transition-colors flex-shrink-0">
-            <span>{icon}</span> {label}
+          { href: '#handgeschakeld', label: 'Handgeschakeld' },
+          { href: '#automaat', label: 'Automaat' },
+          { href: '#motor', label: 'Motor' },
+          { href: '#scooter', label: 'Scooter' },
+          { href: '#vrachtwagen', label: 'Vrachtwagen' },
+          { href: '#taxi', label: 'Taxi' },
+          { href: '#vervolg', label: 'Vervolglessen' },
+          { href: '#faq', label: 'Veelgestelde vragen' },
+        ].map(({ href, label }) => (
+          <a href={href} class="flex items-center px-4 py-2 rounded-lg text-sm font-medium text-asphalt hover:text-pioneer-navy hover:bg-off-white whitespace-nowrap transition-colors flex-shrink-0">
+            {label}
           </a>
         ))}
       </nav>
@@ -217,6 +221,247 @@ import SectionDivider from '../components/SectionDivider.astro';
       <p class="reveal-item text-asphalt/55 text-xs mt-5">
         * Herexamenkosten worden door ons vergoed tot €299 per herexamen. Je betaalt alleen de rijlessen.
       </p>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ══ MOTOR ══ -->
+  <section id="motor" class="py-16 md:py-20 scroll-mt-32">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="reveal-item flex items-start gap-4 mb-3">
+        <div class="w-12 h-12 rounded-xl bg-pioneer-red/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-6 h-6 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3h14l1 7H4L5 3zM3 10h18l-2 7H5L3 10z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Motor</h2>
+          <p class="text-asphalt text-sm mt-0.5">A-rijbewijs — twee wielen, volledige vrijheid</p>
+        </div>
+      </div>
+      <p class="reveal-item text-asphalt mb-10 max-w-xl ml-16">
+        Van A1 (lichte motor) tot A (onbeperkt) — we begeleiden jou naar het rijbewijs dat bij jou past.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { label: 'A1 — Lichte motor', sub: 'tot 125cc / 11 kW', items: ['Inclusief theoriebegeleiding', 'Verkeersdeelname & manoeuvres', '1 praktijkexamen (deel A + B)', 'Persoonlijke instructeur'] },
+          { label: 'A2 — Middencategorie', sub: 'tot 35 kW', items: ['Inclusief theoriebegeleiding', 'Hoge- en lage snelheidsmanoeuvres', '1 praktijkexamen (deel A + B)', 'Persoonlijke instructeur'] },
+          { label: 'A — Onbeperkt', sub: 'na 2 jaar A2 of direct op leeftijd', items: ['Inclusief theoriebegeleiding', 'Examentraining op locatie', '1 praktijkexamen (deel A + B)', 'Persoonlijke instructeur'] },
+        ].map(({ label, sub, items }, i) => (
+          <div class={`reveal-item card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden`} data-delay={String(i + 1)}>
+            <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/60 to-pioneer-red/20 rounded-t-2xl"></div>
+            <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-1">{label}</p>
+            <p class="text-asphalt/60 text-xs mb-5">{sub}</p>
+            <ul class="space-y-3 flex-1 mb-7">
+              {items.map(item => (
+                <li class="flex items-start gap-2.5 text-sm text-asphalt">
+                  <span class="flex-shrink-0 w-5 h-5 rounded-full bg-success-soft/12 flex items-center justify-center mt-0.5">
+                    <svg class="w-3 h-3 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="bg-off-white rounded-xl border border-asphalt-line px-4 py-3 mb-4 text-center">
+              <p class="text-xs text-asphalt/60 mb-0.5">Prijs op aanvraag</p>
+              <p class="font-display font-bold text-pioneer-navy text-lg">Neem contact op</p>
+            </div>
+            <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20meer%20weten%20over%20jullie%20motorrijlessen." target="_blank" rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+              WhatsApp voor prijs
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ══ SCOOTER ══ -->
+  <section id="scooter" class="py-16 md:py-20 scroll-mt-32 bg-white">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="reveal-item flex items-start gap-4 mb-3">
+        <div class="w-12 h-12 rounded-xl bg-pioneer-red/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-6 h-6 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6a2 2 0 110 4 2 2 0 010-4zM5 18a2 2 0 110-4 2 2 0 010 4zM19 18a2 2 0 110-4 2 2 0 010 4zM5 16l5-8 3 4 2-2 4 6"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Scooter</h2>
+          <p class="text-asphalt text-sm mt-0.5">AM-rijbewijs — snel door de stad</p>
+        </div>
+      </div>
+      <p class="reveal-item text-asphalt mb-10 max-w-xl ml-16">
+        Met het AM-rijbewijs mag je legaal op een scooter tot 45 km/u rijden. Praktisch, snel te halen.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+        <div class="reveal-item card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden" data-delay="1">
+          <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
+          <div class="absolute -bottom-10 -right-10 w-36 h-36 bg-pioneer-red/10 rounded-full blur-2xl pointer-events-none"></div>
+          <p class="text-xs font-bold uppercase tracking-widest text-white/45 mb-3">AM-rijbewijs Pakket</p>
+          <ul class="space-y-3 flex-1 mb-7 relative">
+            {['Theoriebegeleiding inbegrepen', 'Verkeersdeelname op locatie', 'Manoeuvres & veiligheidscheck', '1 praktijkexamen'].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-white/80">
+                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
+                  <svg class="w-3 h-3 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="bg-white/10 rounded-xl px-4 py-3 mb-4 text-center relative">
+            <p class="text-white/50 text-xs mb-0.5">Prijs op aanvraag</p>
+            <p class="font-display font-bold text-white text-lg">Neem contact op</p>
+          </div>
+          <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20meer%20weten%20over%20jullie%20scooterlessen." target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 hover:-translate-y-0.5 relative">
+            WhatsApp voor prijs
+          </a>
+        </div>
+
+        <div class="reveal-item bg-off-white rounded-2xl border border-asphalt-line p-7 flex flex-col justify-center gap-4" data-delay="2">
+          <div class="w-12 h-12 rounded-xl bg-pioneer-red/8 flex items-center justify-center">
+            <svg class="w-6 h-6 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold text-lg text-pioneer-navy mb-2">Wist je dat?</h3>
+            <p class="text-asphalt text-sm leading-relaxed">Met een B-rijbewijs (auto) mag je automatisch ook een scooter t/m 45 km/u besturen. Heb je al een B? Dan heb je geen apart AM-rijbewijs nodig.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ══ VRACHTWAGEN ══ -->
+  <section id="vrachtwagen" class="py-16 md:py-20 scroll-mt-32">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="reveal-item flex items-start gap-4 mb-3">
+        <div class="w-12 h-12 rounded-xl bg-pioneer-red/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-6 h-6 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18.5 21a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Vrachtwagen</h2>
+          <p class="text-asphalt text-sm mt-0.5">C-rijbewijs — zware voertuigen, grote kansen</p>
+        </div>
+      </div>
+      <p class="reveal-item text-asphalt mb-10 max-w-xl ml-16">
+        Het C-rijbewijs opent de deur naar een carrière in transport en logistiek. Wij begeleiden je van begin tot examen.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+        {[
+          { label: 'C — Vrachtwagen', sub: 'Meer dan 3.500 kg, geen aanhanger', items: ['Rijbaantechniek & zware voertuigbeheer', 'Blinde hoek & koppelen/ontkoppelen', 'Economisch rijden (eco-driving)', '1 praktijkexamen'] },
+          { label: 'CE — Vrachtwagen + aanhanger', sub: 'Combinatie met aanhanger (>750 kg)', items: ['Voortbouwen op C-rijbewijs', 'Koppelen & ontkoppelen aanhanger', 'Manoeuvres met combinatie', '1 praktijkexamen'] },
+        ].map(({ label, sub, items }, i) => (
+          <div class="reveal-item card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden" data-delay={String(i + 1)}>
+            <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/60 to-pioneer-red/20 rounded-t-2xl"></div>
+            <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-1">{label}</p>
+            <p class="text-asphalt/60 text-xs mb-5">{sub}</p>
+            <ul class="space-y-3 flex-1 mb-7">
+              {items.map(item => (
+                <li class="flex items-start gap-2.5 text-sm text-asphalt">
+                  <span class="flex-shrink-0 w-5 h-5 rounded-full bg-success-soft/12 flex items-center justify-center mt-0.5">
+                    <svg class="w-3 h-3 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div class="bg-off-white rounded-xl border border-asphalt-line px-4 py-3 mb-4 text-center">
+              <p class="text-xs text-asphalt/60 mb-0.5">Prijs op aanvraag</p>
+              <p class="font-display font-bold text-pioneer-navy text-lg">Neem contact op</p>
+            </div>
+            <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20meer%20weten%20over%20jullie%20vrachtwagenlessen." target="_blank" rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+              WhatsApp voor prijs
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ══ TAXI ══ -->
+  <section id="taxi" class="py-16 md:py-20 scroll-mt-32 bg-white">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="reveal-item flex items-start gap-4 mb-3">
+        <div class="w-12 h-12 rounded-xl bg-pioneer-red/8 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-6 h-6 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l1-5H4L5 9m14 0H5m14 0l2 9H3l2-9M9 9V5m6 0v4M9 16h6"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Taxi</h2>
+          <p class="text-asphalt text-sm mt-0.5">Taxichauffeur worden — theorie + praktijk</p>
+        </div>
+      </div>
+      <p class="reveal-item text-asphalt mb-10 max-w-xl ml-16">
+        Als taxichauffeur heb je naast een B-rijbewijs ook een taxikaart (chauffeurskaart) nodig. Wij helpen je door het hele traject.
+      </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-3xl">
+        <div class="reveal-item card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden" data-delay="1">
+          <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
+          <div class="absolute -bottom-10 -right-10 w-36 h-36 bg-pioneer-red/10 rounded-full blur-2xl pointer-events-none"></div>
+          <p class="text-xs font-bold uppercase tracking-widest text-white/45 mb-3">Taxi Pakket</p>
+          <ul class="space-y-3 flex-1 mb-7 relative">
+            {['B-rijbewijs (indien nodig)', 'Theoriebegeleiding chauffeurskaart', 'Praktijkbegeleiding & routekennis', 'Tarieven & regelgeving (AVV)', 'Begeleiding aanvraag taxikaart'].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-white/80">
+                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
+                  <svg class="w-3 h-3 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div class="bg-white/10 rounded-xl px-4 py-3 mb-4 text-center relative">
+            <p class="text-white/50 text-xs mb-0.5">Prijs op aanvraag</p>
+            <p class="font-display font-bold text-white text-lg">Neem contact op</p>
+          </div>
+          <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20meer%20weten%20over%20jullie%20taxi%20rijopleiding." target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 hover:-translate-y-0.5 relative">
+            WhatsApp voor prijs
+          </a>
+        </div>
+
+        <div class="reveal-item space-y-4" data-delay="2">
+          <div class="bg-off-white rounded-2xl border border-asphalt-line p-6">
+            <h3 class="font-display font-semibold text-pioneer-navy mb-2">Wat heb je nodig?</h3>
+            <ul class="space-y-2 text-sm text-asphalt">
+              {['B-rijbewijs (minimaal 3 jaar)', 'Taxikaart / chauffeurskaart (IVW)', 'VOG (Verklaring Omtrent Gedrag)', 'Medische keuring (indien nodig)'].map(item => (
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-pioneer-red flex-shrink-0"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-pioneer-red/5 rounded-2xl border border-pioneer-red/15 p-6">
+            <p class="text-sm text-pioneer-navy font-semibold mb-1">Nieuw in de taxi-branche?</p>
+            <p class="text-sm text-asphalt leading-relaxed">We leggen je alles uit — van de aanvraag tot je eerste rit. Stuur ons gewoon een berichtje.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

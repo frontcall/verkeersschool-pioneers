@@ -14,12 +14,12 @@ const navItems = [
 
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-asphalt-line transition-all duration-300"
 >
   <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
 
-      <!-- Logo -->
+      <!-- Logo — wit logo op witte balk, geen extra achtergrond nodig -->
       <a
         href="/"
         class="flex-shrink-0"
@@ -28,7 +28,7 @@ const navItems = [
         <img
           src="/logo.jpg"
           alt="Verkeersschool Pioneers"
-          class="h-10 md:h-12 w-auto rounded-md bg-white px-1.5 py-0.5 object-contain"
+          class="h-10 md:h-12 w-auto object-contain"
         />
       </a>
 
@@ -40,8 +40,8 @@ const navItems = [
             class:list={[
               'px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150',
               isActive(href)
-                ? 'text-white bg-white/10'
-                : 'text-white/75 hover:text-white hover:bg-white/10',
+                ? 'text-pioneer-navy bg-pioneer-navy/8 font-semibold'
+                : 'text-asphalt hover:text-pioneer-navy hover:bg-pioneer-navy/5',
             ]}
             aria-current={isActive(href) ? 'page' : undefined}
           >
@@ -56,7 +56,7 @@ const navItems = [
           href="https://wa.me/31643127001"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white text-sm font-semibold transition-colors duration-150"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white text-sm font-semibold transition-all duration-150 hover:shadow-md hover:shadow-pioneer-red/25"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -73,12 +73,12 @@ const navItems = [
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Menu openen"
-        class="lg:hidden flex flex-col justify-center items-center w-11 h-11 rounded-lg text-white hover:bg-white/10 transition-colors"
+        class="lg:hidden flex flex-col justify-center items-center w-11 h-11 rounded-lg text-pioneer-navy hover:bg-pioneer-navy/5 transition-colors"
       >
         <span id="hamburger-icon" class="flex flex-col gap-1.5" aria-hidden="true">
-          <span class="block w-5 h-0.5 bg-current transition-all duration-200 origin-center" id="bar1"></span>
-          <span class="block w-5 h-0.5 bg-current transition-all duration-200" id="bar2"></span>
-          <span class="block w-5 h-0.5 bg-current transition-all duration-200 origin-center" id="bar3"></span>
+          <span class="block w-5 h-0.5 bg-pioneer-navy transition-all duration-200 origin-center" id="bar1"></span>
+          <span class="block w-5 h-0.5 bg-pioneer-navy transition-all duration-200" id="bar2"></span>
+          <span class="block w-5 h-0.5 bg-pioneer-navy transition-all duration-200 origin-center" id="bar3"></span>
         </span>
       </button>
     </div>
@@ -123,7 +123,7 @@ const navItems = [
         class:list={[
           'flex items-center min-h-[52px] px-4 py-3 rounded-lg text-base font-medium mb-1 transition-colors',
           isActive(href)
-            ? 'text-white bg-white/10'
+            ? 'text-white bg-white/10 font-semibold'
             : 'text-white/75 hover:text-white hover:bg-white/10',
         ]}
         aria-current={isActive(href) ? 'page' : undefined}
@@ -135,7 +135,9 @@ const navItems = [
 
   <div class="p-4 border-t border-white/10">
     <a
-      href="/contact"
+      href="https://wa.me/31643127001"
+      target="_blank"
+      rel="noopener noreferrer"
       class="flex items-center justify-center gap-2 w-full py-3.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-colors"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -147,8 +149,8 @@ const navItems = [
   </div>
 </nav>
 
-<!-- Spacer to push content below fixed header -->
-<div class="h-16 md:h-20 bg-pioneer-navy"></div>
+<!-- Spacer — hoogte gelijk aan header -->
+<div class="h-16 md:h-20"></div>
 
 <script>
   const header = document.getElementById('site-header')!;
@@ -160,27 +162,22 @@ const navItems = [
   const bar2 = document.getElementById('bar2')!;
   const bar3 = document.getElementById('bar3')!;
 
-  // Sticky header background on scroll
+  // Versterkte schaduw bij scrollen
   const updateHeader = () => {
-    if (window.scrollY > 20) {
-      header.classList.add('bg-pioneer-navy', 'shadow-lg');
+    if (window.scrollY > 8) {
+      header.classList.add('shadow-md');
     } else {
-      header.classList.remove('bg-pioneer-navy', 'shadow-lg');
+      header.classList.remove('shadow-md');
     }
   };
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
-
-  // Initially the header IS on pioneer-navy bg for the spacer — but the header
-  // itself starts transparent over hero. We always keep it colored for safety.
-  header.classList.add('bg-pioneer-navy');
 
   function openMenu() {
     menu.classList.replace('translate-x-full', 'translate-x-0');
     overlay.classList.remove('opacity-0', 'pointer-events-none');
     toggle.setAttribute('aria-expanded', 'true');
     toggle.setAttribute('aria-label', 'Menu sluiten');
-    // Animate to X
     bar1.style.transform = 'rotate(45deg) translate(3px, 3px)';
     bar2.style.opacity = '0';
     bar3.style.transform = 'rotate(-45deg) translate(3px, -3px)';
@@ -192,7 +189,6 @@ const navItems = [
     overlay.classList.add('opacity-0', 'pointer-events-none');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Menu openen');
-    // Animate back to hamburger
     bar1.style.transform = '';
     bar2.style.opacity = '1';
     bar3.style.transform = '';
@@ -206,12 +202,8 @@ const navItems = [
 
   closeBtn.addEventListener('click', closeMenu);
   overlay.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Close on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
       closeMenu();
