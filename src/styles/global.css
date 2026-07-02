@@ -130,16 +130,16 @@
       rgba(243, 249, 240, 0.85) 60%,
       rgba(243, 249, 240, 1)   78%
     ),
-    radial-gradient(circle at 1px 1px, rgba(22, 35, 63, 0.13) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(47, 143, 91, 0.15) 1px, transparent 0);
   background-size: 100% 100%, 22px 22px;
 }
 
 /* ── AMBIENT SECTION GRADIENTS ── */
-/* Off-white sections get a barely-there warm top blush + cool bottom-right depth */
+/* Off-white sections: subtiele rode blush top + groene diepte rechtsonder */
 .bg-off-white, section.bg-off-white, div.bg-off-white {
   background-image:
-    radial-gradient(ellipse 90% 50% at 50% 0%,   rgba(214, 40, 57, 0.05) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 40% at 100% 100%, rgba(22, 35, 63,  0.04) 0%, transparent 55%);
+    radial-gradient(ellipse 90% 50% at 50% 0%,   rgba(214, 40, 57, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 40% at 100% 100%, rgba(47, 143, 91, 0.06) 0%, transparent 55%);
 }
 
 /* ── INNER GLOW (dark cards) ── */
