@@ -42,8 +42,12 @@ const reviews = [
   description="Lees wat leerlingen van Verkeersschool Pioneers vinden — 4,7 sterren op Google. Eerlijke ervaringen van mensen die hier hun rijbewijs hebben gehaald."
 >
   <!-- Page header -->
-  <section class="hero-bg text-white py-16 md:py-24">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+  <section class="hero-bg text-white py-16 md:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-32 right-0 w-[520px] h-[520px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%);"></div>
+      <div class="orb-drift-slow absolute bottom-0 -left-20 w-[380px] h-[380px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(42,67,116,0.55) 0%, transparent 65%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8">
       <p class="hero-item text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-4 flex items-center gap-2" data-delay="1">
         <span class="w-5 h-px bg-pioneer-red inline-block"></span>Google Reviews
       </p>
@@ -83,7 +87,7 @@ const reviews = [
   </div>
 
   <!-- Reviews grid -->
-  <section class="py-16 md:py-24 bg-off-white">
+  <section class="py-16 md:py-24 dot-grid-bg">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {reviews.map(({ name, initial, rating, text, detail, delay }) => (
@@ -150,8 +154,12 @@ const reviews = [
   </section>
 
   <!-- CTA -->
-  <section class="hero-bg text-white py-14">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
+  <section class="hero-bg text-white py-14 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-20 right-1/4 w-[450px] h-[450px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%);"></div>
+      <div class="orb-drift-slow absolute bottom-0 left-1/4 w-[350px] h-[350px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(42,67,116,0.55) 0%, transparent 65%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
       <div class="reveal-item">
         <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-3">
           Jij kunt de volgende zijn

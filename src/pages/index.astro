@@ -11,30 +11,38 @@ import SectionDivider from '../components/SectionDivider.astro';
   <!-- ══════════════════════════════════════════════
        HERO
   ═══════════════════════════════════════════════ -->
-  <section class="hero-bg text-white overflow-hidden">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8 pt-14 pb-20 md:pt-16 md:pb-28 lg:pt-20 lg:pb-36">
+  <section class="hero-bg text-white overflow-hidden relative">
 
-      <!-- Logo — groot en centraal bovenin de hero -->
-      <div class="hero-item flex justify-center mb-10 md:mb-14" data-delay="1">
-        <img
-          src="/logo.jpg"
-          alt="Verkeersschool Pioneers"
-          class="h-24 sm:h-28 md:h-36 lg:h-40 w-auto object-contain rounded-2xl shadow-2xl shadow-black/30"
-        />
-      </div>
+    <!-- Floating depth orbs -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-40 -right-20 w-[720px] h-[720px] rounded-full"
+           style="background: radial-gradient(circle, rgba(214,40,57,0.48) 0%, transparent 60%); filter: blur(90px);"
+           data-mouse-speed="18"></div>
+      <div class="orb-drift-slow absolute -bottom-32 -left-24 w-[620px] h-[620px] rounded-full"
+           style="background: radial-gradient(circle, rgba(42,67,116,0.58) 0%, transparent 60%); filter: blur(95px);"
+           data-mouse-speed="12"></div>
+      <div class="orb-drift-alt absolute top-1/3 right-1/4 w-[420px] h-[420px] rounded-full"
+           style="background: radial-gradient(circle, rgba(214,40,57,0.28) 0%, transparent 55%); filter: blur(75px);"
+           data-mouse-speed="28"></div>
+      <div class="orb-drift absolute bottom-10 right-10 w-[300px] h-[300px] rounded-full"
+           style="background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%); filter: blur(60px);"
+           data-mouse-speed="8"></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8 py-20 md:py-28 lg:py-36">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
         <!-- Left: copy -->
         <div>
-          <p class="hero-item inline-flex items-center gap-2 text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-5" data-delay="2">
+          <p class="hero-item inline-flex items-center gap-2 text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-5" data-delay="1">
             <span class="w-5 h-px bg-pioneer-red inline-block"></span>
             Rijschool in Breda &amp; omgeving
           </p>
 
           <h1 class="hero-item font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] xl:text-6xl leading-[1.06] tracking-tight mb-6" data-delay="2">
             Wil jij snel je<br />
-            <span class="text-pioneer-red">rijbewijs halen?</span>
+            <span class="text-gradient-fire">rijbewijs halen?</span>
           </h1>
 
           <p class="hero-item text-white/68 text-lg leading-relaxed mb-8 max-w-[480px]" data-delay="3">
@@ -86,19 +94,22 @@ import SectionDivider from '../components/SectionDivider.astro';
 
         <!-- Right: deal card -->
         <div class="hero-item lg:flex lg:justify-end" data-delay="5">
-          <div class="relative bg-white/8 border border-white/14 rounded-2xl p-7 max-w-sm w-full backdrop-blur-sm overflow-hidden">
+          <div class="relative bg-gradient-to-br from-white/12 to-white/5 border border-white/16 rounded-2xl p-7 max-w-sm w-full backdrop-blur-2xl overflow-hidden card-glow-inner">
+            <!-- Glass top sheen -->
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
             <!-- Red top accent -->
-            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
+            <div class="absolute inset-x-0 top-px h-[3px] bg-gradient-to-r from-pioneer-red via-[#FF4455] to-pioneer-red-dark rounded-t-2xl"></div>
 
-            <!-- Decorative glow -->
-            <div class="absolute -top-16 -right-16 w-48 h-48 bg-pioneer-red/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
+            <!-- Decorative glows -->
+            <div class="absolute -top-20 -right-20 w-72 h-72 bg-pioneer-red/12 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+            <div class="absolute -bottom-10 -left-10 w-44 h-44 bg-pioneer-navy-light/18 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
 
             <div class="flex items-center gap-2 mb-5 relative">
               <span class="bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Meest gekozen</span>
             </div>
 
             <div class="relative mb-1">
-              <span class="font-display font-bold text-[3.25rem] leading-none text-white">€ 1.499</span>
+              <span class="font-display font-bold text-4xl sm:text-[3.25rem] leading-none text-white">€ 1.499</span>
               <span class="text-white/50 text-lg">,–</span>
             </div>
             <p class="text-white/40 text-xs mb-6">Studenten pakket — handgeschakeld</p>
@@ -163,7 +174,7 @@ import SectionDivider from '../components/SectionDivider.astro';
   <!-- ══════════════════════════════════════════════
        WAAROM PIONEERS
   ═══════════════════════════════════════════════ -->
-  <section class="py-16 md:py-24 bg-off-white">
+  <section class="py-16 md:py-24 dot-grid-bg">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
       <div class="reveal-item max-w-xl mb-12">
         <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
@@ -267,7 +278,7 @@ import SectionDivider from '../components/SectionDivider.astro';
             class:list={[
               'reveal-item card-lift relative flex flex-col rounded-2xl border p-6 overflow-hidden',
               popular
-                ? 'bg-pioneer-navy border-pioneer-navy'
+                ? 'bg-pioneer-navy border-pioneer-navy card-glow-inner'
                 : 'bg-white border-asphalt-line hover:border-pioneer-navy/30',
             ]}
           >
@@ -309,7 +320,7 @@ import SectionDivider from '../components/SectionDivider.astro';
   <!-- ══════════════════════════════════════════════
        REVIEWS
   ═══════════════════════════════════════════════ -->
-  <section class="py-16 md:py-24 bg-off-white">
+  <section class="py-16 md:py-24 dot-grid-bg">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
       <div class="reveal-item flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
         <div>
@@ -432,11 +443,16 @@ import SectionDivider from '../components/SectionDivider.astro';
   ═══════════════════════════════════════════════ -->
   <section class="relative py-16 md:py-24 overflow-hidden" style="background: linear-gradient(135deg, #16233F 0%, #1e2f55 50%, #16233F 100%);">
     <!-- Subtle pattern overlay -->
-    <div class="absolute inset-0 opacity-30" style="background-image: repeating-linear-gradient(-22deg, transparent, transparent 70px, rgba(255,255,255,0.03) 70px, rgba(255,255,255,0.03) 72px);" aria-hidden="true"></div>
-    <!-- Red glow -->
-    <div class="absolute top-0 right-1/4 w-96 h-96 bg-pioneer-red/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute inset-0" style="background-image: repeating-linear-gradient(-22deg, transparent, transparent 70px, rgba(255,255,255,0.018) 70px, rgba(255,255,255,0.018) 72px);" aria-hidden="true"></div>
+    <!-- Floating orbs -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-24 right-1/4 w-[500px] h-[500px] rounded-full"
+           style="background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%); filter: blur(90px);"></div>
+      <div class="orb-drift-slow absolute -bottom-20 left-1/4 w-[400px] h-[400px] rounded-full"
+           style="background: radial-gradient(circle, rgba(42,67,116,0.58) 0%, transparent 65%); filter: blur(90px);"></div>
+    </div>
 
-    <div class="relative max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
       <div class="reveal-item">
         <p class="text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-5 flex items-center justify-center gap-2">
           <span class="w-5 h-px bg-pioneer-red inline-block"></span>
@@ -451,15 +467,9 @@ import SectionDivider from '../components/SectionDivider.astro';
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4">
           <a
-            href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20wil%20me%20graag%20inschrijven."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2.5 px-7 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-[#25D366]/30 hover:-translate-y-0.5 text-base"
+            href="/inschrijven"
+            class="inline-flex items-center gap-2.5 px-7 py-4 rounded-xl border-2 border-pioneer-red text-pioneer-red font-semibold transition-all duration-200 hover:bg-pioneer-red hover:text-white hover:-translate-y-0.5 text-base"
           >
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
-            </svg>
             Schrijf je nu in
           </a>
           <a

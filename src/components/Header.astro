@@ -34,35 +34,44 @@ const navItems = [
 
       <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center gap-1" aria-label="Hoofdnavigatie">
-        {navItems.map(({ href, label }) => (
-          <a
-            href={href}
-            class:list={[
-              'px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150',
-              isActive(href)
-                ? 'text-pioneer-navy bg-pioneer-navy/8 font-semibold'
-                : 'text-asphalt hover:text-pioneer-navy hover:bg-pioneer-navy/5',
-            ]}
-            aria-current={isActive(href) ? 'page' : undefined}
-          >
-            {label}
-          </a>
+        {navItems.map(({ href, label, cta }) => (
+          cta ? (
+            <a
+              href={href}
+              class:list={[
+                'ml-1 px-4 py-2 rounded-md text-sm font-semibold transition-all duration-150',
+                isActive(href)
+                  ? 'bg-pioneer-red text-white'
+                  : 'text-pioneer-red border border-pioneer-red/30 hover:bg-pioneer-red hover:text-white hover:border-pioneer-red',
+              ]}
+              aria-current={isActive(href) ? 'page' : undefined}
+            >
+              {label}
+            </a>
+          ) : (
+            <a
+              href={href}
+              class:list={[
+                'px-4 py-2 rounded-md text-sm font-medium transition-colors duration-150',
+                isActive(href)
+                  ? 'text-pioneer-navy bg-pioneer-navy/8 font-semibold'
+                  : 'text-asphalt hover:text-pioneer-navy hover:bg-pioneer-navy/5',
+              ]}
+              aria-current={isActive(href) ? 'page' : undefined}
+            >
+              {label}
+            </a>
+          )
         ))}
       </nav>
 
       <!-- Desktop CTA -->
       <div class="hidden lg:flex items-center gap-3">
         <a
-          href="https://wa.me/31643127001"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white text-sm font-semibold transition-all duration-150 hover:shadow-md hover:shadow-pioneer-red/25"
+          href="/inschrijven"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-pioneer-red text-pioneer-red text-sm font-semibold transition-all duration-150 hover:bg-pioneer-red hover:text-white"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
-          </svg>
-          WhatsApp ons
+          Schrijf je in
         </a>
       </div>
 
@@ -95,20 +104,20 @@ const navItems = [
 <!-- Mobile menu panel -->
 <nav
   id="mobile-menu"
-  class="fixed top-0 right-0 bottom-0 z-50 w-72 bg-pioneer-navy translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col"
+  class="fixed top-0 right-0 bottom-0 z-50 w-72 bg-white border-l border-asphalt-line translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col"
   aria-label="Mobiele navigatie"
 >
-  <div class="flex items-center justify-between p-5 border-b border-white/10">
+  <div class="flex items-center justify-between p-5 border-b border-asphalt-line">
     <img
       src="/logo.jpg"
       alt="Verkeersschool Pioneers"
-      class="h-9 w-auto rounded bg-white px-1.5 py-0.5 object-contain"
+      class="h-9 w-auto object-contain"
     />
     <button
       id="menu-close"
       type="button"
       aria-label="Menu sluiten"
-      class="flex items-center justify-center w-10 h-10 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+      class="flex items-center justify-center w-10 h-10 rounded-lg text-asphalt hover:text-pioneer-navy hover:bg-pioneer-navy/5 transition-colors"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -123,8 +132,8 @@ const navItems = [
         class:list={[
           'flex items-center min-h-[52px] px-4 py-3 rounded-lg text-base font-medium mb-1 transition-colors',
           isActive(href)
-            ? 'text-white bg-white/10 font-semibold'
-            : 'text-white/75 hover:text-white hover:bg-white/10',
+            ? 'text-pioneer-navy bg-pioneer-navy/8 font-semibold'
+            : 'text-asphalt hover:text-pioneer-navy hover:bg-pioneer-navy/5',
         ]}
         aria-current={isActive(href) ? 'page' : undefined}
       >
@@ -133,18 +142,12 @@ const navItems = [
     ))}
   </div>
 
-  <div class="p-4 border-t border-white/10">
+  <div class="p-4 border-t border-asphalt-line">
     <a
-      href="https://wa.me/31643127001"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="flex items-center justify-center gap-2 w-full py-3.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-colors"
+      href="/inschrijven"
+      class="flex items-center justify-center gap-2 w-full py-3.5 rounded-lg border-2 border-pioneer-red text-pioneer-red font-semibold transition-colors hover:bg-pioneer-red hover:text-white"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-        <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
-      </svg>
-      WhatsApp ons
+      Schrijf je in
     </a>
   </div>
 </nav>

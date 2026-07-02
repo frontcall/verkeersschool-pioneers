@@ -8,8 +8,12 @@ import Layout from '../layouts/Layout.astro';
 >
 
   <!-- ══ HERO ══ -->
-  <section class="hero-bg text-white py-14 md:py-18">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+  <section class="hero-bg text-white py-14 md:py-18 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-32 right-0 w-[520px] h-[520px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%);"></div>
+      <div class="orb-drift-slow absolute bottom-0 -left-20 w-[380px] h-[380px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(42,67,116,0.55) 0%, transparent 65%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8">
       <p class="hero-item text-pioneer-red font-semibold text-xs uppercase tracking-[0.18em] mb-4 flex items-center gap-2" data-delay="1">
         <span class="w-5 h-px bg-pioneer-red inline-block"></span>Pakketten & Prijzen
       </p>
@@ -38,11 +42,11 @@ import Layout from '../layouts/Layout.astro';
         <!-- HANDGESCHAKELD -->
         <button
           type="button"
-          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
+          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
           data-cat="handgeschakeld"
           aria-pressed="false"
         >
-          <div class="w-full max-w-[160px] mx-auto mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
+          <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <!-- Sedan hatchback -->
             <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="90" cy="90" rx="70" ry="5" fill="currentColor" fill-opacity="0.07"/>
@@ -77,11 +81,11 @@ import Layout from '../layouts/Layout.astro';
         <!-- AUTOMAAT -->
         <button
           type="button"
-          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
+          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
           data-cat="automaat"
           aria-pressed="false"
         >
-          <div class="w-full max-w-[160px] mx-auto mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
+          <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <!-- Automaat sedan (rounder/taller roofline) -->
             <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="90" cy="90" rx="70" ry="5" fill="currentColor" fill-opacity="0.07"/>
@@ -117,11 +121,11 @@ import Layout from '../layouts/Layout.astro';
         <!-- MOTOR -->
         <button
           type="button"
-          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
+          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
           data-cat="motor"
           aria-pressed="false"
         >
-          <div class="w-full max-w-[160px] mx-auto mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
+          <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <!-- Motorcycle -->
             <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="90" cy="92" rx="68" ry="4" fill="currentColor" fill-opacity="0.06"/>
@@ -168,11 +172,11 @@ import Layout from '../layouts/Layout.astro';
         <!-- SCOOTER -->
         <button
           type="button"
-          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
+          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
           data-cat="scooter"
           aria-pressed="false"
         >
-          <div class="w-full max-w-[160px] mx-auto mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
+          <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <!-- Scooter -->
             <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="90" cy="92" rx="65" ry="4" fill="currentColor" fill-opacity="0.06"/>
@@ -212,11 +216,11 @@ import Layout from '../layouts/Layout.astro';
         <!-- VRACHTWAGEN -->
         <button
           type="button"
-          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
+          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
           data-cat="vrachtwagen"
           aria-pressed="false"
         >
-          <div class="w-full max-w-[160px] mx-auto mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
+          <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <!-- Cab-over truck -->
             <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="100" cy="94" rx="84" ry="4" fill="currentColor" fill-opacity="0.06"/>
@@ -259,11 +263,11 @@ import Layout from '../layouts/Layout.astro';
         <!-- TAXI -->
         <button
           type="button"
-          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
+          class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red"
           data-cat="taxi"
           aria-pressed="false"
         >
-          <div class="w-full max-w-[160px] mx-auto mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
+          <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <!-- Taxi sedan with roof sign + checker stripe -->
             <svg viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
               <ellipse cx="90" cy="90" rx="70" ry="5" fill="currentColor" fill-opacity="0.07"/>
@@ -328,7 +332,7 @@ import Layout from '../layouts/Layout.astro';
               <p class="text-asphalt text-sm mt-0.5">B-rijbewijs &mdash; jij bedient de koppeling en het schakelen</p>
             </div>
           </div>
-          <p class="text-asphalt mb-10 max-w-xl ml-16">Slagen voor je rijexamen met een handgeschakelde auto. De meeste leerlingen slagen in &eacute;&eacute;n keer.</p>
+          <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Slagen voor je rijexamen met een handgeschakelde auto. De meeste leerlingen slagen in &eacute;&eacute;n keer.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Start Pakket -->
             <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
@@ -347,7 +351,7 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20me%20inschrijven%20voor%20het%20Start%20Pakket%20(handgeschakeld)." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+              <a href="/inschrijven?cat=Handgeschakeld&pakket=start" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
                 Schrijf je in
               </a>
             </div>
@@ -370,7 +374,7 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20me%20inschrijven%20voor%20het%20Studenten%20Pakket%20(handgeschakeld)." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+              <a href="/inschrijven?cat=Handgeschakeld&pakket=studenten" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
                 Schrijf je in
               </a>
             </div>
@@ -391,7 +395,7 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20me%20inschrijven%20voor%20het%20Spoed%20Pakket%20(handgeschakeld)." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+              <a href="/inschrijven?cat=Handgeschakeld&pakket=spoed" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
                 Schrijf je in
               </a>
             </div>
@@ -416,7 +420,7 @@ import Layout from '../layouts/Layout.astro';
               <p class="text-asphalt text-sm mt-0.5">B-rijbewijs &mdash; automatische versnellingsbak</p>
             </div>
           </div>
-          <p class="text-asphalt mb-10 max-w-xl ml-16">Met een automaat geef je 100% aandacht aan de weg. Ideaal als je snel wilt leren rijden.</p>
+          <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Met een automaat geef je 100% aandacht aan de weg. Ideaal als je snel wilt leren rijden.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
             <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
@@ -436,7 +440,7 @@ import Layout from '../layouts/Layout.astro';
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20me%20inschrijven%20voor%20het%20Automaat%20Pakket." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+              <a href="/inschrijven?cat=Automaat&pakket=compleet" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
                 Schrijf je in
               </a>
             </div>
@@ -473,7 +477,7 @@ import Layout from '../layouts/Layout.astro';
               <p class="text-asphalt text-sm mt-0.5">A-rijbewijs &mdash; twee wielen, volledige vrijheid</p>
             </div>
           </div>
-          <p class="text-asphalt mb-10 max-w-xl ml-16">Van A1 (lichte motor) tot A (onbeperkt) &mdash; we begeleiden jou naar het rijbewijs dat bij jou past.</p>
+          <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Van A1 (lichte motor) tot A (onbeperkt) &mdash; we begeleiden jou naar het rijbewijs dat bij jou past.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { label: 'A1 &mdash; Lichte motor', sub: 'tot 125cc / 11 kW', items: ['Inclusief theoriebegeleiding', 'Verkeersdeelname & manoeuvres', '1 praktijkexamen (deel A + B)', 'Persoonlijke instructeur'] },
@@ -498,8 +502,8 @@ import Layout from '../layouts/Layout.astro';
                   <p class="text-xs text-asphalt/60 mb-0.5">Prijs op aanvraag</p>
                   <p class="font-display font-bold text-pioneer-navy">Neem contact op</p>
                 </div>
-                <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20meer%20weten%20over%20jullie%20motorrijlessen." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
-                  WhatsApp voor prijs
+                <a href="/inschrijven?cat=Motor" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+                  Schrijf je in
                 </a>
               </div>
             ))}
@@ -524,7 +528,7 @@ import Layout from '../layouts/Layout.astro';
               <p class="text-asphalt text-sm mt-0.5">AM-rijbewijs &mdash; snel en wendbaar door de stad</p>
             </div>
           </div>
-          <p class="text-asphalt mb-10 max-w-xl ml-16">Met het AM-rijbewijs mag je legaal op een scooter tot 45 km/u rijden. Praktisch en snel te halen.</p>
+          <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Met het AM-rijbewijs mag je legaal op een scooter tot 45 km/u rijden. Praktisch en snel te halen.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
             <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
@@ -544,8 +548,8 @@ import Layout from '../layouts/Layout.astro';
                 <p class="text-white/50 text-xs mb-0.5">Prijs op aanvraag</p>
                 <p class="font-display font-bold text-white">Neem contact op</p>
               </div>
-              <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20meer%20weten%20over%20jullie%20scooterlessen." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
-                WhatsApp voor prijs
+              <a href="/inschrijven?cat=Scooter" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+                Schrijf je in
               </a>
             </div>
             <div class="bg-off-white rounded-2xl border border-asphalt-line p-7 flex flex-col justify-center gap-4">
@@ -579,7 +583,7 @@ import Layout from '../layouts/Layout.astro';
               <p class="text-asphalt text-sm mt-0.5">C-rijbewijs &mdash; zware voertuigen, grote kansen</p>
             </div>
           </div>
-          <p class="text-asphalt mb-10 max-w-xl ml-16">Het C-rijbewijs opent de deur naar een carri&egrave;re in transport en logistiek. Wij begeleiden je van begin tot examen.</p>
+          <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Het C-rijbewijs opent de deur naar een carri&egrave;re in transport en logistiek. Wij begeleiden je van begin tot examen.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
             {[
               { label: 'C &mdash; Vrachtwagen', sub: 'Meer dan 3.500 kg, geen aanhanger', items: ['Rijbaantechniek & zwaar voertuigbeheer', 'Blinde hoek & manoeuvres', 'Economisch rijden (eco-driving)', '1 praktijkexamen'] },
@@ -603,8 +607,8 @@ import Layout from '../layouts/Layout.astro';
                   <p class="text-xs text-asphalt/60 mb-0.5">Prijs op aanvraag</p>
                   <p class="font-display font-bold text-pioneer-navy">Neem contact op</p>
                 </div>
-                <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20meer%20weten%20over%20jullie%20vrachtwagenlessen." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
-                  WhatsApp voor prijs
+                <a href="/inschrijven?cat=Vrachtwagen" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+                  Schrijf je in
                 </a>
               </div>
             ))}
@@ -628,7 +632,7 @@ import Layout from '../layouts/Layout.astro';
               <p class="text-asphalt text-sm mt-0.5">Taxichauffeur worden &mdash; theorie + praktijk</p>
             </div>
           </div>
-          <p class="text-asphalt mb-10 max-w-xl ml-16">Als taxichauffeur heb je naast een B-rijbewijs ook een taxikaart (chauffeurskaart) nodig. Wij helpen je door het hele traject.</p>
+          <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Als taxichauffeur heb je naast een B-rijbewijs ook een taxikaart (chauffeurskaart) nodig. Wij helpen je door het hele traject.</p>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-3xl">
             <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
@@ -648,8 +652,8 @@ import Layout from '../layouts/Layout.astro';
                 <p class="text-white/50 text-xs mb-0.5">Prijs op aanvraag</p>
                 <p class="font-display font-bold text-white">Neem contact op</p>
               </div>
-              <a href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20meer%20weten%20over%20jullie%20taxi%20rijopleiding." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
-                WhatsApp voor prijs
+              <a href="/inschrijven?cat=Taxi" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+                Schrijf je in
               </a>
             </div>
             <div class="space-y-4">
@@ -742,8 +746,12 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ══ BOTTOM CTA ══ -->
-  <section class="hero-bg text-white py-14">
-    <div class="max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
+  <section class="hero-bg text-white py-14 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-20 right-1/4 w-[450px] h-[450px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%);"></div>
+      <div class="orb-drift-slow absolute bottom-0 left-1/4 w-[350px] h-[350px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(42,67,116,0.55) 0%, transparent 65%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
       <div class="reveal-item">
         <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-3">Nog vragen of direct inschrijven?</h2>
         <p class="text-white/55 mb-7">We staan voor je klaar &mdash; 7 dagen per week, ook 's avonds.</p>
