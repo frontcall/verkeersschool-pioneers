@@ -22,11 +22,14 @@ const navItems = [
       <!-- Logo -->
       <a
         href="/"
-        class="flex-shrink-0 font-display font-bold text-lg md:text-xl text-white tracking-tight leading-none"
+        class="flex-shrink-0"
         aria-label="Verkeersschool Pioneers — naar de homepage"
       >
-        Verkeersschool<br class="hidden sm:block" />
-        <span class="text-pioneer-red">Pioneers</span>
+        <img
+          src="/logo.jpg"
+          alt="Verkeersschool Pioneers"
+          class="h-10 md:h-12 w-auto rounded-md bg-white px-1.5 py-0.5 object-contain"
+        />
       </a>
 
       <!-- Desktop nav -->
@@ -96,9 +99,11 @@ const navItems = [
   aria-label="Mobiele navigatie"
 >
   <div class="flex items-center justify-between p-5 border-b border-white/10">
-    <span class="font-display font-bold text-white text-base">
-      Verkeersschool <span class="text-pioneer-red">Pioneers</span>
-    </span>
+    <img
+      src="/logo.jpg"
+      alt="Verkeersschool Pioneers"
+      class="h-9 w-auto rounded bg-white px-1.5 py-0.5 object-contain"
+    />
     <button
       id="menu-close"
       type="button"
