@@ -41,16 +41,29 @@ import Layout from '../layouts/Layout.astro';
         <button type="button" class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red" data-cat="b" aria-pressed="false">
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <svg viewBox="0 0 200 110" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-              <ellipse cx="100" cy="104" rx="76" ry="4.5" fill="currentColor" fill-opacity="0.06"/>
-              <path d="M27 82 C24 82 22 78 22 72 L22 62 C22 54 26 48 34 45 L60 37 C65 24 76 19 92 19 L118 19 C134 19 144 24 152 36 L168 48 C172 54 176 60 176 68 L176 82 Z" fill="currentColor" fill-opacity="0.09" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M62 37 L70 20 L128 20 L148 36 L140 50 L68 50 Z" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              <line x1="104" y1="50" x2="104" y2="82" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.22"/>
-              <rect x="173" y="52" width="4" height="10" rx="2" fill="currentColor" fill-opacity="0.55"/>
-              <rect x="21" y="52" width="3" height="10" rx="1.5" fill="currentColor" fill-opacity="0.45"/>
-              <circle cx="52" cy="82" r="18" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="52" cy="82" r="7" fill="currentColor" fill-opacity="0.22"/>
-              <circle cx="154" cy="82" r="18" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="154" cy="82" r="7" fill="currentColor" fill-opacity="0.22"/>
+              <ellipse cx="100" cy="104" rx="72" ry="5" fill="#A8C2E0" fill-opacity="0.35"/>
+              <path d="M26 82 C22 82 18 78 18 72 L18 64 C18 54 24 46 32 42 L60 34 C64 22 76 18 92 18 L118 18 C134 18 146 22 152 34 L170 46 C176 54 180 62 180 70 L180 82 Z"
+                    fill="#E8EFF9" stroke="#576DB8" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M62 34 L70 20 L130 20 L150 34 L140 50 L68 50 Z"
+                    fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <line x1="104" y1="50" x2="104" y2="82" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.40"/>
+              <rect x="116" y="68" width="12" height="4" rx="2" fill="#CDE0F5" stroke="#576DB8" stroke-width="1"/>
+              <rect x="176" y="56" width="5" height="16" rx="2.5" fill="#BAD0F0" stroke="#576DB8" stroke-width="1.5"/>
+              <rect x="17" y="56" width="4" height="16" rx="2" fill="#BAD0F0" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="52" cy="82" r="18" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="52" cy="82" r="10" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="52" cy="82" r="4" fill="#576DB8"/>
+              <line x1="52" y1="72" x2="52" y2="78" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="52" y1="86" x2="52" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="42" y1="82" x2="48" y2="82" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="56" y1="82" x2="62" y2="82" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <circle cx="154" cy="82" r="18" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="154" cy="82" r="10" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="154" cy="82" r="4" fill="#576DB8"/>
+              <line x1="154" y1="72" x2="154" y2="78" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="154" y1="86" x2="154" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="144" y1="82" x2="150" y2="82" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="158" y1="82" x2="164" y2="82" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
             </svg>
           </div>
           <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
@@ -66,54 +79,51 @@ import Layout from '../layouts/Layout.astro';
         <button type="button" class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red" data-cat="a" aria-pressed="false">
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <svg viewBox="0 0 200 118" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-              <ellipse cx="103" cy="112" rx="76" ry="4" fill="currentColor" fill-opacity="0.06"/>
-              <!-- SWINGARM (behind wheels) -->
-              <path d="M138 62 L152 84" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-              <!-- REAR WHEEL — sport alloy with rim ring, brake disc ring, hub, 6 spokes -->
-              <circle cx="152" cy="88" r="24" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="2"/>
-              <circle cx="152" cy="88" r="16" fill="none" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.22"/>
-              <circle cx="152" cy="88" r="10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.32"/>
-              <circle cx="152" cy="88" r="5" fill="currentColor" fill-opacity="0.32"/>
-              <line x1="152" y1="64" x2="152" y2="78" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
-              <line x1="152" y1="98" x2="152" y2="112" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
-              <line x1="128" y1="88" x2="142" y2="88" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
-              <line x1="162" y1="88" x2="176" y2="88" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
-              <line x1="135" y1="71" x2="145" y2="81" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.18"/>
-              <line x1="159" y1="95" x2="169" y2="105" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.18"/>
-              <!-- FRONT WHEEL — identical sport alloy style -->
-              <circle cx="54" cy="88" r="24" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="2"/>
-              <circle cx="54" cy="88" r="16" fill="none" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.22"/>
-              <circle cx="54" cy="88" r="10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.32"/>
-              <circle cx="54" cy="88" r="5" fill="currentColor" fill-opacity="0.32"/>
-              <line x1="54" y1="64" x2="54" y2="78" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
-              <line x1="54" y1="98" x2="54" y2="112" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
-              <line x1="30" y1="88" x2="44" y2="88" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
-              <line x1="64" y1="88" x2="78" y2="88" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
-              <line x1="37" y1="71" x2="47" y2="81" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.18"/>
-              <line x1="61" y1="95" x2="71" y2="105" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.18"/>
-              <!-- EXHAUST HEADER PIPE (exits engine underside, curves rearward) -->
-              <path d="M106 76 C120 86 134 86 150 80" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity="0.36"/>
-              <!-- ENGINE BLOCK — large exposed mass, three cooling-fin lines -->
-              <path d="M88 52 L136 52 L140 76 L90 78 Z" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <line x1="89" y1="58" x2="138" y2="57" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.26"/>
-              <line x1="89" y1="65" x2="138" y2="64" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.26"/>
-              <line x1="90" y1="72" x2="138" y2="71" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.26"/>
-              <!-- USD FRONT FORKS — thick stanchion tube + offset inner tube -->
-              <path d="M76 46 L58 88" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-              <path d="M82 44 L64 86" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity="0.34"/>
-              <!-- UNIFIED BODY — tank + seat + tail as one clean silhouette -->
-              <path d="M82 46 L86 22 C100 12 126 12 140 20 L152 28 C162 34 174 44 178 52 L178 60 C168 64 154 66 142 62 L136 52 L88 52 Z"
-                    fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <!-- HEADLIGHT UNIT — angular pentagon (sport naked style) -->
-              <path d="M66 52 L68 38 L80 36 L82 52 L76 58 Z"
-                    fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <!-- HANDLEBARS — flat bar + stem -->
-              <path d="M82 42 L92 34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M90 34 L110 34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- Rectangular mirror (sport style) -->
-              <rect x="108" y="27" width="7" height="9" rx="1" fill="currentColor" fill-opacity="0.24" stroke="currentColor" stroke-width="1.2" transform="rotate(8 108 27)"/>
+              <!-- Ground shadow -->
+              <ellipse cx="100" cy="113" rx="80" ry="4.5" fill="#A8C2E0" fill-opacity="0.35"/>
+              <!-- REAR WHEEL (large sport alloy) -->
+              <circle cx="150" cy="90" r="24" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="150" cy="90" r="14" fill="none" stroke="#576DB8" stroke-width="1" stroke-opacity="0.40"/>
+              <circle cx="150" cy="90" r="5" fill="#576DB8"/>
+              <line x1="150" y1="66" x2="150" y2="79" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.30"/>
+              <line x1="150" y1="101" x2="150" y2="114" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.30"/>
+              <line x1="126" y1="90" x2="139" y2="90" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.30"/>
+              <line x1="161" y1="90" x2="174" y2="90" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.30"/>
+              <line x1="133" y1="73" x2="143" y2="83" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.22"/>
+              <line x1="157" y1="97" x2="167" y2="107" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.22"/>
+              <!-- SWINGARM -->
+              <path d="M112 80 L150 88" stroke="#576DB8" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- EXHAUST PIPE -->
+              <path d="M86 84 C106 90 128 88 150 82" stroke="#576DB8" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.45"/>
+              <!-- MAIN FAIRING / BODY SILHOUETTE (full-faired sport bike) -->
+              <path d="M18 78 C14 64 16 46 28 30 C38 16 54 8 74 8 L110 8 C126 8 140 14 150 26 C156 34 158 50 152 62 C148 72 140 78 124 80 L54 80 C38 80 24 80 18 78 Z"
+                    fill="#E8EFF9" stroke="#576DB8" stroke-width="2" stroke-linejoin="round"/>
+              <!-- SEAT (runs along the top of the fairing) -->
+              <path d="M72 10 C90 6 122 8 150 24 L144 32 C120 18 90 14 72 18 Z"
+                    fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- PASSENGER HUMP (rear of seat) -->
+              <path d="M146 24 C156 14 170 16 172 28 C176 44 166 64 154 70 L144 62 C150 52 154 38 150 28 Z"
+                    fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- WINDSCREEN (small angled piece at top-front of fairing) -->
+              <path d="M30 30 L40 16 L54 18 L48 34 Z"
+                    fill="#D8E7F7" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- HEADLIGHT (front of fairing) -->
+              <ellipse cx="20" cy="62" rx="6" ry="10" fill="#D8E7F7" stroke="#576DB8" stroke-width="1.5"/>
+              <!-- FRONT FORK (angled from steering head down to wheel) -->
+              <path d="M58 74 L52 90" stroke="#576DB8" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M64 74 L58 90" stroke="#576DB8" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.40"/>
+              <!-- FRONT WHEEL (large sport alloy) -->
+              <circle cx="50" cy="90" r="24" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="50" cy="90" r="14" fill="none" stroke="#576DB8" stroke-width="1" stroke-opacity="0.40"/>
+              <circle cx="50" cy="90" r="5" fill="#576DB8"/>
+              <line x1="50" y1="66" x2="50" y2="79" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.30"/>
+              <line x1="50" y1="101" x2="50" y2="114" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.30"/>
+              <line x1="26" y1="90" x2="39" y2="90" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.30"/>
+              <line x1="61" y1="90" x2="74" y2="90" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.30"/>
+              <line x1="33" y1="73" x2="43" y2="83" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.22"/>
+              <line x1="57" y1="97" x2="67" y2="107" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.22"/>
               <!-- TAILLIGHT -->
-              <rect x="174" y="50" width="5" height="5" rx="1" fill="currentColor" fill-opacity="0.55"/>
+              <rect x="170" y="52" width="5" height="8" rx="2" fill="#576DB8"/>
             </svg>
           </div>
           <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
@@ -129,53 +139,57 @@ import Layout from '../layouts/Layout.astro';
         <button type="button" class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red" data-cat="am" aria-pressed="false">
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <svg viewBox="0 0 200 118" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-              <ellipse cx="100" cy="110" rx="74" ry="4" fill="currentColor" fill-opacity="0.06"/>
-              <!-- REAR WHEEL (small 12" alloy — distinctly smaller than motorcycle) -->
-              <circle cx="150" cy="90" r="14" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="150" cy="90" r="6" fill="currentColor" fill-opacity="0.22"/>
-              <line x1="150" y1="76" x2="150" y2="84" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="150" y1="96" x2="150" y2="104" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="136" y1="90" x2="144" y2="90" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="156" y1="90" x2="164" y2="90" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <!-- FRONT WHEEL (same small size) -->
-              <circle cx="46" cy="90" r="14" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="46" cy="90" r="6" fill="currentColor" fill-opacity="0.22"/>
-              <line x1="46" y1="76" x2="46" y2="84" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="46" y1="96" x2="46" y2="104" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="32" y1="90" x2="40" y2="90" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="52" y1="90" x2="60" y2="90" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <!-- FLOOR PLATFORM (low step-through, visible between the two body panels) -->
-              <rect x="70" y="76" width="38" height="12" rx="2" fill="currentColor" fill-opacity="0.09" stroke="currentColor" stroke-width="1.5"/>
-              <!-- LEGSHIELD — organic convex front apron, widest at mid-height -->
-              <path d="M58 30 C50 26 34 38 30 54 C24 70 36 82 50 84 L70 84 L70 34 C68 30 62 26 58 30 Z"
-                    fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <!-- Legshield pressed-steel ridge lines (iconic Vespa detail) -->
-              <path d="M32 50 C40 50 54 50 68 52" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.34"/>
-              <path d="M28 62 C36 62 52 62 68 64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.34"/>
-              <path d="M32 74 C40 74 54 74 68 76" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.34"/>
-              <!-- REAR COWL — the large rounded signature Vespa mass, enclosing the engine -->
-              <path d="M108 64 C106 48 114 28 128 20 C142 12 162 14 172 26 C180 36 182 54 180 70 C178 80 170 88 158 90 L142 90 L108 90 C106 80 106 72 108 64 Z"
-                    fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <!-- SEAT — long saddle set into the top of the rear cowl -->
-              <path d="M116 26 C120 18 156 16 168 26 C172 34 170 50 164 54 C152 60 122 60 116 54 C112 48 112 36 116 26 Z"
-                    fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <!-- Cowl accent panel crease -->
-              <path d="M142 28 C162 34 178 58 174 78 C172 86 162 92 152 94" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-opacity="0.26"/>
-              <!-- FRONT FORK — only visible portion below legshield -->
-              <path d="M50 82 L46 90" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-              <!-- HANDLEBAR STEM -->
-              <path d="M62 28 L62 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <!-- HANDLEBARS — Vespa ram's-horn style sweeping outward -->
-              <path d="M62 14 C60 8 50 8 46 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M62 14 C64 8 74 8 78 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Round mirrors at bar ends -->
-              <circle cx="46" cy="14" r="4.5" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="78" cy="14" r="4.5" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1.5"/>
-              <!-- ROUND HEADLIGHT (on front of fork, top of legshield) -->
-              <circle cx="36" cy="44" r="9" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="2"/>
-              <circle cx="36" cy="44" r="5" fill="currentColor" fill-opacity="0.28"/>
-              <!-- TAILLIGHT -->
-              <rect x="175" y="32" width="5" height="8" rx="2" fill="currentColor" fill-opacity="0.45"/>
+              <!-- Ground shadow -->
+              <ellipse cx="100" cy="112" rx="72" ry="4" fill="#A8C2E0" fill-opacity="0.35"/>
+              <!-- REAR STORAGE BOX (dominant feature — boxy cargo box at rear) -->
+              <rect x="82" y="46" width="74" height="40" rx="5" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <!-- Storage box shelf line -->
+              <line x1="82" y1="60" x2="156" y2="60" stroke="#576DB8" stroke-width="1" stroke-opacity="0.26"/>
+              <!-- Rear fender arch over rear wheel -->
+              <path d="M126 86 C126 66 172 66 172 86" fill="none" stroke="#576DB8" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- SEAT (narrow saddle between legshield and storage box) -->
+              <path d="M64 52 C68 44 78 40 84 42 L84 52 C78 54 72 58 68 64 Z"
+                    fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- FLOOR BOARD (step-through platform) -->
+              <rect x="62" y="76" width="24" height="12" rx="2" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.5"/>
+              <!-- LEGSHIELD (organic convex front panel) -->
+              <path d="M62 26 C50 22 36 22 26 32 C18 42 16 56 20 70 C24 78 34 86 44 88 L64 84 C64 68 62 48 62 26 Z"
+                    fill="#D8E7F7" stroke="#576DB8" stroke-width="2" stroke-linejoin="round"/>
+              <!-- Legshield ridge lines -->
+              <path d="M26 50 C36 48 54 50 62 52" stroke="#576DB8" stroke-width="1" stroke-linecap="round" stroke-opacity="0.38"/>
+              <path d="M22 64 C32 62 52 64 62 66" stroke="#576DB8" stroke-width="1" stroke-linecap="round" stroke-opacity="0.38"/>
+              <!-- ROUND HEADLIGHT (front face of legshield) -->
+              <circle cx="20" cy="54" r="10" fill="#D8E7F7" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="20" cy="54" r="5" fill="#576DB8"/>
+              <!-- FRONT FORK (lower visible section below legshield) -->
+              <path d="M46 84 L42 92" stroke="#576DB8" stroke-width="3" stroke-linecap="round"/>
+              <path d="M52 84 L48 92" stroke="#576DB8" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.40"/>
+              <!-- HANDLEBAR STEM (rises above legshield top) -->
+              <line x1="58" y1="24" x2="58" y2="10" stroke="#576DB8" stroke-width="2" stroke-linecap="round"/>
+              <!-- HANDLEBARS -->
+              <path d="M58 10 C56 4 44 4 40 10" stroke="#576DB8" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M58 10 C60 4 70 4 74 10" stroke="#576DB8" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Round mirrors on handlebars -->
+              <circle cx="40" cy="10" r="5" fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5"/>
+              <circle cx="74" cy="10" r="5" fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5"/>
+              <!-- FRONT WHEEL (small scooter wheel) -->
+              <circle cx="42" cy="92" r="14" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="42" cy="92" r="8" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="42" cy="92" r="3" fill="#576DB8"/>
+              <line x1="42" y1="78" x2="42" y2="85" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.36"/>
+              <line x1="42" y1="99" x2="42" y2="106" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.36"/>
+              <line x1="28" y1="92" x2="35" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.36"/>
+              <line x1="49" y1="92" x2="56" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.36"/>
+              <!-- REAR WHEEL (small, mostly behind storage box) -->
+              <circle cx="154" cy="92" r="14" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="154" cy="92" r="8" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="154" cy="92" r="3" fill="#576DB8"/>
+              <line x1="154" y1="78" x2="154" y2="85" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.36"/>
+              <line x1="154" y1="99" x2="154" y2="106" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.36"/>
+              <line x1="140" y1="92" x2="147" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.36"/>
+              <line x1="161" y1="92" x2="168" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.36"/>
+              <!-- Taillight on back of storage box -->
+              <rect x="155" y="57" width="5" height="10" rx="2" fill="#576DB8"/>
             </svg>
           </div>
           <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
@@ -191,22 +205,36 @@ import Layout from '../layouts/Layout.astro';
         <button type="button" class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red" data-cat="c" aria-pressed="false">
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <svg viewBox="0 0 200 110" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-              <ellipse cx="100" cy="104" rx="88" ry="4.5" fill="currentColor" fill-opacity="0.06"/>
-              <rect x="72" y="26" width="118" height="58" rx="3" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <line x1="114" y1="26" x2="114" y2="84" stroke="currentColor" stroke-width="1" stroke-opacity="0.25"/>
-              <line x1="152" y1="26" x2="152" y2="84" stroke="currentColor" stroke-width="1" stroke-opacity="0.25"/>
-              <rect x="10" y="22" width="64" height="62" rx="5" fill="currentColor" fill-opacity="0.11" stroke="currentColor" stroke-width="2"/>
-              <rect x="17" y="29" width="50" height="30" rx="3" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M10 22 C10 16 20 12 32 12 L74 14 L74 22 Z" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              <rect x="7" y="70" width="12" height="14" rx="2" fill="currentColor" fill-opacity="0.38"/>
-              <rect x="9" y="36" width="4" height="10" rx="2" fill="currentColor" fill-opacity="0.55"/>
-              <circle cx="34" cy="86" r="14" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="34" cy="86" r="6" fill="currentColor" fill-opacity="0.20"/>
-              <circle cx="68" cy="86" r="14" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="68" cy="86" r="6" fill="currentColor" fill-opacity="0.20"/>
-              <circle cx="158" cy="86" r="14" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="158" cy="86" r="6" fill="currentColor" fill-opacity="0.20"/>
-              <circle cx="178" cy="86" r="12" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.55"/>
+              <ellipse cx="105" cy="104" rx="88" ry="4.5" fill="#A8C2E0" fill-opacity="0.35"/>
+              <rect x="70" y="20" width="122" height="64" rx="3" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <line x1="110" y1="20" x2="110" y2="84" stroke="#576DB8" stroke-width="1" stroke-opacity="0.22"/>
+              <line x1="152" y1="20" x2="152" y2="84" stroke="#576DB8" stroke-width="1" stroke-opacity="0.22"/>
+              <line x1="70" y1="30" x2="192" y2="30" stroke="#576DB8" stroke-width="0.8" stroke-opacity="0.18"/>
+              <rect x="185" y="28" width="5" height="46" rx="2" fill="#E8EFF9" stroke="#576DB8" stroke-width="1" stroke-opacity="0.35"/>
+              <rect x="8" y="18" width="64" height="66" rx="4" fill="#D8E7F7" stroke="#576DB8" stroke-width="2"/>
+              <rect x="15" y="26" width="50" height="34" rx="3" fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5"/>
+              <path d="M8 18 C8 12 18 8 30 8 L72 10 L72 18 Z" fill="#D8E7F7" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <line x1="8" y1="36" x2="2" y2="36" stroke="#576DB8" stroke-width="2" stroke-linecap="round"/>
+              <rect x="0" y="32" width="5" height="8" rx="1.5" fill="#CDE0F5" stroke="#576DB8" stroke-width="1"/>
+              <rect x="8" y="64" width="14" height="14" rx="2" fill="#BAD0F0" stroke="#576DB8" stroke-width="1.2"/>
+              <rect x="14" y="78" width="28" height="6" rx="2" fill="#D8E7F7" stroke="#576DB8" stroke-width="1"/>
+              <rect x="185" y="36" width="5" height="12" rx="2" fill="#BAD0F0" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="36" cy="86" r="14" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="36" cy="86" r="8" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="36" cy="86" r="3" fill="#576DB8"/>
+              <line x1="36" y1="78" x2="36" y2="83" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="36" y1="89" x2="36" y2="94" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="28" y1="86" x2="33" y2="86" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="39" y1="86" x2="44" y2="86" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <circle cx="152" cy="86" r="14" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="152" cy="86" r="8" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="152" cy="86" r="3" fill="#576DB8"/>
+              <line x1="152" y1="78" x2="152" y2="83" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="152" y1="89" x2="152" y2="94" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="144" y1="86" x2="149" y2="86" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="155" y1="86" x2="160" y2="86" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <circle cx="170" cy="86" r="12" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.65"/>
+              <circle cx="170" cy="86" r="7" fill="#E8EFF9" stroke="#576DB8" stroke-width="1" stroke-opacity="0.45"/>
             </svg>
           </div>
           <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
@@ -222,25 +250,44 @@ import Layout from '../layouts/Layout.astro';
         <button type="button" class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red" data-cat="taxi" aria-pressed="false">
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <svg viewBox="0 0 200 110" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-              <ellipse cx="100" cy="104" rx="76" ry="4.5" fill="currentColor" fill-opacity="0.06"/>
-              <path d="M27 82 C24 82 22 78 22 72 L22 62 C22 54 26 48 34 45 L60 37 C65 24 76 19 92 19 L118 19 C134 19 144 24 152 36 L168 48 C172 54 176 60 176 68 L176 82 Z" fill="currentColor" fill-opacity="0.09" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M62 37 L70 20 L128 20 L148 36 L140 50 L68 50 Z" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              <line x1="104" y1="50" x2="104" y2="82" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.22"/>
-              <rect x="84" y="12" width="30" height="10" rx="3" fill="currentColor" fill-opacity="0.45" stroke="currentColor" stroke-width="1.5"/>
-              <rect x="46" y="62" width="8" height="7" fill="currentColor" fill-opacity="0.28"/>
-              <rect x="62" y="62" width="8" height="7" fill="currentColor" fill-opacity="0.28"/>
-              <rect x="78" y="62" width="8" height="7" fill="currentColor" fill-opacity="0.28"/>
-              <rect x="94" y="62" width="8" height="7" fill="currentColor" fill-opacity="0.28"/>
-              <rect x="110" y="62" width="8" height="7" fill="currentColor" fill-opacity="0.28"/>
-              <rect x="126" y="62" width="8" height="7" fill="currentColor" fill-opacity="0.28"/>
-              <rect x="142" y="62" width="8" height="7" fill="currentColor" fill-opacity="0.28"/>
-              <rect x="158" y="62" width="8" height="7" fill="currentColor" fill-opacity="0.28"/>
-              <rect x="173" y="52" width="4" height="10" rx="2" fill="currentColor" fill-opacity="0.55"/>
-              <rect x="21" y="52" width="3" height="10" rx="1.5" fill="currentColor" fill-opacity="0.45"/>
-              <circle cx="52" cy="82" r="18" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="52" cy="82" r="7" fill="currentColor" fill-opacity="0.22"/>
-              <circle cx="154" cy="82" r="18" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="154" cy="82" r="7" fill="currentColor" fill-opacity="0.22"/>
+              <ellipse cx="100" cy="104" rx="72" ry="4.5" fill="#A8C2E0" fill-opacity="0.35"/>
+              <path d="M26 82 C22 82 18 78 18 72 L18 64 C18 54 24 46 32 42 L58 35 C62 24 74 18 90 18 L120 18 C136 18 148 24 152 35 L168 44 C174 52 178 60 178 70 L178 82 Z"
+                    fill="#E8EFF9" stroke="#576DB8" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M60 35 L66 20 L132 20 L150 35 L140 50 L66 50 Z"
+                    fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <line x1="102" y1="50" x2="102" y2="82" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.40"/>
+              <rect x="83" y="10" width="34" height="10" rx="3" fill="#BAD0F0" stroke="#576DB8" stroke-width="1.5"/>
+              <line x1="88" y1="14" x2="112" y2="14" stroke="#576DB8" stroke-width="1" stroke-opacity="0.35"/>
+              <rect x="44" y="58" width="8" height="7" fill="#BAD0F0"/>
+              <rect x="52" y="58" width="8" height="7" fill="#E8EFF9"/>
+              <rect x="60" y="58" width="8" height="7" fill="#BAD0F0"/>
+              <rect x="68" y="58" width="8" height="7" fill="#E8EFF9"/>
+              <rect x="76" y="58" width="8" height="7" fill="#BAD0F0"/>
+              <rect x="84" y="58" width="8" height="7" fill="#E8EFF9"/>
+              <rect x="92" y="58" width="8" height="7" fill="#BAD0F0"/>
+              <rect x="100" y="58" width="8" height="7" fill="#E8EFF9"/>
+              <rect x="108" y="58" width="8" height="7" fill="#BAD0F0"/>
+              <rect x="116" y="58" width="8" height="7" fill="#E8EFF9"/>
+              <rect x="124" y="58" width="8" height="7" fill="#BAD0F0"/>
+              <rect x="132" y="58" width="8" height="7" fill="#E8EFF9"/>
+              <rect x="140" y="58" width="8" height="7" fill="#BAD0F0"/>
+              <rect x="114" y="68" width="12" height="4" rx="2" fill="#CDE0F5" stroke="#576DB8" stroke-width="1"/>
+              <rect x="174" y="54" width="5" height="16" rx="2.5" fill="#BAD0F0" stroke="#576DB8" stroke-width="1.5"/>
+              <rect x="17" y="54" width="4" height="16" rx="2" fill="#BAD0F0" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="52" cy="82" r="18" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="52" cy="82" r="10" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="52" cy="82" r="4" fill="#576DB8"/>
+              <line x1="52" y1="72" x2="52" y2="78" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="52" y1="86" x2="52" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="42" y1="82" x2="48" y2="82" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="56" y1="82" x2="62" y2="82" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <circle cx="152" cy="82" r="18" fill="#E8EFF9" stroke="#576DB8" stroke-width="2"/>
+              <circle cx="152" cy="82" r="10" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2"/>
+              <circle cx="152" cy="82" r="4" fill="#576DB8"/>
+              <line x1="152" y1="72" x2="152" y2="78" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="152" y1="86" x2="152" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="142" y1="82" x2="148" y2="82" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
+              <line x1="156" y1="82" x2="162" y2="82" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.38"/>
             </svg>
           </div>
           <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
