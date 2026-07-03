@@ -511,21 +511,20 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Met het AM-rijbewijs mag je legaal op een scooter tot 45 km/u rijden. Praktisch en snel te halen.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
-            <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden">
-              <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
-              <div class="absolute -bottom-10 -right-10 w-36 h-36 bg-pioneer-red/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
-              <p class="text-xs font-bold uppercase tracking-widest text-white/45 mb-3">AM-pakket</p>
-              <ul class="space-y-3 flex-1 mb-7 relative">
+            <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
+              <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/60 to-pioneer-red/20 rounded-t-2xl"></div>
+              <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">AM-pakket</p>
+              <ul class="space-y-3 flex-1 mb-7">
                 {['Theoriebegeleiding inbegrepen', 'Verkeersdeelname op locatie', 'Manoeuvres & veiligheidscheck', '1 praktijkexamen'].map(item => (
-                  <li class="flex items-start gap-2.5 text-sm text-white/80">
-                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
-                      <svg class="w-3 h-3 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <li class="flex items-start gap-2.5 text-sm text-asphalt">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-success-soft/12 flex items-center justify-center mt-0.5">
+                      <svg class="w-3 h-3 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                     </span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <a href="/inschrijven" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+              <a href="/inschrijven" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
                 Neem contact met ons op
               </a>
             </div>
@@ -642,21 +641,20 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Als taxichauffeur heb je naast een B-rijbewijs ook een taxikaart (chauffeurskaart) nodig. Wij helpen je door het hele traject.</p>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-3xl">
-            <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden">
-              <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
-              <div class="absolute -bottom-10 -right-10 w-36 h-36 bg-pioneer-red/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
-              <p class="text-xs font-bold uppercase tracking-widest text-white/45 mb-3">Taxi Pakket</p>
-              <ul class="space-y-3 flex-1 mb-7 relative">
+            <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
+              <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/60 to-pioneer-red/20 rounded-t-2xl"></div>
+              <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Taxi Pakket</p>
+              <ul class="space-y-3 flex-1 mb-7">
                 {['B-rijbewijs (indien nodig)', 'Theoriebegeleiding chauffeurskaart', 'Praktijkbegeleiding & routekennis', 'Tarieven & regelgeving (AVV)', 'Begeleiding aanvraag taxikaart'].map(item => (
-                  <li class="flex items-start gap-2.5 text-sm text-white/80">
-                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
-                      <svg class="w-3 h-3 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <li class="flex items-start gap-2.5 text-sm text-asphalt">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-success-soft/12 flex items-center justify-center mt-0.5">
+                      <svg class="w-3 h-3 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                     </span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <a href="/inschrijven" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
+              <a href="/inschrijven" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
                 Neem contact met ons op
               </a>
             </div>
