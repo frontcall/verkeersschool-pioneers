@@ -222,6 +222,22 @@ html.js-ready .reveal-item[data-delay="6"] { transition-delay: 420ms; }
   background: linear-gradient(90deg, #D62839, #A81C2A);
 }
 
+/* ── SECTION EYEBROW LABELS ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.875rem;
+  border-radius: 9999px;
+  background-color: rgba(214, 40, 57, 0.10);
+  border: 1px solid rgba(214, 40, 57, 0.28);
+  color: #D62839;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
 /* ── WHATSAPP PULSE ── */
 @keyframes wa-pulse {
   0%   { transform: scale(1);    opacity: 0.6; }
