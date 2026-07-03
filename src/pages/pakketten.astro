@@ -78,7 +78,50 @@ import Layout from '../layouts/Layout.astro';
         <!-- A -->
         <button type="button" class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red" data-cat="a" aria-pressed="false">
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4">
-            <img src="/motor-a.jpg" alt="Motor" class="w-full h-auto object-contain" />
+            <svg viewBox="0 0 200 118" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+              <ellipse cx="100" cy="114" rx="82" ry="4" fill="#A8C2E0" fill-opacity="0.35"/>
+              <!-- Rear wheel -->
+              <circle cx="152" cy="90" r="24" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.8"/>
+              <circle cx="152" cy="90" r="14" fill="none" stroke="#576DB8" stroke-width="1" stroke-opacity="0.40"/>
+              <circle cx="152" cy="90" r="5" fill="#576DB8"/>
+              <line x1="152" y1="66" x2="152" y2="78" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.28"/>
+              <line x1="152" y1="102" x2="152" y2="114" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.28"/>
+              <line x1="128" y1="90" x2="140" y2="90" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.28"/>
+              <line x1="164" y1="90" x2="176" y2="90" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.28"/>
+              <line x1="135" y1="73" x2="143" y2="81" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.20"/>
+              <line x1="161" y1="99" x2="169" y2="107" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.20"/>
+              <!-- Swingarm -->
+              <path d="M110 80 L152 88" stroke="#576DB8" stroke-width="2" stroke-linecap="round"/>
+              <!-- Exhaust -->
+              <path d="M80 82 C104 88 130 86 152 80" stroke="#576DB8" stroke-width="2" stroke-linecap="round" stroke-opacity="0.42"/>
+              <!-- Main fairing body -->
+              <path d="M14 76 C12 60 14 44 24 30 C32 18 50 10 66 10 L126 10 C138 8 148 12 154 22 C160 32 162 48 158 62 C154 72 144 78 128 80 L54 80 C38 80 22 80 14 76 Z" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- Body crease line -->
+              <path d="M28 52 C52 60 90 62 126 58 C138 56 150 52 156 54" fill="none" stroke="#576DB8" stroke-width="1" stroke-linecap="round" stroke-opacity="0.36"/>
+              <!-- Seat along top -->
+              <path d="M64 12 C86 8 118 8 154 22 L148 30 C120 16 88 14 64 18 Z" fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- Passenger hump -->
+              <path d="M150 22 C158 12 170 14 172 28 C174 44 166 64 154 70 L144 62 C150 50 154 36 150 28 Z" fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- Windscreen -->
+              <path d="M26 28 L34 14 L48 16 L44 32 Z" fill="#D8E7F7" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- Headlight -->
+              <ellipse cx="16" cy="62" rx="5" ry="8" fill="#D8E7F7" stroke="#576DB8" stroke-width="1.5"/>
+              <!-- Front fork -->
+              <path d="M56 74 L48 90" stroke="#576DB8" stroke-width="3" stroke-linecap="round"/>
+              <path d="M62 74 L54 90" stroke="#576DB8" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.40"/>
+              <!-- Front wheel -->
+              <circle cx="48" cy="90" r="24" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.8"/>
+              <circle cx="48" cy="90" r="14" fill="none" stroke="#576DB8" stroke-width="1" stroke-opacity="0.40"/>
+              <circle cx="48" cy="90" r="5" fill="#576DB8"/>
+              <line x1="48" y1="66" x2="48" y2="78" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.28"/>
+              <line x1="48" y1="102" x2="48" y2="114" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.28"/>
+              <line x1="24" y1="90" x2="36" y2="90" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.28"/>
+              <line x1="60" y1="90" x2="72" y2="90" stroke="#576DB8" stroke-width="1.8" stroke-opacity="0.28"/>
+              <line x1="31" y1="73" x2="39" y2="81" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.20"/>
+              <line x1="57" y1="99" x2="65" y2="107" stroke="#576DB8" stroke-width="1.5" stroke-opacity="0.20"/>
+              <!-- Taillight -->
+              <rect x="168" y="52" width="5" height="8" rx="2" fill="#576DB8"/>
+            </svg>
           </div>
           <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
             <svg class="w-5 h-5 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
@@ -92,7 +135,55 @@ import Layout from '../layouts/Layout.astro';
         <!-- Am -->
         <button type="button" class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red" data-cat="am" aria-pressed="false">
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4">
-            <img src="/scooter-am.jpg" alt="Scooter" class="w-full h-auto object-contain" />
+            <svg viewBox="0 0 200 118" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+              <ellipse cx="100" cy="112" rx="78" ry="4" fill="#A8C2E0" fill-opacity="0.35"/>
+              <!-- Rear wheel (drawn first so cargo box overlaps it) -->
+              <circle cx="158" cy="92" r="16" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.8"/>
+              <circle cx="158" cy="92" r="9" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.50"/>
+              <circle cx="158" cy="92" r="4" fill="#576DB8"/>
+              <line x1="158" y1="76" x2="158" y2="83" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.34"/>
+              <line x1="158" y1="101" x2="158" y2="108" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.34"/>
+              <line x1="142" y1="92" x2="149" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.34"/>
+              <line x1="167" y1="92" x2="174" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.34"/>
+              <!-- Cargo box (rear storage box — main rear feature) -->
+              <rect x="82" y="42" width="74" height="44" rx="6" fill="#CDE0F5" stroke="#576DB8" stroke-width="1.8"/>
+              <!-- Rear fender arch -->
+              <path d="M128 86 C128 66 178 66 178 86" fill="none" stroke="#576DB8" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Seat (connecting legshield to cargo box) -->
+              <path d="M64 44 C70 36 80 36 82 42 L82 56 C80 56 70 54 64 56 Z" fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- Floor board -->
+              <rect x="62" y="78" width="24" height="14" rx="3" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.5"/>
+              <!-- Legshield (large rounded organic front body) -->
+              <path d="M62 18 C52 12 34 12 20 22 C8 32 6 50 8 66 C10 80 22 92 40 94 L62 90 C64 74 64 44 62 18 Z" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- Legshield inner arc detail -->
+              <path d="M16 42 C26 40 46 42 60 44" fill="none" stroke="#576DB8" stroke-width="1" stroke-linecap="round" stroke-opacity="0.34"/>
+              <!-- Headlight (large round light at legshield front) -->
+              <circle cx="10" cy="54" r="13" fill="#D8E7F7" stroke="#576DB8" stroke-width="1.8"/>
+              <circle cx="10" cy="54" r="8" fill="#E8EFF9" stroke="#576DB8" stroke-width="1" stroke-opacity="0.50"/>
+              <circle cx="10" cy="54" r="3.5" fill="#576DB8"/>
+              <!-- Front fork (short visible section below legshield) -->
+              <path d="M46 88 L40 94" stroke="#576DB8" stroke-width="3" stroke-linecap="round"/>
+              <path d="M52 88 L46 94" stroke="#576DB8" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.40"/>
+              <!-- Handlebar stem -->
+              <line x1="58" y1="18" x2="58" y2="6" stroke="#576DB8" stroke-width="2" stroke-linecap="round"/>
+              <!-- Handlebars -->
+              <path d="M58 6 C56 0 44 0 40 6" stroke="#576DB8" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M58 6 C60 0 70 0 74 6" stroke="#576DB8" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Mirror left (front-facing) -->
+              <circle cx="40" cy="6" r="6" fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5"/>
+              <!-- Mirror right -->
+              <circle cx="74" cy="6" r="4.5" fill="#CDE0F5" stroke="#576DB8" stroke-width="1.5"/>
+              <!-- Front wheel -->
+              <circle cx="40" cy="92" r="16" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.8"/>
+              <circle cx="40" cy="92" r="9" fill="#E8EFF9" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.50"/>
+              <circle cx="40" cy="92" r="4" fill="#576DB8"/>
+              <line x1="40" y1="76" x2="40" y2="83" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.34"/>
+              <line x1="40" y1="101" x2="40" y2="108" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.34"/>
+              <line x1="24" y1="92" x2="31" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.34"/>
+              <line x1="49" y1="92" x2="56" y2="92" stroke="#576DB8" stroke-width="1.2" stroke-opacity="0.34"/>
+              <!-- Taillight -->
+              <rect x="155" y="54" width="5" height="10" rx="2.5" fill="#BAD0F0" stroke="#576DB8" stroke-width="1.2"/>
+            </svg>
           </div>
           <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
             <svg class="w-5 h-5 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
