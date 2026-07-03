@@ -5,7 +5,7 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  --color-pioneer-navy: #2D4D82;
+  --color-pioneer-navy: #3A60A8;
   --color-pioneer-navy-light: #2A4374;
   --color-pioneer-red: #D62839;
   --color-pioneer-red-dark: #A81C2A;
@@ -57,7 +57,7 @@
 
 /* ── HERO BACKGROUND ── */
 .hero-bg {
-  background-color: #2D4D82;
+  background-color: #3A60A8;
   background-image:
     /* Starfield — bright scattered stars give night-sky depth */
     radial-gradient(circle 1.5px at 12% 22%, rgba(255,255,255,0.75) 0%, transparent 100%),
