@@ -68,53 +68,63 @@ import Layout from '../layouts/Layout.astro';
         <button type="button" class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red" data-cat="a" aria-pressed="false">
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <svg viewBox="0 0 200 118" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-              <!-- ground shadow -->
-              <ellipse cx="106" cy="112" rx="74" ry="4" fill="currentColor" fill-opacity="0.06"/>
-              <!-- REAR WHEEL with spoke ring + hub -->
-              <circle cx="150" cy="88" r="24" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="2"/>
-              <circle cx="150" cy="88" r="16" fill="none" stroke="currentColor" stroke-width="1" stroke-opacity="0.28"/>
-              <circle cx="150" cy="88" r="6" fill="currentColor" fill-opacity="0.24"/>
-              <line x1="150" y1="72" x2="150" y2="82" stroke="currentColor" stroke-width="1" stroke-opacity="0.32"/>
-              <line x1="150" y1="94" x2="150" y2="104" stroke="currentColor" stroke-width="1" stroke-opacity="0.32"/>
-              <line x1="134" y1="88" x2="144" y2="88" stroke="currentColor" stroke-width="1" stroke-opacity="0.32"/>
-              <line x1="156" y1="88" x2="166" y2="88" stroke="currentColor" stroke-width="1" stroke-opacity="0.32"/>
-              <!-- FRONT WHEEL with spoke ring + hub -->
-              <circle cx="58" cy="88" r="24" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="2"/>
-              <circle cx="58" cy="88" r="16" fill="none" stroke="currentColor" stroke-width="1" stroke-opacity="0.28"/>
-              <circle cx="58" cy="88" r="6" fill="currentColor" fill-opacity="0.24"/>
-              <line x1="58" y1="72" x2="58" y2="82" stroke="currentColor" stroke-width="1" stroke-opacity="0.32"/>
-              <line x1="58" y1="94" x2="58" y2="104" stroke="currentColor" stroke-width="1" stroke-opacity="0.32"/>
-              <line x1="42" y1="88" x2="52" y2="88" stroke="currentColor" stroke-width="1" stroke-opacity="0.32"/>
-              <line x1="64" y1="88" x2="74" y2="88" stroke="currentColor" stroke-width="1" stroke-opacity="0.32"/>
+              <ellipse cx="103" cy="112" rx="76" ry="4" fill="currentColor" fill-opacity="0.06"/>
+              <!-- REAR WHEEL — sport alloy: outer tyre, rim ring, brake disc ring, hub, 5 spokes -->
+              <circle cx="152" cy="88" r="24" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="2"/>
+              <circle cx="152" cy="88" r="17" fill="none" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.25"/>
+              <circle cx="152" cy="88" r="11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.35"/>
+              <circle cx="152" cy="88" r="5" fill="currentColor" fill-opacity="0.35"/>
+              <line x1="152" y1="64" x2="152" y2="77" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
+              <line x1="152" y1="99" x2="152" y2="112" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
+              <line x1="128" y1="88" x2="141" y2="88" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
+              <line x1="163" y1="88" x2="176" y2="88" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
+              <line x1="135" y1="71" x2="144" y2="80" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.18"/>
+              <line x1="160" y1="96" x2="169" y2="105" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.18"/>
+              <!-- FRONT WHEEL — same sport alloy style -->
+              <circle cx="54" cy="88" r="24" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="2"/>
+              <circle cx="54" cy="88" r="17" fill="none" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.25"/>
+              <circle cx="54" cy="88" r="11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.35"/>
+              <circle cx="54" cy="88" r="5" fill="currentColor" fill-opacity="0.35"/>
+              <line x1="54" y1="64" x2="54" y2="77" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
+              <line x1="54" y1="99" x2="54" y2="112" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
+              <line x1="30" y1="88" x2="43" y2="88" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
+              <line x1="65" y1="88" x2="78" y2="88" stroke="currentColor" stroke-width="2" stroke-opacity="0.24"/>
+              <line x1="37" y1="71" x2="46" y2="80" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.18"/>
               <!-- SWINGARM -->
-              <path d="M136 68 L150 84" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-              <!-- EXHAUST header pipe + oval muffler -->
-              <path d="M122 76 C134 74 148 76 158 82" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.50"/>
-              <ellipse cx="161" cy="84" rx="5" ry="7" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.45" transform="rotate(-12 161 84)"/>
-              <!-- ENGINE BLOCK (visible between frame tubes) -->
-              <path d="M86 58 L130 56 L134 74 L100 78 L82 72 Z" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <!-- SEAT STAY + CHAIN STAY (rear frame tubes) -->
-              <path d="M136 68 L124 76 L102 78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.55"/>
-              <!-- MAIN FRAME TOP TUBE -->
-              <path d="M80 48 L138 46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- DOWN TUBE (front diagonal frame tube) -->
-              <path d="M80 48 C80 62 84 70 88 76" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- SEAT (saddle behind tank) -->
-              <path d="M128 46 C130 40 150 40 152 46 L150 52 C144 55 134 55 130 50 Z" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <!-- FUEL TANK — the most recognisable element, prominent teardrop -->
-              <path d="M80 48 C84 26 108 16 124 18 C138 20 146 32 144 48 L130 50 C118 44 96 44 84 50 Z" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <!-- FRONT FORK — main tube + offset tube for visual depth -->
-              <path d="M76 52 L60 86" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-              <path d="M82 50 L66 84" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.40"/>
-              <!-- HANDLEBARS — T-bar with round grip end -->
-              <path d="M78 48 L74 38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M62 35 L88 35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="62" cy="35" r="4" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1.5"/>
-              <!-- HEADLIGHT — round, mounted mid-fork -->
-              <circle cx="64" cy="66" r="9" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="2"/>
-              <circle cx="64" cy="66" r="5" fill="currentColor" fill-opacity="0.28"/>
+              <path d="M140 66 L152 84" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <!-- REAR MONOSHOCK -->
+              <path d="M136 56 L140 68" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.45"/>
+              <!-- EXHAUST HEADERS (curve under engine to canister) -->
+              <path d="M108 78 C120 88 134 90 146 84" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity="0.38"/>
+              <!-- EXHAUST CANISTER (large angular side-mount) -->
+              <path d="M142 72 L168 68 L168 78 L144 82 Z" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle cx="169" cy="73" r="5" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.5"/>
+              <!-- ENGINE BLOCK (large, fully exposed — naked bike) -->
+              <path d="M88 58 L136 56 L140 78 L90 80 Z" fill="currentColor" fill-opacity="0.13" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <line x1="89" y1="64" x2="139" y2="63" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.28"/>
+              <line x1="89" y1="71" x2="139" y2="70" stroke="currentColor" stroke-width="0.75" stroke-opacity="0.28"/>
+              <!-- PERIMETER FRAME (lower rails visible between engine and bodywork) -->
+              <path d="M86 48 C100 54 124 56 140 56" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity="0.45"/>
+              <path d="M140 56 L140 66" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity="0.45"/>
+              <!-- FUEL TANK — angular, flat-top Kawasaki Z shape -->
+              <path d="M82 44 L86 24 L130 18 L136 24 L136 46 L88 48 Z" fill="currentColor" fill-opacity="0.20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <!-- SEAT + SHORT SHARP TAIL (naked bike silhouette) -->
+              <path d="M130 20 L148 26 L156 30 C164 32 172 36 176 42 L176 50 L160 54 L148 54 L136 46 L134 22 Z" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- USD FRONT FORKS (inverted — thick stanchion at top, tapers to axle) -->
+              <path d="M74 46 L56 88" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+              <path d="M80 44 L62 86" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity="0.38"/>
+              <!-- Fork crown / triple clamp -->
+              <rect x="72" y="38" width="12" height="9" rx="2" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.5"/>
+              <!-- SHORT WINDSCREEN (aggressive, above headlight) -->
+              <path d="M80 38 C82 28 90 22 96 20 L90 32 Z" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- HEADLIGHT UNIT (angular, compact) -->
+              <path d="M66 52 L68 38 L80 38 L82 52 L76 58 Z" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- HANDLEBARS + ANGULAR MIRROR -->
+              <path d="M82 42 L92 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M90 36 L106 36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="104" y="29" width="7" height="9" rx="1" fill="currentColor" fill-opacity="0.24" stroke="currentColor" stroke-width="1.2" transform="rotate(8 104 29)"/>
               <!-- TAILLIGHT -->
-              <rect x="163" y="42" width="4" height="8" rx="2" fill="currentColor" fill-opacity="0.50"/>
+              <rect x="173" y="40" width="5" height="5" rx="1" fill="currentColor" fill-opacity="0.55"/>
             </svg>
           </div>
           <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
@@ -130,51 +140,51 @@ import Layout from '../layouts/Layout.astro';
         <button type="button" class="cat-card group relative flex flex-col items-center text-center bg-off-white border-2 border-asphalt-line rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-pioneer-navy hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pioneer-red" data-cat="am" aria-pressed="false">
           <div class="w-full max-w-[100px] sm:max-w-[140px] md:max-w-[160px] mx-auto mb-3 sm:mb-4 text-pioneer-navy/70 group-[.is-active]:text-white/80">
             <svg viewBox="0 0 200 118" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-              <!-- ground shadow -->
-              <ellipse cx="104" cy="112" rx="68" ry="4" fill="currentColor" fill-opacity="0.06"/>
+              <ellipse cx="101" cy="112" rx="70" ry="4" fill="currentColor" fill-opacity="0.06"/>
               <!-- REAR WHEEL (small — distinctly smaller than motorcycle) -->
-              <circle cx="148" cy="94" r="14" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="148" cy="94" r="6" fill="currentColor" fill-opacity="0.22"/>
-              <line x1="148" y1="80" x2="148" y2="88" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="148" y1="100" x2="148" y2="108" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="134" y1="94" x2="142" y2="94" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="154" y1="94" x2="162" y2="94" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
+              <circle cx="152" cy="92" r="14" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
+              <circle cx="152" cy="92" r="6" fill="currentColor" fill-opacity="0.22"/>
+              <line x1="152" y1="78" x2="152" y2="86" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
+              <line x1="152" y1="98" x2="152" y2="106" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
+              <line x1="138" y1="92" x2="146" y2="92" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
+              <line x1="158" y1="92" x2="166" y2="92" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
               <!-- FRONT WHEEL (small) -->
-              <circle cx="62" cy="94" r="14" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
-              <circle cx="62" cy="94" r="6" fill="currentColor" fill-opacity="0.22"/>
-              <line x1="62" y1="80" x2="62" y2="88" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="62" y1="100" x2="62" y2="108" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="48" y1="94" x2="56" y2="94" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <line x1="68" y1="94" x2="76" y2="94" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
-              <!-- STEP-THROUGH FLOOR PLATFORM (the low flat area between legshield and rear cowl) -->
-              <rect x="80" y="78" width="30" height="14" rx="2" fill="currentColor" fill-opacity="0.09" stroke="currentColor" stroke-width="1.5"/>
-              <!-- LEGSHIELD — the large front apron, most visible from the side -->
-              <path d="M70 32 C60 30 46 40 44 54 C42 68 52 78 64 80 L82 80 L82 36 C78 32 74 30 70 32 Z" fill="currentColor" fill-opacity="0.11" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <!-- Legshield horizontal ridges — the iconic Vespa pressed-steel detail -->
-              <path d="M46 50 C52 50 62 50 70 52" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.38"/>
-              <path d="M44 60 C50 60 62 60 70 62" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.38"/>
-              <path d="M46 70 C52 70 62 70 70 72" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.38"/>
-              <!-- REAR COWL — the signature large rounded engine cover, the most Vespa element -->
-              <path d="M106 80 C118 82 136 80 146 74 C158 64 170 52 168 36 C166 24 152 20 138 22 L112 24 C104 28 102 38 102 52 L102 78 C104 80 106 80 106 80 Z" fill="currentColor" fill-opacity="0.11" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <!-- SEAT — prominent saddle hump on top of rear cowl -->
-              <path d="M110 28 C114 18 150 18 158 26 C162 32 160 42 154 44 C146 48 118 48 112 44 C108 40 108 34 110 28 Z" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <!-- Rear cowl raised panel accent line -->
-              <path d="M134 30 C150 32 162 44 158 60 C156 68 146 74 134 76" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-opacity="0.30"/>
-              <!-- FRONT FORK — single leg connecting body to front wheel -->
-              <path d="M68 54 L62 80" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <!-- HANDLEBAR STEM — rises from top of legshield -->
-              <path d="M72 32 L72 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <!-- HANDLEBARS — Vespa ram's-horn style, curves outward and slightly down -->
-              <path d="M72 18 C70 12 60 12 56 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M72 18 C74 12 84 12 88 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Round mirror / grip balls at handlebar ends -->
-              <circle cx="56" cy="18" r="4.5" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="88" cy="18" r="4.5" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1.5"/>
-              <!-- HEADLIGHT — round, on front of fork -->
-              <circle cx="52" cy="48" r="9" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="2"/>
-              <circle cx="52" cy="48" r="5" fill="currentColor" fill-opacity="0.26"/>
+              <circle cx="48" cy="92" r="14" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="2"/>
+              <circle cx="48" cy="92" r="6" fill="currentColor" fill-opacity="0.22"/>
+              <line x1="48" y1="78" x2="48" y2="86" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
+              <line x1="48" y1="98" x2="48" y2="106" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
+              <line x1="34" y1="92" x2="42" y2="92" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
+              <line x1="54" y1="92" x2="62" y2="92" stroke="currentColor" stroke-width="1" stroke-opacity="0.30"/>
+              <!-- STEP-THROUGH FLOOR PLATFORM -->
+              <rect x="72" y="80" width="36" height="12" rx="2" fill="currentColor" fill-opacity="0.09" stroke="currentColor" stroke-width="1.5"/>
+              <!-- LEGSHIELD — organic convex Vespa Primavera front apron -->
+              <!-- Widest at mid-height, narrows at top (handlebar neck) and bottom (floor) -->
+              <path d="M 58 30 C 50 26 34 38 30 54 C 26 70 36 82 50 84 L 72 84 L 72 34 C 68 30 62 26 58 30 Z" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <!-- Legshield horizontal ridges — iconic Vespa pressed-steel body detail -->
+              <path d="M 32 52 C 40 52 54 52 68 54" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.36"/>
+              <path d="M 30 62 C 38 62 52 62 68 64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.36"/>
+              <path d="M 32 72 C 40 72 52 72 68 74" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.36"/>
+              <!-- REAR COWL — the large rounded signature Vespa element, enclosing the engine -->
+              <path d="M 108 60 C 106 46 112 28 124 22 C 138 14 158 16 168 26 C 176 34 178 52 176 68 C 174 78 166 86 154 88 L 140 88 L 108 88 C 106 78 106 68 108 60 Z" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <!-- SEAT — long saddle on top of rear cowl -->
+              <path d="M 116 28 C 120 18 154 16 166 26 C 170 34 168 48 162 52 C 150 58 122 58 116 52 C 112 46 112 36 116 28 Z" fill="currentColor" fill-opacity="0.22" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- Rear cowl accent panel crease line -->
+              <path d="M 140 28 C 158 34 172 54 168 74 C 166 82 158 88 148 90" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-opacity="0.28"/>
+              <!-- FRONT FORK (single arm, passes through legshield) -->
+              <path d="M 60 40 L 46 90" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.55"/>
+              <!-- HANDLEBAR STEM — rises from top of legshield/fork head -->
+              <path d="M 62 28 L 62 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <!-- HANDLEBARS — Vespa ram's-horn style, sweeping outward and slightly down -->
+              <path d="M 62 14 C 60 8 50 8 46 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 62 14 C 64 8 74 8 78 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Round mirrors at handlebar ends -->
+              <circle cx="46" cy="14" r="4.5" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="78" cy="14" r="4.5" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1.5"/>
+              <!-- ROUND HEADLIGHT — on front of fork / top of legshield -->
+              <circle cx="38" cy="44" r="9" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="2"/>
+              <circle cx="38" cy="44" r="5" fill="currentColor" fill-opacity="0.28"/>
               <!-- TAILLIGHT -->
-              <rect x="165" y="34" width="5" height="8" rx="2" fill="currentColor" fill-opacity="0.45"/>
+              <rect x="172" y="34" width="5" height="8" rx="2" fill="currentColor" fill-opacity="0.45"/>
             </svg>
           </div>
           <div class="absolute top-3.5 right-3.5 opacity-0 group-[.is-active]:opacity-100 transition-opacity">
