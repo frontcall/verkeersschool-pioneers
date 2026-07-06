@@ -38,20 +38,17 @@ import SectionDivider from '../components/SectionDivider.astro';
           <div class="hero-item mb-7" data-delay="1">
             <!-- Locatieregel -->
             <div class="flex items-center gap-2.5 mb-5">
-              <svg class="w-6 h-6 text-pioneer-red flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-9 h-9 text-pioneer-red flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
               </svg>
               <span class="text-white text-2xl sm:text-3xl font-bold tracking-wide">Verkeersschool in Breda &amp; omgeving</span>
             </div>
             <!-- Rijbewijscategorieën -->
-            <div class="flex items-center gap-3 sm:gap-5">
-              <span class="font-display font-black text-2xl sm:text-3xl text-white leading-none">A &amp; Am</span>
-              <span class="text-white/30 text-xl font-light">·</span>
-              <span class="font-display font-black text-2xl sm:text-3xl text-white leading-none">B</span>
-              <span class="text-white/30 text-xl font-light">·</span>
-              <span class="font-display font-black text-2xl sm:text-3xl text-white leading-none">C &amp; Ce</span>
-              <span class="text-white/30 text-xl font-light">·</span>
-              <span class="font-display font-black text-2xl sm:text-3xl text-white leading-none">Taxi</span>
+            <div class="flex flex-wrap gap-3">
+              <span class="px-5 py-3 rounded-xl bg-white/[0.08] border border-white/[0.22] text-white font-display font-bold text-2xl sm:text-3xl tracking-wide uppercase backdrop-blur-sm">A &amp; AM</span>
+              <span class="px-5 py-3 rounded-xl bg-white/[0.08] border border-white/[0.22] text-white font-display font-bold text-2xl sm:text-3xl tracking-wide uppercase backdrop-blur-sm">B</span>
+              <span class="px-5 py-3 rounded-xl bg-white/[0.08] border border-white/[0.22] text-white font-display font-bold text-2xl sm:text-3xl tracking-wide uppercase backdrop-blur-sm">C &amp; CE</span>
+              <span class="px-5 py-3 rounded-xl bg-white/[0.08] border border-white/[0.22] text-white font-display font-bold text-2xl sm:text-3xl tracking-wide uppercase backdrop-blur-sm">TAXI</span>
             </div>
           </div>
 
@@ -84,27 +81,6 @@ import SectionDivider from '../components/SectionDivider.astro';
             </a>
           </div>
 
-          <!-- Trust badges -->
-          <div class="hero-item flex flex-wrap items-center gap-5 mt-9 pt-9 border-t border-white/10" data-delay="5">
-            <div class="flex items-center gap-2 text-white/55 text-sm">
-              <svg class="w-4 h-4 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-              </svg>
-              Geen inschrijfkosten
-            </div>
-            <div class="flex items-center gap-2 text-white/55 text-sm">
-              <svg class="w-4 h-4 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-              </svg>
-              Onbeperkte herexamens
-            </div>
-            <div class="flex items-center gap-2 text-white/55 text-sm">
-              <svg class="w-4 h-4 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-              </svg>
-              4,7&#9733; Google rating
-            </div>
-          </div>
         </div>
 
         <!-- Right: deal card -->
@@ -139,7 +115,7 @@ import SectionDivider from '../components/SectionDivider.astro';
             <ul class="space-y-3 mb-7">
               {[
                 '24 rijlessen inbegrepen',
-                'Gratis proefles!',
+                'Gratis vrijblijvende proefles*',
                 'Geen inschrijf- of advieskosten',
                 'Onbeperkt gratis herexamens!',
               ].map(item => (
@@ -162,6 +138,7 @@ import SectionDivider from '../components/SectionDivider.astro';
             >
               Gratis Vrijblijvende Proefles
             </a>
+            <p class="text-white/35 text-[11px] mt-3 leading-relaxed">* De proefles is gratis bij inschrijving bij Verkeersschool Pioneers.</p>
           </div>
         </div>
       </div>
@@ -210,6 +187,7 @@ import SectionDivider from '../components/SectionDivider.astro';
             icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
             title: 'De meesten slagen in 1x',
             body: 'Gerichte voorbereiding op het CBR-examen. En lukt het niet de eerste keer? De herexamenkosten zijn voor ons — tot €299.',
+            link: { href: '/algemene-voorwaarden', label: 'Algemene voorwaarden' },
             delay: '1',
           },
           {
@@ -242,7 +220,7 @@ import SectionDivider from '../components/SectionDivider.astro';
             body: 'Jonge, goed uitgeruste voertuigen voor iedere les. Veilig, comfortabel en klaar voor het examen.',
             delay: '6',
           },
-        ].map(({ icon, title, body, delay }) => (
+        ].map(({ icon, title, body, link, delay }) => (
           <div class="reveal-item card-lift bg-white rounded-2xl border border-asphalt-line p-6" data-delay={delay}>
             <div class="w-11 h-11 rounded-xl bg-pioneer-red/8 flex items-center justify-center mb-4">
               <svg class="w-5 h-5 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -251,6 +229,11 @@ import SectionDivider from '../components/SectionDivider.astro';
             </div>
             <h3 class="font-display font-bold text-[1.05rem] mb-2 tracking-tight">{title}</h3>
             <p class="text-asphalt text-sm leading-relaxed">{body}</p>
+            {link && (
+              <a href={link.href} class="inline-block mt-3 text-xs text-pioneer-navy/60 hover:text-pioneer-navy underline underline-offset-2 transition-colors">
+                {link.label}
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -328,9 +311,8 @@ import SectionDivider from '../components/SectionDivider.astro';
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
       <div class="reveal-item grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          <p class="eyebrow mb-3">Lesgebied</p>
           <h2 class="font-display font-bold text-4xl md:text-5xl tracking-tight mb-4">
-            Rijles bij jou in de buurt
+            Waar geven we les?
           </h2>
           <p class="text-asphalt leading-relaxed mb-6">
             We rijden in Breda en de omliggende gemeenten. Twijfel je of we bij jou rijden? App ons — we kijken graag mee.
@@ -399,7 +381,7 @@ import SectionDivider from '../components/SectionDivider.astro';
           Jouw rijbewijs begint<br class="hidden sm:block" /> met één bericht
         </h2>
         <p class="text-white/55 text-lg mb-10 max-w-lg mx-auto leading-relaxed">
-          We antwoorden snel — 7 dagen per week, ook 's avonds. Plan je gratis proefles of schrijf je direct in.
+          We antwoorden snel — 7 dagen per week, ook 's avonds. Plan je gratis vrijblijvende proefles of schrijf je direct in.
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4">
           <a

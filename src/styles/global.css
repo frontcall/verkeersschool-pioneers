@@ -16,7 +16,21 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  /* Forceer altijd light mode — ook als het systeem dark mode heeft */
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: light;
+    }
+    body {
+      background-color: #FAFAF8;
+      color: #4B4F58;
+    }
+  }
 
   body {
     font-family: var(--font-sans);
