@@ -233,10 +233,11 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- C sub-group -->
       <div class="sub-group" data-group="c">
-        <h2 class="font-display font-bold text-xl md:text-2xl tracking-tight mb-5">C of CE?</h2>
+        <h2 class="font-display font-bold text-xl md:text-2xl tracking-tight mb-5">Welk rijbewijs?</h2>
         <div class="flex flex-wrap justify-center gap-3">
           <button type="button" class="sub-card" data-sub="c-c"><strong>C</strong>&nbsp;· Vrachtwagen (zonder aanhanger)</button>
           <button type="button" class="sub-card" data-sub="c-ce"><strong>CE</strong>&nbsp;· Vrachtwagen met aanhanger</button>
+          <button type="button" class="sub-card" data-sub="c-ce-oplegger"><strong>CE</strong>&nbsp;· Vrachtwagen met oplegger</button>
         </div>
       </div>
     </div>
@@ -654,6 +655,46 @@ import Layout from '../layouts/Layout.astro';
               <h3 class="font-display font-semibold text-pioneer-navy">Vereisten CE-rijbewijs</h3>
               <ul class="space-y-2 text-sm text-asphalt">
                 {['C-rijbewijs vereist', 'Minimumleeftijd 18 jaar', 'Medische keuring vereist', 'Geldig voor combinaties met aanhanger >750 kg'].map(item => (
+                  <li class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-pioneer-red flex-shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ── CE Oplegger ── -->
+    <div class="sub-section" data-sub="c-ce-oplegger">
+      <section class="py-16 md:py-20 bg-off-white">
+        <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-1">CE — Vrachtwagen met oplegger</h2>
+          <p class="text-asphalt text-sm mb-10">Combinatie vrachtwagen + oplegger (semi-trailer)</p>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-3xl">
+            <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
+              <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/60 to-pioneer-red/20 rounded-t-2xl"></div>
+              <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-5">CE Oplegger-pakket</p>
+              <ul class="space-y-3 flex-1 mb-7">
+                {['Voortbouwen op C-rijbewijs', 'Koppelen & ontkoppelen oplegger', 'Manoeuvres met semi-trailer', '1 praktijkexamen'].map(item => (
+                  <li class="flex items-start gap-2.5 text-sm text-asphalt">
+                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-success-soft/12 flex items-center justify-center mt-0.5">
+                      <svg class="w-3 h-3 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="/inschrijven" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+                Neem contact met ons op
+              </a>
+            </div>
+            <div class="bg-off-white rounded-2xl border border-asphalt-line p-6 space-y-4 h-fit">
+              <h3 class="font-display font-semibold text-pioneer-navy">Vereisten CE-rijbewijs (oplegger)</h3>
+              <ul class="space-y-2 text-sm text-asphalt">
+                {['C-rijbewijs vereist', 'Minimumleeftijd 18 jaar', 'Medische keuring vereist', 'Geldig voor combinaties met oplegger (semi-trailer)'].map(item => (
                   <li class="flex items-center gap-2">
                     <span class="w-1.5 h-1.5 rounded-full bg-pioneer-red flex-shrink-0"></span>
                     {item}
