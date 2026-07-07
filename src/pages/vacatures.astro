@@ -1,12 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// ─────────────────────────────────────────────
-// Plak hier jouw Google Sheet ID
-// (de lange code uit de URL van jouw sheet)
-const SHEET_ID = 'JOUW_SHEET_ID_HIER';
-// ─────────────────────────────────────────────
-
 const categorieInfo = [
   { key: 'A',    label: 'Categorie A — Motor',       omschrijving: 'We zoeken een gecertificeerde rij-instructeur voor motorlessen (categorie A) in de regio Breda.' },
   { key: 'B',    label: 'Categorie B — Auto',         omschrijving: 'We zoeken een gediplomeerde rij-instructeur voor autolessen (categorie B) in de regio Breda.' },
@@ -166,47 +160,95 @@ const categorieInfo = [
   </section>
 </Layout>
 
-<script define:vars={{ SHEET_ID }}>
-  const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv`;
+<script>
+  // ── Google Sheets vacaturekoppeling ──
+  // Kolommen verwacht: categorie, instructeur_gezocht
+  const VACATURES_URL = import.meta.env.PUBLIC_VACATURES_SHEET_URL as string;
+  const CACHE_KEY     = 'pioneers_vacatures_v1';
+  const CACHE_TTL     = 5 * 60 * 1000;
+
+  function getCache(): string | null {
+    try {
+      const raw = sessionStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      const { ts, data } = JSON.parse(raw) as { ts: number; data: string };
+      if (Date.now() - ts > CACHE_TTL) { sessionStorage.removeItem(CACHE_KEY); return null; }
+      return data;
+    } catch { return null; }
+  }
+
+  function setCache(data: string) {
+    try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data })); } catch {}
+  }
+
+  function parseCsvRow(line: string): string[] {
+    const cols: string[] = [];
+    let cur = '', inQ = false;
+    for (const ch of line) {
+      if (ch === '"') { inQ = !inQ; }
+      else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else { cur += ch; }
+    }
+    cols.push(cur.trim());
+    return cols;
+  }
+
+  function parseOpenCategorien(csv: string): Set<string> {
+    const lines   = csv.trim().split('\n');
+    const headers = parseCsvRow(lines[0]).map(h => h.toLowerCase().replace(/"/g, ''));
+    const iCat    = headers.indexOf('categorie');
+    const iGezocht = headers.indexOf('instructeur_gezocht');
+    const open = new Set<string>();
+    for (let i = 1; i < lines.length; i++) {
+      const cols = parseCsvRow(lines[i]).map(s => s.replace(/"/g, '').trim());
+      if ((cols[iGezocht] || '').toLowerCase() === 'ja') {
+        open.add(cols[iCat]);
+      }
+    }
+    return open;
+  }
 
   async function laadVacatures() {
     const loading = document.getElementById('vacatures-loading');
     const grid    = document.getElementById('vacatures-grid');
     const leeg    = document.getElementById('vacatures-leeg');
-    const kaarten = document.querySelectorAll('.vacature-card');
+    const kaarten = document.querySelectorAll<HTMLElement>('.vacature-card');
+
+    if (!VACATURES_URL) {
+      loading?.classList.add('hidden');
+      leeg?.classList.remove('hidden');
+      return;
+    }
 
     try {
-      const res  = await fetch(CSV_URL);
-      const tekst = await res.text();
-
-      // CSV parsen: sla eerste rij (header) over
-      const regels = tekst.trim().split('\n').slice(1);
-      const openSet = new Set();
-
-      for (const regel of regels) {
-        const [categorie, open] = regel.split(',').map(s => s.trim().replace(/"/g, ''));
-        if (open.toUpperCase() === 'TRUE') openSet.add(categorie);
+      let csv = getCache();
+      if (!csv) {
+        const res = await fetch(VACATURES_URL);
+        if (!res.ok) throw new Error('fetch failed');
+        csv = await res.text();
+        setCache(csv);
       }
 
+      const openSet = parseOpenCategorien(csv);
       let aantalOpen = 0;
+
       kaarten.forEach(kaart => {
-        const cat = kaart.getAttribute('data-categorie');
-        if (openSet.has(cat)) {
+        const cat = kaart.dataset.categorie;
+        if (cat && openSet.has(cat)) {
           kaart.classList.remove('hidden');
           aantalOpen++;
         }
       });
 
-      loading.classList.add('hidden');
-
+      loading?.classList.add('hidden');
       if (aantalOpen > 0) {
-        grid.classList.remove('hidden');
+        grid?.classList.remove('hidden');
       } else {
-        leeg.classList.remove('hidden');
+        leeg?.classList.remove('hidden');
       }
     } catch {
-      loading.textContent = '';
-      leeg.classList.remove('hidden');
+      loading?.classList.add('hidden');
+      leeg?.classList.remove('hidden');
     }
   }
 

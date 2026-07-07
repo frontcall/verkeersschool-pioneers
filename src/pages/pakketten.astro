@@ -72,7 +72,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-[10px] font-bold uppercase tracking-widest text-pioneer-red/80 group-[.is-active]:text-pioneer-red mb-1">B-rijbewijs</p>
           <p class="font-display font-bold text-base md:text-lg text-pioneer-navy group-[.is-active]:text-white leading-tight mb-1">Categorie B</p>
           <p class="text-asphalt text-xs group-[.is-active]:text-white/60">Schakel, Automaat &amp; Be</p>
-          <p class="mt-2.5 text-pioneer-navy font-semibold text-sm group-[.is-active]:text-white/80">Vanaf &euro;&nbsp;1.049</p>
+          <p class="mt-2.5 text-pioneer-navy font-semibold text-sm group-[.is-active]:text-white/80" data-pakket-preview="Start Pakket">Vanaf &euro;&nbsp;1.049</p>
         </button>
 
         <!-- A -->
@@ -317,11 +317,12 @@ import Layout from '../layouts/Layout.astro';
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1.25fr_1fr] gap-6 mb-6">
             <!-- Start Pakket -->
-            <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
+            <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden" data-pakket="Start Pakket">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-asphalt/30 to-asphalt/10 rounded-t-2xl"></div>
               <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Start Pakket</p>
-              <div class="flex items-baseline gap-1 mb-6">
-                <span class="font-display font-bold text-4xl text-pioneer-navy">&euro; 1.049</span>
+              <div class="flex items-baseline gap-2 flex-wrap mb-6">
+                <span data-prijs-van class="font-display font-bold text-2xl line-through opacity-40 hidden"></span>
+                <span data-prijs class="font-display font-bold text-4xl text-pioneer-navy">&euro;&nbsp;1.049</span>
               </div>
               <ul class="space-y-3 flex-1 mb-7">
                 {['11 rijlessen', 'Gratis vrijblijvende proefles*', 'Inschrijving & advies', '1 praktijkexamen'].map(item => (
@@ -338,13 +339,14 @@ import Layout from '../layouts/Layout.astro';
               </a>
             </div>
             <!-- Studenten Pakket -->
-            <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 lg:p-9 lg:-my-4 flex flex-col overflow-hidden z-10">
+            <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 lg:p-9 lg:-my-4 flex flex-col overflow-hidden z-10" data-pakket="Studenten Pakket">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
               <span class="absolute top-5 right-5 bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Meest gekozen</span>
               <div class="absolute -bottom-12 -right-12 w-40 h-40 bg-pioneer-red/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
               <p class="text-xs font-bold uppercase tracking-widest text-white/45 mb-3">Studenten Pakket</p>
-              <div class="flex items-baseline gap-1 mb-6">
-                <span class="font-display font-bold text-4xl text-white">&euro; 1.499</span>
+              <div class="flex items-baseline gap-2 flex-wrap mb-6">
+                <span data-prijs-van class="font-display font-bold text-2xl line-through opacity-40 hidden"></span>
+                <span data-prijs class="font-display font-bold text-4xl text-white">&euro;&nbsp;1.499</span>
               </div>
               <ul class="space-y-3 flex-1 mb-7 relative">
                 {['20 rijlessen', 'Gratis vrijblijvende proefles*', 'Gratis theoriepakket', '1 theorie-examen', '1 praktijkexamen', 'Onbeperkte herexamens**'].map(item => (
@@ -361,11 +363,12 @@ import Layout from '../layouts/Layout.astro';
               </a>
             </div>
             <!-- Spoed Pakket -->
-            <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
+            <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden" data-pakket="Spoed Pakket">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/60 to-pioneer-red/20 rounded-t-2xl"></div>
               <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Spoed Pakket</p>
-              <div class="flex items-baseline gap-1 mb-6">
-                <span class="font-display font-bold text-4xl text-pioneer-navy">&euro; 2.099</span>
+              <div class="flex items-baseline gap-2 flex-wrap mb-6">
+                <span data-prijs-van class="font-display font-bold text-2xl line-through opacity-40 hidden"></span>
+                <span data-prijs class="font-display font-bold text-4xl text-pioneer-navy">&euro;&nbsp;2.099</span>
               </div>
               <ul class="space-y-3 flex-1 mb-7">
                 {['30 rijlessen', 'Gratis vrijblijvende proefles*', 'Gratis theoriepakket', '1 praktijkexamen', 'Onbeperkte herexamens**', 'Tot 5 lessen per week'].map(item => (
@@ -404,13 +407,14 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Met een automaat geef je 100% aandacht aan de weg. Ideaal als je snel wilt leren rijden.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
             <!-- Automaat Pakket -->
-            <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden">
+            <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden" data-pakket="Automaat Pakket">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
               <span class="absolute top-5 right-5 bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Compleet</span>
               <div class="absolute -bottom-12 -left-8 w-36 h-36 bg-pioneer-red/8 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
               <p class="text-xs font-bold uppercase tracking-widest text-white/45 mb-3">Automaat Pakket</p>
-              <div class="flex items-baseline gap-1 mb-6">
-                <span class="font-display font-bold text-4xl text-white">&euro; 1.750</span>
+              <div class="flex items-baseline gap-2 flex-wrap mb-6">
+                <span data-prijs-van class="font-display font-bold text-2xl line-through opacity-40 hidden"></span>
+                <span data-prijs class="font-display font-bold text-4xl text-white">&euro;&nbsp;1.750</span>
               </div>
               <ul class="space-y-3 flex-1 mb-7 relative">
                 {['24 rijlessen', 'Gratis vrijblijvende proefles*', '1 praktijkexamen', 'Onbeperkte herexamens**', 'Geen inschrijf- of advieskosten'].map(item => (
@@ -427,11 +431,12 @@ import Layout from '../layouts/Layout.astro';
               </a>
             </div>
             <!-- Losse Rijles -->
-            <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
+            <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden" data-pakket="Losse Rijles">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-asphalt/30 to-asphalt/10 rounded-t-2xl"></div>
               <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Losse Rijles</p>
-              <div class="flex items-baseline gap-1.5 mb-2">
-                <span class="font-display font-bold text-4xl text-pioneer-navy">&euro; 60</span>
+              <div class="flex items-baseline gap-2 flex-wrap mb-2">
+                <span data-prijs-van class="font-display font-bold text-2xl line-through opacity-40 hidden"></span>
+                <span data-prijs class="font-display font-bold text-4xl text-pioneer-navy">&euro;&nbsp;60</span>
                 <span class="text-asphalt text-sm">per les</span>
               </div>
               <p class="text-asphalt text-sm mb-6 flex-1 leading-relaxed">Al rijervaring of gewoon een les pakken? Boek losse lessen zonder vast pakket.</p>
@@ -971,4 +976,113 @@ import Layout from '../layouts/Layout.astro';
     // Default: B → Handgeschakeld
     selectCat('b', false);
   })();
+</script>
+
+<script>
+  // ── Google Sheets prijskoppeling ──
+  // Kolommen verwacht: pakket, prijs, prijs_van, actief
+  const PRICING_URL = import.meta.env.PUBLIC_PRICING_SHEET_URL as string;
+  const CACHE_KEY   = 'pioneers_pricing_v1';
+  const CACHE_TTL   = 5 * 60 * 1000;
+
+  function getCache(): string | null {
+    try {
+      const raw = sessionStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      const { ts, data } = JSON.parse(raw) as { ts: number; data: string };
+      if (Date.now() - ts > CACHE_TTL) { sessionStorage.removeItem(CACHE_KEY); return null; }
+      return data;
+    } catch { return null; }
+  }
+
+  function setCache(data: string) {
+    try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data })); } catch {}
+  }
+
+  function parseCsvRow(line: string): string[] {
+    const cols: string[] = [];
+    let cur = '', inQ = false;
+    for (const ch of line) {
+      if (ch === '"') { inQ = !inQ; }
+      else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else { cur += ch; }
+    }
+    cols.push(cur.trim());
+    return cols;
+  }
+
+  interface PakketInfo { prijs: string; prijsVan: string; actief: boolean }
+
+  function parsePricing(csv: string): Record<string, PakketInfo> {
+    const lines  = csv.trim().split('\n');
+    const headers = parseCsvRow(lines[0]).map(h => h.toLowerCase().replace(/"/g, ''));
+    const iNaam   = headers.indexOf('pakket');
+    const iPrijs  = headers.indexOf('prijs');
+    const iVan    = headers.indexOf('prijs_van');
+    const iActief = headers.indexOf('actief');
+    const result: Record<string, PakketInfo> = {};
+    for (let i = 1; i < lines.length; i++) {
+      const cols = parseCsvRow(lines[i]).map(s => s.replace(/"/g, ''));
+      const naam = cols[iNaam]?.trim();
+      if (!naam) continue;
+      result[naam] = {
+        prijs:   iActief >= 0 && cols[iPrijs]  ? cols[iPrijs]  : '',
+        prijsVan: iVan   >= 0 && cols[iVan]   ? cols[iVan]   : '',
+        actief:  iActief < 0 || (cols[iActief] || 'ja').toLowerCase() !== 'nee',
+      };
+    }
+    return result;
+  }
+
+  function applyPricing(data: Record<string, PakketInfo>) {
+    document.querySelectorAll<HTMLElement>('[data-pakket]').forEach(card => {
+      const naam = card.dataset.pakket!;
+      const info = data[naam];
+      if (!info) return;
+
+      if (!info.actief) { card.hidden = true; return; }
+
+      const prijsEl    = card.querySelector<HTMLElement>('[data-prijs]');
+      const prijsVanEl = card.querySelector<HTMLElement>('[data-prijs-van]');
+
+      if (info.prijs && prijsEl) {
+        prijsEl.textContent = `€ ${info.prijs}`;
+      }
+      if (prijsVanEl) {
+        if (info.prijsVan) {
+          prijsVanEl.textContent = `€ ${info.prijsVan}`;
+          prijsVanEl.classList.remove('hidden');
+        } else {
+          prijsVanEl.classList.add('hidden');
+        }
+      }
+    });
+
+    // Update 'Vanaf' preview in cat-card
+    document.querySelectorAll<HTMLElement>('[data-pakket-preview]').forEach(el => {
+      const naam = el.dataset.pakketPreview!;
+      const info = data[naam];
+      if (info?.actief && info.prijs) {
+        el.textContent = `Vanaf € ${info.prijs}`;
+      }
+    });
+  }
+
+  async function laadPrijzen() {
+    if (!PRICING_URL) return;
+    try {
+      let csv = getCache();
+      if (!csv) {
+        const res = await fetch(PRICING_URL);
+        if (!res.ok) throw new Error('fetch failed');
+        csv = await res.text();
+        setCache(csv);
+      }
+      applyPricing(parsePricing(csv));
+    } catch {
+      // Sheet niet bereikbaar — statische fallback-prijzen blijven staan
+    }
+  }
+
+  laadPrijzen();
 </script>
