@@ -202,7 +202,8 @@ const categorieInfo = [
     for (let i = 1; i < lines.length; i++) {
       const cols = parseCsvRow(lines[i]).map(s => s.replace(/"/g, '').trim());
       if ((cols[iGezocht] || '').toLowerCase() === 'ja') {
-        open.add(cols[iCat]);
+        // "A (motor)" → "A", "Taxi" → "Taxi"
+        open.add((cols[iCat] || '').split(/[\s(]/)[0]);
       }
     }
     return open;
