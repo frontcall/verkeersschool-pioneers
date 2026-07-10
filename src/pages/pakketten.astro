@@ -169,30 +169,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <p class="text-asphalt mb-10 max-w-xl ml-0 sm:ml-16">Slagen voor je rijexamen. De meeste leerlingen slagen in één keer.</p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            <!-- Actie Pakket -->
-            <div class="card-lift relative bg-pioneer-navy rounded-2xl p-7 flex flex-col overflow-hidden" data-pakket="Actie Pakket">
-              <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
-              <span class="absolute top-5 right-5 bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Actie</span>
-              <p class="text-xs font-bold uppercase tracking-widest text-white/45 mb-3">Actie Pakket</p>
-              <div class="flex items-baseline gap-2 flex-wrap mb-6">
-                <span data-prijs-van class="font-display font-bold text-2xl line-through opacity-40 hidden"></span>
-                <span data-prijs class="font-display font-bold text-4xl text-white">&euro;&nbsp;1.200</span>
-              </div>
-              <ul class="space-y-3 flex-1 mb-7 relative">
-                {['24 rijlessen', 'Gratis vrijblijvende proefles*', 'Gratis theoriepakket', '1 praktijkexamen', 'Onbeperkte herexamens**'].map(item => (
-                  <li class="flex items-start gap-2.5 text-sm text-white/80">
-                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
-                      <svg class="w-3 h-3 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a href="https://wa.me/31643127001?text=Hallo%20Verkeersschool%20Pioneers!%20Ik%20heb%20interesse%20in%20het%20Actie%20Pakket." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 relative">
-                Neem contact met ons op
-              </a>
-            </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1.25fr_1fr] gap-6 mb-6">
             <!-- Start Pakket -->
             <div class="card-lift relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden" data-pakket="Start Pakket">
               <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-asphalt/30 to-asphalt/10 rounded-t-2xl"></div>

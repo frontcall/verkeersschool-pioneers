@@ -102,12 +102,12 @@ import SectionDivider from '../components/SectionDivider.astro';
 
             <!-- Doorgestreepte oude prijs -->
             <div class="flex items-center gap-2 mb-1">
-              <span class="text-white/35 text-base line-through">€ 1.899,–</span>
-              <span class="bg-pioneer-red/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Bespaar €500!</span>
+              <span id="actie-prijs-van" class="text-white/35 text-base line-through">€ 2.099,–</span>
+              <span id="actie-bespaar" class="bg-pioneer-red/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full"></span>
             </div>
             <!-- Actieprijs -->
             <div class="relative mb-1">
-              <span class="font-display font-bold text-4xl sm:text-[3.25rem] leading-none text-white">€ 1.399</span>
+              <span id="actie-prijs" class="font-display font-bold text-4xl sm:text-[3.25rem] leading-none text-white">€ 1.200</span>
               <span class="text-white/50 text-lg">,–</span>
             </div>
             <p class="text-white/40 text-xs mb-6">Actie pakket — 24 lessen · handgeschakeld</p>
@@ -397,3 +397,76 @@ import SectionDivider from '../components/SectionDivider.astro';
   </section>
 
 </Layout>
+
+<script>
+  const SHEET_URL = import.meta.env.PUBLIC_PRICING_SHEET_URL as string;
+  const CACHE_KEY = 'pioneers_pricing_v1';
+  const CACHE_TTL = 5 * 60 * 1000;
+
+  function parseCsvRow(row: string): string[] {
+    const cols: string[] = [];
+    let cur = '', inQ = false;
+    for (const ch of row) {
+      if (ch === '"') { inQ = !inQ; }
+      else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
+      else { cur += ch; }
+    }
+    cols.push(cur.trim());
+    return cols;
+  }
+
+  async function loadActiePrijs() {
+    if (!SHEET_URL) return;
+    let csv: string;
+    try {
+      const cached = sessionStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const { ts, data } = JSON.parse(cached);
+        if (Date.now() - ts < CACHE_TTL) { csv = data; }
+      }
+      if (!csv!) {
+        const res = await fetch(SHEET_URL);
+        csv = await res.text();
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data: csv }));
+      }
+    } catch { return; }
+
+    const rows = csv.split('\n').filter(Boolean);
+    const headers = parseCsvRow(rows[0]).map(h => h.toLowerCase());
+    const iPakket = headers.indexOf('pakket');
+    const iPrijs  = headers.indexOf('prijs');
+    const iPrijsVan = headers.indexOf('prijs_van');
+
+    for (let i = 1; i < rows.length; i++) {
+      const cols = parseCsvRow(rows[i]);
+      if ((cols[iPakket] || '').trim().toLowerCase() !== 'actie pakket') continue;
+
+      const prijs    = (cols[iPrijs]    || '').replace(/[".]/g, '').replace(',', '.');
+      const prijsVan = (cols[iPrijsVan] || '').replace(/[".]/g, '').replace(',', '.');
+
+      const elPrijs    = document.getElementById('actie-prijs');
+      const elPrijsVan = document.getElementById('actie-prijs-van');
+      const elBespaar  = document.getElementById('actie-bespaar');
+
+      if (elPrijs && prijs) {
+        const num = parseFloat(prijs);
+        if (!isNaN(num)) elPrijs.textContent = '€ ' + Math.round(num).toLocaleString('nl-NL');
+      }
+      if (elPrijsVan && prijsVan) {
+        const num = parseFloat(prijsVan);
+        if (!isNaN(num)) {
+          elPrijsVan.textContent = '€ ' + Math.round(num).toLocaleString('nl-NL') + ',–';
+        }
+      }
+      if (elBespaar && prijs && prijsVan) {
+        const bespaar = Math.round(parseFloat(prijsVan) - parseFloat(prijs));
+        if (!isNaN(bespaar) && bespaar > 0) {
+          elBespaar.textContent = 'Bespaar €' + bespaar.toLocaleString('nl-NL') + '!';
+        }
+      }
+      break;
+    }
+  }
+
+  loadActiePrijs();
+</script>
