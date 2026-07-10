@@ -66,74 +66,33 @@ const categorieInfo = [
       <!-- Geen vacatures bericht -->
       <div id="vacatures-leeg" class="hidden bg-white rounded-2xl border border-asphalt-line p-10 text-center max-w-lg mx-auto">
         <p class="text-asphalt/60 text-sm mb-2">Momenteel geen openstaande vacatures.</p>
-        <p class="text-asphalt text-sm">Stuur gerust een open sollicitatie — we bewaren je gegevens voor toekomstige vacatures.</p>
+        <p class="text-asphalt text-sm">Neem gerust contact met ons op via WhatsApp.</p>
       </div>
     </div>
   </section>
 
-  <!-- ══ WAAROM + OPEN SOLLICITATIE ══ -->
+  <!-- ══ WAAROM ══ -->
   <section class="py-14 md:py-20 bg-white">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        <div class="reveal-item">
-          <p class="eyebrow mb-3">Waarom Pioneers?</p>
-          <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-6">Maak het verschil</h2>
-          <div class="space-y-4 text-asphalt leading-relaxed">
-            <p>Bij Verkeersschool Pioneers geloven we dat goed rijonderwijs verder gaat dan een rijbewijs halen. We geven leerlingen iets waardevols mee voor de rest van hun leven.</p>
-            <p>Als collega bij Pioneers werk je in een hecht team, met flexibele werktijden en ruimte voor jouw eigen aanpak.</p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-            {[
-              { title: 'Flexibele werktijden', body: '7 dagen per week, ook avonden — jij bepaalt mee.' },
-              { title: 'Persoonlijke aanpak',  body: 'Klein team, korte lijnen en echte betrokkenheid.' },
-              { title: 'Meerdere categorieën', body: 'Van B tot C en Taxi — brede mogelijkheden.' },
-              { title: 'Regio Breda',          body: 'Werkzaam in Breda en de wijde omgeving.' },
-            ].map(({ title, body }) => (
-              <div class="bg-off-white rounded-xl border border-asphalt-line p-4">
-                <h3 class="font-display font-semibold text-pioneer-navy text-sm mb-1">{title}</h3>
-                <p class="text-asphalt text-xs leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
+      <div class="reveal-item max-w-2xl">
+        <p class="eyebrow mb-3">Waarom Pioneers?</p>
+        <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-6">Maak het verschil</h2>
+        <div class="space-y-4 text-asphalt leading-relaxed">
+          <p>Bij Verkeersschool Pioneers geloven we dat goed rijonderwijs verder gaat dan een rijbewijs halen. We geven leerlingen iets waardevols mee voor de rest van hun leven.</p>
+          <p>Als collega bij Pioneers werk je in een hecht team, met flexibele werktijden en ruimte voor jouw eigen aanpak.</p>
         </div>
-
-        <div class="reveal-item" data-delay="2">
-          <div class="bg-off-white rounded-2xl border border-asphalt-line p-8">
-            <h2 class="font-display font-bold text-2xl tracking-tight mb-2 text-pioneer-navy">Open sollicitatie</h2>
-            <p class="text-asphalt text-sm mb-6 leading-relaxed">
-              Zie je geen specifieke vacature die past, maar wil je toch bij ons werken? Stuur een open sollicitatie — we lezen elke brief.
-            </p>
-            <form name="sollicitatie" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bedankt" class="space-y-5">
-              <input type="hidden" name="form-name" value="sollicitatie" />
-              <p class="hidden"><label>Laat dit veld leeg: <input name="bot-field" /></label></p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label for="sol-naam" class="block text-xs font-semibold text-pioneer-navy uppercase tracking-wider mb-1.5">Naam *</label>
-                  <input type="text" id="sol-naam" name="naam" required class="w-full px-4 py-3 rounded-lg border border-asphalt-line bg-white text-pioneer-navy placeholder-asphalt/50 focus:outline-none focus:border-pioneer-navy transition-colors text-sm" placeholder="Jouw volledige naam" />
-                </div>
-                <div>
-                  <label for="sol-telefoon" class="block text-xs font-semibold text-pioneer-navy uppercase tracking-wider mb-1.5">Telefoon</label>
-                  <input type="tel" id="sol-telefoon" name="telefoon" class="w-full px-4 py-3 rounded-lg border border-asphalt-line bg-white text-pioneer-navy placeholder-asphalt/50 focus:outline-none focus:border-pioneer-navy transition-colors text-sm" placeholder="06-00000000" />
-                </div>
-              </div>
-              <div>
-                <label for="sol-email" class="block text-xs font-semibold text-pioneer-navy uppercase tracking-wider mb-1.5">E-mailadres *</label>
-                <input type="email" id="sol-email" name="email" required class="w-full px-4 py-3 rounded-lg border border-asphalt-line bg-white text-pioneer-navy placeholder-asphalt/50 focus:outline-none focus:border-pioneer-navy transition-colors text-sm" placeholder="jouw@email.nl" />
-              </div>
-              <div>
-                <label for="sol-motivatie" class="block text-xs font-semibold text-pioneer-navy uppercase tracking-wider mb-1.5">Motivatie / bericht *</label>
-                <textarea id="sol-motivatie" name="motivatie" required rows="5" class="w-full px-4 py-3 rounded-lg border border-asphalt-line bg-white text-pioneer-navy placeholder-asphalt/50 focus:outline-none focus:border-pioneer-navy transition-colors text-sm resize-none" placeholder="Vertel waarom jij bij Verkeersschool Pioneers wilt werken…"></textarea>
-              </div>
-              <div>
-                <label for="sol-cv" class="block text-xs font-semibold text-pioneer-navy uppercase tracking-wider mb-1.5">CV (optioneel)</label>
-                <input type="file" id="sol-cv" name="cv" accept=".pdf,.doc,.docx" class="w-full text-sm text-asphalt file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-pioneer-navy file:text-white hover:file:bg-pioneer-navy-light transition-colors" />
-                <p class="text-xs text-asphalt/55 mt-1">PDF, Word — max. 5 MB</p>
-              </div>
-              <button type="submit" class="w-full py-3.5 rounded-lg bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-colors">
-                Sollicitatie versturen
-              </button>
-            </form>
-          </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+          {[
+            { title: 'Flexibele werktijden', body: '7 dagen per week, ook avonden — jij bepaalt mee.' },
+            { title: 'Persoonlijke aanpak',  body: 'Klein team, korte lijnen en echte betrokkenheid.' },
+            { title: 'Meerdere categorieën', body: 'Van B tot C en Taxi — brede mogelijkheden.' },
+            { title: 'Regio Breda',          body: 'Werkzaam in Breda en de wijde omgeving.' },
+          ].map(({ title, body }) => (
+            <div class="bg-off-white rounded-xl border border-asphalt-line p-4">
+              <h3 class="font-display font-semibold text-pioneer-navy text-sm mb-1">{title}</h3>
+              <p class="text-asphalt text-xs leading-relaxed">{body}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
