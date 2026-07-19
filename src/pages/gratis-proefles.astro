@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Gratis Proefles"
+  description="Plan een gratis proefles bij Verkeersschool Pioneers in Breda. Maak kennis met je instructeur zonder kosten of verplichting. Stuur gewoon een WhatsApp."
+>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero-bg text-white py-16 md:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-32 right-0 w-[520px] h-[520px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%);"></div>
+      <div class="orb-drift-slow absolute bottom-0 -left-20 w-[380px] h-[380px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(42,67,116,0.55) 0%, transparent 65%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
+      <p class="hero-item eyebrow mb-4" data-delay="1">Verkeersschool Pioneers · Breda</p>
+      <h1 class="hero-item font-display font-bold text-4xl md:text-6xl tracking-tight mb-5" data-delay="2">
+        Gratis proefles
+      </h1>
+      <p class="hero-item text-white/65 text-lg max-w-lg mx-auto mb-8" data-delay="3">
+        Maak kennis met je instructeur en ervaar hoe wij rijles geven. De proefles is gratis bij inschrijving.
+      </p>
+      <div class="hero-item" data-delay="4">
+        <a
+          href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20een%20gratis%20proefles%20plannen."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:shadow-pioneer-red/35 hover:-translate-y-0.5"
+        >
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+          </svg>
+          Plan via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOE WERKT HET ══ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="reveal-item text-center mb-12">
+        <p class="eyebrow mb-3">Zo werkt het</p>
+        <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight">In 3 stappen op weg</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        {[
+          {
+            stap: '1',
+            title: 'Stuur een WhatsApp',
+            body: 'Stuur ons een berichtje via WhatsApp. We reageren snel en plannen samen een moment dat voor jou uitkomt.',
+          },
+          {
+            stap: '2',
+            title: 'Maak kennis',
+            body: 'Je maakt kennis met je instructeur en ervaart hoe we rijles geven. Geen druk, gewoon kennismaken.',
+          },
+          {
+            stap: '3',
+            title: 'Schrijf je in',
+            body: 'Bevalt het? Dan schrijf je je in en is de proefles gratis. Kies het pakket dat bij jou past.',
+          },
+        ].map(({ stap, title, body }) => (
+          <div class="reveal-item card-lift bg-white rounded-2xl border border-asphalt-line p-7 text-center">
+            <div class="w-12 h-12 rounded-full bg-pioneer-red text-white font-display font-bold text-lg flex items-center justify-center mx-auto mb-5">
+              {stap}
+            </div>
+            <h3 class="font-display font-bold text-pioneer-navy text-lg mb-2">{title}</h3>
+            <p class="text-asphalt text-sm leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WAAROM PIONEERS ══ -->
+  <section class="py-16 md:py-20 bg-off-white">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="reveal-item mb-10">
+        <p class="eyebrow mb-3">Waarom Pioneers?</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Wat je mag verwachten</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Hoge slagingskans', body: 'De meeste leerlingen slagen in één keer voor hun CBR-examen.' },
+          { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', title: '7 dagen per week', body: "Les van maandag t/m zondag, overdag én 's avonds." },
+          { icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129', title: 'NL & EN', body: 'Rijles in het Nederlands en Engels. Jij kiest de taal.' },
+          { icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z', title: 'Flexibel betalen', body: 'Vooraf of in termijnen. Geen verborgen kosten.' },
+          { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Breda & omgeving', body: 'We rijden in Breda, Etten-Leur, Roosendaal en meer.' },
+          { icon: 'M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z', title: 'Theorie vanaf 16', body: 'Begin al op je 16e. Praktijklessen vanaf 16,5 jaar.' },
+        ].map(({ icon, title, body }) => (
+          <div class="reveal-item card-lift bg-white rounded-xl border border-asphalt-line p-5">
+            <div class="w-10 h-10 rounded-lg bg-pioneer-red/8 flex items-center justify-center mb-3">
+              <svg class="w-5 h-5 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-base text-pioneer-navy mb-1">{title}</h3>
+            <p class="text-asphalt text-xs leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BOTTOM CTA ══ -->
+  <section class="hero-bg text-white py-16 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-20 right-1/4 w-[450px] h-[450px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%);"></div>
+      <div class="orb-drift-slow absolute bottom-0 left-1/4 w-[350px] h-[350px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(42,67,116,0.55) 0%, transparent 65%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
+      <div class="reveal-item">
+        <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-3">Plan je gratis proefles</h2>
+        <p class="text-white/55 mb-8 max-w-sm mx-auto">Stuur een berichtje — we antwoorden snel en plannen een moment dat voor jou uitkomt.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20een%20gratis%20proefles%20plannen."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 hover:-translate-y-0.5"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+            </svg>
+            Stuur een WhatsApp-bericht
+          </a>
+          <a
+            href="/pakketten"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold transition-all duration-200"
+          >
+            Bekijk pakketten
+          </a>
+        </div>
+        <p class="text-white/30 text-xs mt-6">* De proefles is gratis bij inschrijving bij Verkeersschool Pioneers.</p>
+      </div>
+    </div>
+  </section>
+
+</Layout>

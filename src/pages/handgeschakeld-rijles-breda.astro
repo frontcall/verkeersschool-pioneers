@@ -1,0 +1,192 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Handgeschakeld Rijles Breda"
+  description="Handgeschakeld rijles in Breda bij Verkeersschool Pioneers. Rijbewijs halen met versnellingsbak — transparante pakketten, gratis proefles."
+>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero-bg text-white py-16 md:py-20 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-32 right-0 w-[520px] h-[520px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%);"></div>
+      <div class="orb-drift-slow absolute bottom-0 -left-20 w-[380px] h-[380px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(42,67,116,0.55) 0%, transparent 65%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8">
+      <p class="hero-item eyebrow mb-4" data-delay="1">Categorie B · Handgeschakeld</p>
+      <h1 class="hero-item font-display font-bold text-4xl md:text-5xl tracking-tight mb-4" data-delay="2">
+        Handgeschakeld rijles in Breda
+      </h1>
+      <p class="hero-item text-white/65 text-lg max-w-xl mb-8" data-delay="3">
+        Rijbewijs halen met versnellingsbak. Stap voor stap begeleid door onze instructeur — de meeste leerlingen slagen in één keer.
+      </p>
+      <div class="hero-item flex flex-wrap gap-4" data-delay="4">
+        <a
+          href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20een%20gratis%20proefles%20plannen%20voor%20handgeschakeld%20rijles."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 hover:-translate-y-0.5"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+          </svg>
+          Gratis proefles plannen
+        </a>
+        <a
+          href="/pakketten"
+          class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold transition-all duration-200"
+        >
+          Bekijk alle pakketten
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ VOORDELEN ══ -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal-item">
+          <p class="eyebrow mb-3">Handgeschakeld rijbewijs</p>
+          <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight mb-4">
+            Rijbewijs halen<br/>met versnellingsbak
+          </h2>
+          <p class="text-asphalt leading-relaxed mb-4">
+            Met een handgeschakeld rijbewijs kun je in elke auto rijden — ook automaten. Je hebt de volledige vrijheid op de weg, wereldwijd.
+          </p>
+          <p class="text-asphalt leading-relaxed">
+            Onze instructeurs leren je schakelen stap voor stap, op een rustige manier. Je bouwt snel vertrouwen op en bent goed voorbereid op het CBR-examen.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Rijdt in elke auto', body: 'Met een schakelrijbewijs kun je ook automaten besturen.' },
+            { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064', title: 'Geldig wereldwijd', body: 'Schakelen is de internationale standaard. Rij overal ter wereld.' },
+            { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Goedkoper leasen', body: 'Schakelwagens zijn vaak goedkoper in aanschaf en lease.' },
+            { icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z', title: 'Meest gekozen', body: 'Het handgeschakelde rijbewijs is de meest populaire keuze.' },
+          ].map(({ icon, title, body }) => (
+            <div class="reveal-item bg-off-white rounded-xl border border-asphalt-line p-5">
+              <div class="w-9 h-9 rounded-lg bg-pioneer-red/8 flex items-center justify-center mb-3">
+                <svg class="w-4.5 h-4.5 text-pioneer-red" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+                </svg>
+              </div>
+              <h3 class="font-display font-semibold text-pioneer-navy text-sm mb-1">{title}</h3>
+              <p class="text-asphalt text-xs leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PAKKETTEN ══ -->
+  <section class="py-16 md:py-20 bg-off-white">
+    <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
+      <div class="reveal-item mb-10">
+        <p class="eyebrow mb-3">Pakketten</p>
+        <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Handgeschakeld — onze pakketten</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1.25fr_1fr] gap-6 mb-6">
+        <!-- Start Pakket -->
+        <div class="card-lift reveal-item relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
+          <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-asphalt/30 to-asphalt/10 rounded-t-2xl"></div>
+          <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Start Pakket</p>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-4xl text-pioneer-navy">&euro;&nbsp;1.049</span>
+          </div>
+          <ul class="space-y-3 flex-1 mb-7">
+            {['11 rijlessen', 'Gratis proefles*', 'Inschrijving & advies', '1 praktijkexamen'].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-asphalt">
+                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-success-soft/12 flex items-center justify-center mt-0.5">
+                  <svg class="w-3 h-3 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="https://wa.me/31643127001?text=Ik%20heb%20interesse%20om%20me%20in%20te%20schrijven%20voor%20Auto%20Schakel" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+            Neem contact met ons op
+          </a>
+        </div>
+        <!-- Studenten Pakket -->
+        <div class="card-lift reveal-item relative bg-pioneer-navy rounded-2xl p-7 lg:p-9 lg:-my-4 flex flex-col overflow-hidden z-10">
+          <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red to-pioneer-red-dark rounded-t-2xl"></div>
+          <span class="absolute top-5 right-5 bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Meest gekozen</span>
+          <p class="text-xs font-bold uppercase tracking-widest text-white/45 mb-3">Studenten Pakket</p>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-4xl text-white">&euro;&nbsp;1.499</span>
+          </div>
+          <ul class="space-y-3 flex-1 mb-7">
+            {['20 rijlessen', 'Gratis proefles*', 'Gratis theoriepakket', '1 theorie-examen', '1 praktijkexamen', 'Onbeperkte herexamens**'].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-white/80">
+                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-white/10 flex items-center justify-center mt-0.5">
+                  <svg class="w-3 h-3 text-[#4ade80]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="https://wa.me/31643127001?text=Ik%20heb%20interesse%20om%20me%20in%20te%20schrijven%20voor%20Auto%20Schakel" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30">
+            Neem contact met ons op
+          </a>
+        </div>
+        <!-- Spoed Pakket -->
+        <div class="card-lift reveal-item relative bg-white rounded-2xl border border-asphalt-line p-7 flex flex-col overflow-hidden">
+          <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/60 to-pioneer-red/20 rounded-t-2xl"></div>
+          <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Spoed Pakket</p>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="font-display font-bold text-4xl text-pioneer-navy">&euro;&nbsp;2.099</span>
+          </div>
+          <ul class="space-y-3 flex-1 mb-7">
+            {['30 rijlessen', 'Gratis proefles*', 'Gratis theoriepakket', '1 praktijkexamen', 'Onbeperkte herexamens**', 'Tot 5 lessen per week'].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-asphalt">
+                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-success-soft/12 flex items-center justify-center mt-0.5">
+                  <svg class="w-3 h-3 text-success-soft" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="https://wa.me/31643127001?text=Ik%20heb%20interesse%20om%20me%20in%20te%20schrijven%20voor%20Auto%20Schakel" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-pioneer-navy text-pioneer-navy font-semibold text-sm hover:bg-pioneer-navy hover:text-white transition-all duration-200">
+            Neem contact met ons op
+          </a>
+        </div>
+      </div>
+      <p class="text-asphalt text-xs">* De proefles is gratis bij inschrijving. &nbsp;** Herexamens t/m €299 per examen.</p>
+      <a href="/pakketten" class="inline-flex items-center gap-2 mt-6 text-pioneer-navy font-semibold text-sm hover:underline">
+        Bekijk de volledige prijzentabel
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ BOTTOM CTA ══ -->
+  <section class="hero-bg text-white py-14 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="orb-drift absolute -top-20 right-1/4 w-[450px] h-[450px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(214,40,57,0.45) 0%, transparent 65%);"></div>
+      <div class="orb-drift-slow absolute bottom-0 left-1/4 w-[350px] h-[350px] rounded-full" style="filter:blur(90px); background: radial-gradient(circle, rgba(42,67,116,0.55) 0%, transparent 65%);"></div>
+    </div>
+    <div class="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8 text-center">
+      <div class="reveal-item">
+        <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-3">Klaar om te starten?</h2>
+        <p class="text-white/55 mb-7 max-w-md mx-auto">Plan een gratis proefles via WhatsApp — we antwoorden 7 dagen per week.</p>
+        <a
+          href="https://wa.me/31643127001?text=Hallo!%20Ik%20wil%20graag%20een%20gratis%20proefles%20plannen%20voor%20handgeschakeld%20rijles."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-pioneer-red hover:bg-pioneer-red-dark text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-pioneer-red/30 hover:-translate-y-0.5"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+          </svg>
+          Stuur een WhatsApp-bericht
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
