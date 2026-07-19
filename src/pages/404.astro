@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Pagina niet gevonden" description="Deze pagina bestaat niet.">
+  <section class="min-h-[70vh] flex flex-col items-center justify-center text-center px-5">
+    <p class="text-pioneer-red font-bold text-6xl mb-4">404</p>
+    <h1 class="font-display font-bold text-2xl md:text-3xl mb-4 text-pioneer-navy">Pagina niet gevonden</h1>
+    <p class="text-asphalt mb-8 max-w-sm">De pagina die je zoekt bestaat niet of is verplaatst.</p>
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-pioneer-red text-white font-semibold hover:bg-pioneer-red-dark transition-all duration-200"
+    >
+      Terug naar home
+    </a>
+  </section>
+</Layout>
