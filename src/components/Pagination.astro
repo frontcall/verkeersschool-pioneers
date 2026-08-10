@@ -1,0 +1,99 @@
+---
+import { pageHref } from '../lib/blog.js';
+
+interface Props {
+  current: number;
+  totalPages: number;
+}
+
+const { current, totalPages } = Astro.props;
+
+// First, last, and the current page ±1 — with gaps collapsed into an ellipsis.
+const shown = new Set([1, totalPages, current - 1, current, current + 1]);
+const numbers = [...shown].filter((n) => n >= 1 && n <= totalPages).sort((a, b) => a - b);
+
+const items = [];
+let previous = 0;
+for (const n of numbers) {
+  if (previous && n - previous > 1) items.push({ gap: true });
+  items.push({ page: n });
+  previous = n;
+}
+
+const linkBase =
+  'inline-flex items-center justify-center min-w-[2.5rem] h-10 px-3 rounded-lg text-sm font-semibold transition-colors';
+---
+
+{totalPages > 1 && (
+  <nav class="flex items-center justify-center gap-2 mt-14" aria-label="Paginering">
+    {current > 1 ? (
+      <a
+        href={pageHref(current - 1)}
+        rel="prev"
+        aria-label="Vorige pagina"
+        class:list={[linkBase, 'gap-1.5 text-pioneer-navy border border-asphalt-line bg-white hover:border-pioneer-red hover:text-pioneer-red']}
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+        </svg>
+        <span class="hidden sm:inline">Vorige</span>
+      </a>
+    ) : (
+      <span
+        class:list={[linkBase, 'gap-1.5 text-asphalt/30 border border-asphalt-line/60 bg-white/50 cursor-not-allowed']}
+        aria-hidden="true"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+        </svg>
+        <span class="hidden sm:inline">Vorige</span>
+      </span>
+    )}
+
+    {items.map((item) =>
+      item.gap ? (
+        <span class="px-1 text-asphalt/40 select-none" aria-hidden="true">…</span>
+      ) : item.page === current ? (
+        <span
+          class:list={[linkBase, 'bg-pioneer-red text-white']}
+          aria-current="page"
+          aria-label={`Pagina ${item.page}, huidige pagina`}
+        >
+          {item.page}
+        </span>
+      ) : (
+        <a
+          href={pageHref(item.page)}
+          class:list={[linkBase, 'text-pioneer-navy border border-asphalt-line bg-white hover:border-pioneer-red hover:text-pioneer-red']}
+          aria-label={`Pagina ${item.page}`}
+        >
+          {item.page}
+        </a>
+      ),
+    )}
+
+    {current < totalPages ? (
+      <a
+        href={pageHref(current + 1)}
+        rel="next"
+        aria-label="Volgende pagina"
+        class:list={[linkBase, 'gap-1.5 text-pioneer-navy border border-asphalt-line bg-white hover:border-pioneer-red hover:text-pioneer-red']}
+      >
+        <span class="hidden sm:inline">Volgende</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    ) : (
+      <span
+        class:list={[linkBase, 'gap-1.5 text-asphalt/30 border border-asphalt-line/60 bg-white/50 cursor-not-allowed']}
+        aria-hidden="true"
+      >
+        <span class="hidden sm:inline">Volgende</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </span>
+    )}
+  </nav>
+)}

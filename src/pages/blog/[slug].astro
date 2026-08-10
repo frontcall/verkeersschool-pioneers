@@ -1,15 +1,17 @@
 ---
 export const prerender = false;
 
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 import { getStore } from '@netlify/blobs';
+import { formatDate } from '../../lib/blog.js';
 
 const { slug } = Astro.params;
-const context  = Astro.locals.netlify?.context;
 
 let post = null;
 try {
-  const store = getStore({ name: 'posts', ...(context ? { context } : {}) });
+  // Strong consistency: Edward opens post_url right after the webhook returns,
+  // so an eventually-consistent read could bounce it back to /blog.
+  const store = getStore({ name: 'posts', consistency: 'strong' });
   const postId = await store.get(`slug:${slug}`, { type: 'text' });
   if (postId) {
     post = await store.get(`post:${postId}`, { type: 'json' });
@@ -22,262 +24,189 @@ if (!post || post.status !== 'published') {
   return Astro.redirect('/blog', 302);
 }
 
-function formatDate(iso) {
-  if (!iso) return '';
-  return new Date(iso).toLocaleDateString('nl-NL', {
-    day: 'numeric', month: 'long', year: 'numeric',
-  });
-}
-
 const canonicalURL = `https://verkeersschoolpioneers.nl/blog/${post.slug}`;
-const pageTitle    = post.og_title      || post.title;
-const pageDesc     = post.og_description || post.meta_description;
-const ogImage      = post.og_image_url  || post.featured_image_url || '';
+const pageDesc = post.og_description || post.meta_description;
+const ogImage = post.og_image_url || post.featured_image_url || undefined;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: post.meta_description,
+  image: post.featured_image_url || undefined,
+  datePublished: post.published_at,
+  dateModified: post.updated_at || post.published_at,
+  author: {
+    '@type': 'Organization',
+    name: 'Verkeersschool Pioneers',
+    url: 'https://verkeersschoolpioneers.nl',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Verkeersschool Pioneers',
+    url: 'https://verkeersschoolpioneers.nl',
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalURL },
+};
 ---
 
-<!doctype html>
-<html lang="nl" style="color-scheme: light;">
-  <head>
-    <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N82B8VXB');</script>
-    <!-- End Google Tag Manager -->
+<Layout
+  title={post.title}
+  description={pageDesc}
+  ogImage={ogImage}
+  ogType="article"
+  ogTitle={post.og_title || post.title}
+  twitterTitle={post.twitter_title || post.og_title || post.title}
+  twitterDescription={post.twitter_description || pageDesc}
+  publishedTime={post.published_at}
+>
+  <script
+    slot="head"
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(jsonLd)}
+  ></script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#FAFAF8" />
+  <article>
+    <!-- ── Article header ── -->
+    <div class="max-w-[860px] mx-auto px-5 sm:px-8 pt-12 pb-6">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-asphalt hover:text-pioneer-red transition-colors mb-8"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Terug naar blog
+      </a>
 
-    <title>{pageTitle} | Verkeersschool Pioneers</title>
-    <meta name="description" content={pageDesc} />
-    <link rel="canonical" href={canonicalURL} />
+      <h1 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-pioneer-navy leading-tight mb-4">
+        {post.title}
+      </h1>
 
-    <!-- Open Graph -->
-    <meta property="og:type"        content="article" />
-    <meta property="og:url"         content={canonicalURL} />
-    <meta property="og:title"       content={pageTitle} />
-    <meta property="og:description" content={pageDesc} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
-    <meta property="og:locale"      content="nl_NL" />
-    <meta property="article:published_time" content={post.published_at} />
+      <div class="flex items-center gap-3 text-sm text-asphalt/70 mb-8">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        <time datetime={post.published_at}>{formatDate(post.published_at)}</time>
+        {post.focus_keyword && (
+          <>
+            <span class="text-asphalt/30">·</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-pioneer-red/8 border border-pioneer-red/20 text-pioneer-red text-xs font-semibold">
+              {post.focus_keyword}
+            </span>
+          </>
+        )}
+      </div>
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content={post.twitter_title || pageTitle} />
-    <meta name="twitter:description" content={post.twitter_description || pageDesc} />
-    {ogImage && <meta name="twitter:image" content={ogImage} />}
+      {post.meta_description && (
+        <p class="text-asphalt text-lg leading-relaxed border-l-4 border-pioneer-red pl-5 mb-8 italic">
+          {post.meta_description}
+        </p>
+      )}
+    </div>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- ── Cover image ── -->
+    {post.featured_image_url && (
+      <div class="max-w-[1024px] mx-auto px-5 sm:px-8 mb-12">
+        <img
+          src={post.featured_image_url}
+          alt={post.featured_image_alt || post.title}
+          class="w-full rounded-2xl aspect-[16/7] object-cover"
+          loading="eager"
+        />
+      </div>
+    )}
 
-    <!-- JSON-LD BlogPosting -->
-    <script type="application/ld+json" is:inline set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": post.title,
-      "description": post.meta_description,
-      "image": post.featured_image_url || undefined,
-      "datePublished": post.published_at,
-      "dateModified": post.updated_at || post.published_at,
-      "author": {
-        "@type": "Organization",
-        "name": "Verkeersschool Pioneers",
-        "url": "https://verkeersschoolpioneers.nl"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Verkeersschool Pioneers",
-        "url": "https://verkeersschoolpioneers.nl"
-      },
-      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalURL }
-    })}></script>
+    <!-- ── Body ── -->
+    <div class="max-w-[860px] mx-auto px-5 sm:px-8 pb-16">
+      <div class="prose" set:html={post.body_html} />
 
-    <style is:global>
-      /* ── PROSE — article body ── */
-      .prose {
-        color: #4B4F58;
-        font-size: 1.125rem;
-        line-height: 1.75;
-        max-width: 72ch;
-      }
-      .prose > * + * { margin-top: 1.25em; }
-      .prose h1, .prose h2, .prose h3, .prose h4 {
-        font-family: 'Space Grotesk', sans-serif;
-        font-weight: 700;
-        color: #3A60A8;
-        line-height: 1.25;
-      }
-      .prose h1 { font-size: 2rem;    margin-top: 2.5rem; margin-bottom: 0.75rem; }
-      .prose h2 { font-size: 1.625rem; margin-top: 2.5rem; margin-bottom: 0.6rem;  }
-      .prose h3 { font-size: 1.25rem;  margin-top: 2rem;   margin-bottom: 0.5rem;  }
-      .prose h4 { font-size: 1.05rem;  margin-top: 1.5rem; margin-bottom: 0.4rem;  }
-      .prose p  { margin-bottom: 1.25rem; }
-      .prose a  { color: #D62839; text-decoration: underline; text-underline-offset: 3px; }
-      .prose a:hover { color: #3A60A8; }
-      .prose strong { color: #3A60A8; font-weight: 700; }
-      .prose em { font-style: italic; }
-      .prose ul { list-style: disc;    margin: 1rem 0 1.25rem 1.5rem; }
-      .prose ol { list-style: decimal; margin: 1rem 0 1.25rem 1.5rem; }
-      .prose li { margin-bottom: 0.4rem; }
-      .prose blockquote {
-        border-left: 4px solid #D62839;
-        padding: 0.75rem 1.25rem;
-        margin: 1.5rem 0;
-        background: rgba(214,40,57,0.04);
-        border-radius: 0 0.5rem 0.5rem 0;
-        color: #4B4F58;
-        font-style: italic;
-      }
-      .prose blockquote p { margin-bottom: 0; }
-      .prose img { border-radius: 0.75rem; width: 100%; margin: 1.5rem 0; }
-      .prose hr { border: none; border-top: 1px solid #E8E9EC; margin: 2.5rem 0; }
-      .prose code {
-        background: #F4F4F2;
-        border: 1px solid #E8E9EC;
-        padding: 0.1em 0.35em;
-        border-radius: 0.25rem;
-        font-size: 0.875em;
-        font-family: ui-monospace, monospace;
-      }
-      .prose pre {
-        background: #3A60A8;
-        color: #FAFAF8;
-        padding: 1.25rem 1.5rem;
-        border-radius: 0.75rem;
-        overflow-x: auto;
-        margin: 1.5rem 0;
-      }
-      .prose pre code { background: none; border: none; padding: 0; font-size: 0.9rem; }
-      .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
-      .prose th { background: #3A60A8; color: white; padding: 0.6rem 1rem; text-align: left; }
-      .prose td { padding: 0.6rem 1rem; border-bottom: 1px solid #E8E9EC; }
-      .prose tr:last-child td { border-bottom: none; }
-    </style>
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N82B8VXB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+      <!-- Tags -->
+      {post.tags && post.tags.length > 0 && (
+        <div class="mt-12 pt-8 border-t border-asphalt-line flex flex-wrap gap-2">
+          {post.tags.map((tag) => (
+            <span class="px-3 py-1 rounded-full bg-off-white border border-asphalt-line text-asphalt text-xs font-medium">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
 
-    <!-- Header (reuse site component) -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-asphalt-line">
-      <div class="max-w-[1280px] mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3">
-          <img src="/logo.webp" alt="Verkeersschool Pioneers" class="h-9 w-auto" />
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-pioneer-navy">
-          <a href="/" class="hover:text-pioneer-red transition-colors">Home</a>
-          <a href="/pakketten" class="hover:text-pioneer-red transition-colors">Pakketten</a>
-          <a href="/reviews" class="hover:text-pioneer-red transition-colors">Reviews</a>
-          <a href="/blog" class="text-pioneer-red">Blog</a>
-          <a href="/contact" class="hover:text-pioneer-red transition-colors">Contact</a>
-        </nav>
+      <!-- Back link bottom -->
+      <div class="mt-12 pt-8 border-t border-asphalt-line">
         <a
-          href="https://wa.me/31643127001"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-pioneer-red text-white text-sm font-semibold hover:bg-pioneer-red-dark transition-colors"
+          href="/blog"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-pioneer-navy hover:text-pioneer-red transition-colors"
         >
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M5.339 18.706A9.905 9.905 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.934 9.934 0 0 1-5.127-1.417L2 22l2.339-3.294z"/>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
           </svg>
-          WhatsApp
+          Terug naar blog
         </a>
       </div>
-    </header>
+    </div>
+  </article>
+</Layout>
 
-    <main>
-      <article>
-
-        <!-- ── Article header ── -->
-        <div class="max-w-[860px] mx-auto px-5 sm:px-8 pt-12 pb-6">
-          <a
-            href="/blog"
-            class="inline-flex items-center gap-2 text-sm font-semibold text-asphalt hover:text-pioneer-red transition-colors mb-8"
-          >
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-            </svg>
-            Terug naar blog
-          </a>
-
-          <h1 class="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-pioneer-navy leading-tight mb-4">
-            {post.title}
-          </h1>
-
-          <div class="flex items-center gap-3 text-sm text-asphalt/70 mb-8">
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-            <time datetime={post.published_at}>{formatDate(post.published_at)}</time>
-            {post.focus_keyword && (
-              <>
-                <span class="text-asphalt/30">·</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-pioneer-red/8 border border-pioneer-red/20 text-pioneer-red text-xs font-semibold">
-                  {post.focus_keyword}
-                </span>
-              </>
-            )}
-          </div>
-
-          {post.meta_description && (
-            <p class="text-asphalt text-lg leading-relaxed border-l-4 border-pioneer-red pl-5 mb-8 italic">
-              {post.meta_description}
-            </p>
-          )}
-        </div>
-
-        <!-- ── Cover image ── -->
-        {post.featured_image_url && (
-          <div class="max-w-[1024px] mx-auto px-5 sm:px-8 mb-12">
-            <img
-              src={post.featured_image_url}
-              alt={post.featured_image_alt || post.title}
-              class="w-full rounded-2xl aspect-[16/7] object-cover"
-              loading="eager"
-            />
-          </div>
-        )}
-
-        <!-- ── Body ── -->
-        <div class="max-w-[860px] mx-auto px-5 sm:px-8 pb-16">
-          <div class="prose" set:html={post.body_html} />
-
-          <!-- Tags -->
-          {post.tags && post.tags.length > 0 && (
-            <div class="mt-12 pt-8 border-t border-asphalt-line flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span class="px-3 py-1 rounded-full bg-off-white border border-asphalt-line text-asphalt text-xs font-medium">
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          )}
-
-          <!-- Back link bottom -->
-          <div class="mt-12 pt-8 border-t border-asphalt-line">
-            <a
-              href="/blog"
-              class="inline-flex items-center gap-2 text-sm font-semibold text-pioneer-navy hover:text-pioneer-red transition-colors"
-            >
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-              </svg>
-              Terug naar blog
-            </a>
-          </div>
-        </div>
-
-      </article>
-    </main>
-
-    <!-- Simple footer -->
-    <footer class="bg-pioneer-navy text-white/50 text-xs text-center py-6">
-      &copy; {new Date().getFullYear()} Verkeersschool Pioneers — Breda
-    </footer>
-
-    <script is:inline>
-      document.documentElement.classList.add('js-ready');
-    </script>
-  </body>
-</html>
+<style is:global>
+  /* ── PROSE — article body ── */
+  .prose {
+    color: #4B4F58;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    max-width: 72ch;
+  }
+  .prose > * + * { margin-top: 1.25em; }
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: #3A60A8;
+    line-height: 1.25;
+  }
+  .prose h1 { font-size: 2rem;    margin-top: 2.5rem; margin-bottom: 0.75rem; }
+  .prose h2 { font-size: 1.625rem; margin-top: 2.5rem; margin-bottom: 0.6rem;  }
+  .prose h3 { font-size: 1.25rem;  margin-top: 2rem;   margin-bottom: 0.5rem;  }
+  .prose h4 { font-size: 1.05rem;  margin-top: 1.5rem; margin-bottom: 0.4rem;  }
+  .prose p  { margin-bottom: 1.25rem; }
+  .prose a  { color: #D62839; text-decoration: underline; text-underline-offset: 3px; }
+  .prose a:hover { color: #3A60A8; }
+  .prose strong { color: #3A60A8; font-weight: 700; }
+  .prose em { font-style: italic; }
+  .prose ul { list-style: disc;    margin: 1rem 0 1.25rem 1.5rem; }
+  .prose ol { list-style: decimal; margin: 1rem 0 1.25rem 1.5rem; }
+  .prose li { margin-bottom: 0.4rem; }
+  .prose blockquote {
+    border-left: 4px solid #D62839;
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    background: rgba(214,40,57,0.04);
+    border-radius: 0 0.5rem 0.5rem 0;
+    color: #4B4F58;
+    font-style: italic;
+  }
+  .prose blockquote p { margin-bottom: 0; }
+  .prose img { border-radius: 0.75rem; width: 100%; margin: 1.5rem 0; }
+  .prose hr { border: none; border-top: 1px solid #E8E9EC; margin: 2.5rem 0; }
+  .prose code {
+    background: #F4F4F2;
+    border: 1px solid #E8E9EC;
+    padding: 0.1em 0.35em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family: ui-monospace, monospace;
+  }
+  .prose pre {
+    background: #3A60A8;
+    color: #FAFAF8;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .prose pre code { background: none; border: none; padding: 0; font-size: 0.9rem; }
+  .prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+  .prose th { background: #3A60A8; color: white; padding: 0.6rem 1rem; text-align: left; }
+  .prose td { padding: 0.6rem 1rem; border-bottom: 1px solid #E8E9EC; }
+  .prose tr:last-child td { border-bottom: none; }
+</style>

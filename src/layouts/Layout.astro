@@ -9,13 +9,29 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  /** 'article' for blog posts, 'website' elsewhere. */
+  ogType?: string;
+  /** Overrides the default "<title> | Verkeersschool Pioneers" for og:title. */
+  ogTitle?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  /** ISO date — emits article:published_time. */
+  publishedTime?: string;
 }
 
 const {
   title,
   description = 'Verkeersschool Pioneers in Breda — rijlessen voor auto, motor, scooter, vrachtwagen en taxi. Professioneel, persoonlijk en betaalbaar.',
   ogImage = '/og-default.jpg',
+  ogType = 'website',
+  ogTitle,
+  twitterTitle,
+  twitterDescription,
+  publishedTime,
 } = Astro.props;
+
+const fullTitle = `${title} | Verkeersschool Pioneers`;
+const socialTitle = ogTitle || fullTitle;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://verkeersschoolpioneers.nl');
 ---
@@ -34,26 +50,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://verkeers
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->
-    <title>{title} | Verkeersschool Pioneers</title>
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={`${title} | Verkeersschool Pioneers`} />
+    <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="nl_NL" />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | Verkeersschool Pioneers`} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={twitterTitle || socialTitle} />
+    <meta name="twitter:description" content={twitterDescription || description} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href="/logo.webp" type="image/webp" />
+
+    <!-- Page-specific head content (JSON-LD, rel=prev/next, …) -->
+    <slot name="head" />
 
 
     <!-- Structured Data: LocalBusiness -->

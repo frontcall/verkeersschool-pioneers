@@ -1,23 +1,40 @@
 ---
 export const prerender = false;
 
-import Layout from '../../layouts/Layout.astro';
-import PostGrid from '../../components/PostGrid.astro';
-import Pagination from '../../components/Pagination.astro';
-import { getPublishedPosts, paginate, pageHref } from '../../lib/blog.js';
+import Layout from '../../../layouts/Layout.astro';
+import PostGrid from '../../../components/PostGrid.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { getPublishedPosts, paginate, pageHref, parsePageParam } from '../../../lib/blog.js';
+
+const requested = parsePageParam(Astro.params.page);
+
+// /blog/page/1 duplicates /blog — send it to the canonical URL. Anything that
+// isn't a clean integer is not a real page either.
+if (requested === null || requested === 1) {
+  return Astro.redirect('/blog', 301);
+}
 
 const posts = await getPublishedPosts();
-const { items, current, totalPages } = paginate(posts, 1);
+const { items, current, totalPages } = paginate(posts, requested);
+
+// Past the last page there is nothing to show.
+if (requested > totalPages) {
+  return Astro.redirect('/blog', 302);
+}
 
 const site = Astro.site || 'https://verkeersschoolpioneers.nl';
+const prevUrl = new URL(pageHref(current - 1), site).href;
 const nextUrl = current < totalPages ? new URL(pageHref(current + 1), site).href : null;
 ---
 
 <Layout
-  title="Blog"
-  description="Lees de laatste artikelen van Verkeersschool Pioneers — tips voor het rijexamen, theorie en meer."
+  title={`Blog — pagina ${current}`}
+  description={`Artikelen van Verkeersschool Pioneers — pagina ${current} van ${totalPages}.`}
 >
-  {nextUrl && <link slot="head" rel="next" href={nextUrl} />}
+  <Fragment slot="head">
+    <link rel="prev" href={prevUrl} />
+    {nextUrl && <link rel="next" href={nextUrl} />}
+  </Fragment>
 
   <!-- ══ HERO ══ -->
   <section class="hero-bg text-white py-14 md:py-18 relative overflow-hidden">
@@ -31,7 +48,7 @@ const nextUrl = current < totalPages ? new URL(pageHref(current + 1), site).href
         Blog
       </h1>
       <p class="hero-item text-white/60 text-lg max-w-lg" data-delay="3">
-        Rijexamen tips, theorie-hulp en het laatste nieuws van Verkeersschool Pioneers.
+        Pagina {current} van {totalPages}.
       </p>
     </div>
   </section>
@@ -39,17 +56,8 @@ const nextUrl = current < totalPages ? new URL(pageHref(current + 1), site).href
   <!-- ══ POSTS GRID ══ -->
   <section class="py-16 md:py-20">
     <div class="max-w-[1280px] mx-auto px-5 sm:px-8">
-      {items.length === 0 ? (
-        <div class="text-center py-24">
-          <p class="text-asphalt text-lg">Er zijn nog geen artikelen gepubliceerd.</p>
-          <p class="text-asphalt/60 text-sm mt-2">Kom binnenkort terug.</p>
-        </div>
-      ) : (
-        <>
-          <PostGrid posts={items} />
-          <Pagination current={current} totalPages={totalPages} />
-        </>
-      )}
+      <PostGrid posts={items} />
+      <Pagination current={current} totalPages={totalPages} />
     </div>
   </section>
 </Layout>

@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://verkeersschoolpioneers.nl/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://verkeersschoolpioneers.nl/reviews/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
