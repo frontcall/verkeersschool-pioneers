@@ -1,5 +1,14 @@
 ---
+export const prerender = false;
+
 import Layout from '../layouts/Layout.astro';
+import { getPrijzen, setPrijsCacheHeaders, prijsVan } from '../lib/pricing';
+
+const { prijzen, live } = await getPrijzen();
+setPrijsCacheHeaders(Astro.response.headers, live);
+const pakketPrijzen = Object.fromEntries(
+  ['Start Pakket', 'Studenten Pakket', 'Spoed Pakket', 'Automaat Pakket', 'Losse Rijles'].map(n => [n, prijsVan(prijzen, n)]),
+);
 ---
 
 <Layout
@@ -108,7 +117,7 @@ import Layout from '../layouts/Layout.astro';
                   </div>
 
                   <!-- Pakket (dynamisch getoond) -->
-                  <div id="pakket-wrap" class="pakket-hidden">
+                  <div id="pakket-wrap" class="pakket-hidden" data-prijzen={JSON.stringify(pakketPrijzen)}>
                     <label for="pakket" class="field-label">Welk pakket? *</label>
                     <div class="relative">
                       <select id="pakket" name="pakket" class="form-field appearance-none pr-10">
@@ -393,15 +402,17 @@ import Layout from '../layouts/Layout.astro';
   const pakketWrap = document.getElementById('pakket-wrap');
   const pakketSelect = document.getElementById('pakket') as HTMLSelectElement | null;
 
+  const prijzen: Record<string, string> = JSON.parse(pakketWrap?.dataset.prijzen || '{}');
+
   const pakkettenMap: Record<string, string[]> = {
     'Handgeschakeld (B)': [
-      'Start Pakket — € 1.049 (11 lessen)',
-      'Studenten Pakket — € 1.499 (20 lessen)',
-      'Spoed Pakket — € 2.099 (30 lessen)',
+      `Start Pakket — € ${prijzen['Start Pakket']} (11 lessen)`,
+      `Studenten Pakket — € ${prijzen['Studenten Pakket']} (20 lessen)`,
+      `Spoed Pakket — € ${prijzen['Spoed Pakket']} (30 lessen)`,
     ],
     'Automaat (B)': [
-      'Automaat Pakket — € 1.750 (24 lessen)',
-      'Losse rijles — € 60 per les',
+      `Automaat Pakket — € ${prijzen['Automaat Pakket']} (24 lessen)`,
+      `Losse rijles — € ${prijzen['Losse Rijles']} per les`,
     ],
     'Motor (A1/A2/A)': [
       'A1 — Lichte motor (tot 11 kW)',

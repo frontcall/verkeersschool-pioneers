@@ -1,5 +1,11 @@
 ---
+export const prerender = false;
+
 import Layout from '../layouts/Layout.astro';
+import { getPrijzen, setPrijsCacheHeaders, prijsVan } from '../lib/pricing';
+
+const { prijzen, live } = await getPrijzen();
+setPrijsCacheHeaders(Astro.response.headers, live);
 ---
 
 <Layout
@@ -95,7 +101,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-asphalt/30 to-asphalt/10 rounded-t-2xl"></div>
           <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Start Pakket</p>
           <div class="flex items-baseline gap-2 mb-6">
-            <span class="font-display font-bold text-4xl text-pioneer-navy">&euro;&nbsp;1.049</span>
+            <span class="font-display font-bold text-4xl text-pioneer-navy">&euro;&nbsp;{prijsVan(prijzen, 'Start Pakket')}</span>
           </div>
           <ul class="space-y-3 flex-1 mb-7">
             {['11 rijlessen', 'Gratis proefles*', 'Inschrijving & advies', '1 praktijkexamen'].map(item => (
@@ -117,7 +123,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="absolute top-5 right-5 bg-pioneer-red text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">Meest gekozen</span>
           <p class="text-xs font-bold uppercase tracking-widest text-white/45 mb-3">Studenten Pakket</p>
           <div class="flex items-baseline gap-2 mb-6">
-            <span class="font-display font-bold text-4xl text-white">&euro;&nbsp;1.499</span>
+            <span class="font-display font-bold text-4xl text-white">&euro;&nbsp;{prijsVan(prijzen, 'Studenten Pakket')}</span>
           </div>
           <ul class="space-y-3 flex-1 mb-7">
             {['20 rijlessen', 'Gratis proefles*', 'Gratis theoriepakket', '1 theorie-examen', '1 praktijkexamen', 'Onbeperkte herexamens**'].map(item => (
@@ -138,7 +144,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-pioneer-red/60 to-pioneer-red/20 rounded-t-2xl"></div>
           <p class="text-xs font-bold uppercase tracking-widest text-asphalt mb-3">Spoed Pakket</p>
           <div class="flex items-baseline gap-2 mb-6">
-            <span class="font-display font-bold text-4xl text-pioneer-navy">&euro;&nbsp;2.099</span>
+            <span class="font-display font-bold text-4xl text-pioneer-navy">&euro;&nbsp;{prijsVan(prijzen, 'Spoed Pakket')}</span>
           </div>
           <ul class="space-y-3 flex-1 mb-7">
             {['30 rijlessen', 'Gratis proefles*', 'Gratis theoriepakket', '1 praktijkexamen', 'Onbeperkte herexamens**', 'Tot 5 lessen per week'].map(item => (
