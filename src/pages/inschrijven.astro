@@ -197,11 +197,14 @@ const pakketPrijzen = Object.fromEntries(
                         { v: 'Vooraf (volledig)', l: 'Vooraf' },
                         { v: 'Maandelijks', l: 'Maandelijks' },
                         { v: 'Per les', l: 'Per les' },
+                        { v: 'Klarna (gespreid via betaallink)', l: 'Klarna' },
                         { v: 'Weet ik nog niet', l: 'Weet nog niet' },
                       ].map(({ v, l }) => (
                         <label class="pill-option">
                           <input type="radio" name="betaal" value={v} />
-                          <span>{l}</span>
+                          {l === 'Klarna'
+                            ? <span><img src="https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg" alt="Klarna" width="48" height="20" class="h-5 w-auto" /></span>
+                            : <span>{l}</span>}
                         </label>
                       ))}
                     </div>
